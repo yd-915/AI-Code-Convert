@@ -114,6 +114,18 @@ export default function Home() {
 		<meta name="keywords" content="AI Code Converter,Code Convert AI, Code Generate AI,Code Translator,AICodeHelper,free,online" />
 		<link rel="canonical" href="https://aicodeconvert.com" />
         <link rel="icon" href="/code.png" />
+		{/* Add the Google Analytics script tags here */}
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-Q03Q3VY7RV"></script>
+		<script
+		  dangerouslySetInnerHTML={{
+			__html: `
+			  window.dataLayer = window.dataLayer || [];
+			  function gtag(){dataLayer.push(arguments);}
+			  gtag('js', new Date());
+			  gtag('config', 'G-Q03Q3VY7RV');
+			`,
+		  }}
+		/>
       </Head>
 	  
 	  <div className="h-100 flex justify-start items-center pl-10 pt-5 bg-[#0E1117]">
