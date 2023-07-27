@@ -55,7 +55,7 @@ export default function Home() {
 
     if (!response.ok) {
       setLoading(false);
-      alert('Something went wrong.');
+      alert('OpenAI key has expired.');
       return;
     }
 
@@ -198,9 +198,14 @@ export default function Home() {
 		    {loading ? 'Generating...' : 'Generate'}
 		  </button>
 		</div>
-		<button className="mt-2 cursor-pointer rounded-md bg-blue-800 px-4 py-2 hover:bg-blue-600 active:bg-blue-700">
-			<a href="https://base64.kr/en">Visit Base64.kr</a>
-		</button>
+		<div className="flex justify-center space-x-2">
+			<button className="mt-2 cursor-pointer rounded-md bg-blue-800 px-4 py-2 hover:bg-blue-600 active:bg-blue-700">
+				<a href="https://base64.kr/en">Visit Base64.kr</a>
+			</button>
+			<button className="mt-2 cursor-pointer rounded-md bg-white text-black px-4 py-2">
+				<a href="https://github.com/JustAIGithub/AI-Code-Convert">Star On Github</a>
+			</button>
+		</div>
 	  </div>
     </>
   );
