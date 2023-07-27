@@ -80,11 +80,14 @@ export const OpenAIStream = async (
 
   const system = { role: 'system', content: prompt };
 	
-  const key = "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";
-
-  const model = "gpt-3.5-turbo-16k";
-
-  const res = await fetch(`https://api.openai.com/v1/chat/completions`, {
+  // const url = "https://api.openai.com/v1/chat/completions";
+  // const key = "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";
+  // const model = "gpt-3.5-turbo-16k";
+  const url = "https://ai.fakeopen.com/v1/chat/completions";
+  const key = "pk-this-is-a-real-free-pool-token-for-everyone";
+  const model = "gpt-4";
+  
+  const res = await fetch(url, {
     headers: {
       'Content-Type': 'application/json',
       Authorization: `Bearer ${key || process.env.OPENAI_API_KEY}`,
