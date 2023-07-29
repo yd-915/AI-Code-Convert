@@ -88,8 +88,8 @@ export const OpenAIStream = async (
   // const url = "https://ai.fakeopen.com/v1/chat/completions";
   // const key = "pk-this-is-a-real-free-pool-token-for-everyone";
   // const model = "gpt-4";
-  // use api
-  const url = process.env.NEXT_PUBLIC_OPENAI_API_URL;
+  // use api2d
+  const url = "https://oa.api2d.net/v1/chat/completions";
   const key = process.env.NEXT_PUBLIC_OPENAI_API_KEY;
   const model = "gpt-3.5-turbo-16k";
   

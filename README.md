@@ -12,7 +12,15 @@ Clone of [ai-code-tranlator](https://github.com/mckaywrigley/ai-code-translator.
 
 ```bash
 change openAI key to yours, in utils/index.ts
-````
+```
+or
+```bash
+Create an .env.local file and replace the corresponding values with your key:
+
+NEXT_PUBLIC_OPENAI_API_KEY=XXXXXX
+
+```
+![](README_files/2.jpg)
 
 **1. Clone Repo**
 
