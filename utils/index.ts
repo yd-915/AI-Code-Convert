@@ -81,17 +81,17 @@ export const OpenAIStream = async (
   const system = { role: 'system', content: prompt };
 	
   // use openai 
-  // const url = "https://api.openai.com/v1/chat/completions";
-  // const key = "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";
-  // const model = "gpt-3.5-turbo-16k";
+  const url = "https://api.openai.com/v1/chat/completions";
+  const key = process.env.NEXT_PUBLIC_OPENAI_API_KEY;
+  const model = "gpt-3.5-turbo-16k";
   // use fake
   // const url = "https://ai.fakeopen.com/v1/chat/completions";
   // const key = "pk-this-is-a-real-free-pool-token-for-everyone";
   // const model = "gpt-4";
   // use api2d
-  const url = "https://oa.api2d.net/v1/chat/completions";
-  const key = process.env.NEXT_PUBLIC_OPENAI_API_KEY;
-  const model = "gpt-3.5-turbo-16k";
+  // const url = "https://oa.api2d.net/v1/chat/completions";
+  // const key = process.env.NEXT_PUBLIC_OPENAI_API_KEY;
+  // const model = "gpt-3.5-turbo-16k";
   
   const res = await fetch(url, {
     headers: {

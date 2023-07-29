@@ -126,6 +126,8 @@ export default function Home() {
 			`,
 		  }}
 		/>
+		{/* baidu analytics */}
+		<script src="/baidu-analytics.js" />
       </Head>
 	  
 	  <div className="h-100 flex justify-start items-center pl-10 pt-2 bg-[#0E1117]">
