@@ -11,11 +11,12 @@ export const LanguageSelect: FC<Props> = ({ language, onChange }) => {
   };
 
   return (
-    <div>
+    <div className="flex justify-center items-center">
+	 <span className="mr-2 w-1/10">Select :</span>
       <input
         type="text"
         list="languages"
-        className="w-full rounded-md bg-[#1F2937] px-4 py-2 text-neutral-200"
+        className="flex-1 rounded-md bg-[#1F2937] px-4 py-2 text-neutral-200"
         value={language}
         onChange={handleChange}
       />
@@ -84,4 +85,5 @@ export const languages = [
   { value: 'Binary Code', label: 'Binary Code' },
   { value: 'Decimal Code', label: 'Decimal Code' },
   { value: 'Pseudo Code', label: 'Pseudo Code' },
+  { value: 'Android', label: 'Android Code' },
 ];
