@@ -212,16 +212,36 @@ export default function Home() {
 		    {loading ? 'Generating...' : 'Generate'}
 		  </button>
 		</div>
-		<div className="flex justify-center space-x-2 mt-3">
-			<button className="cursor-pointer rounded-md bg-blue-800 px-3 py-1 hover:bg-blue-600 active:bg-blue-700">
-				<a href="https://base64.kr/en">Visit Base64.kr</a>
-			</button>
-			<div className="cursor-pointer rounded-md bg-white text-black px-3 py-1 flex justify-center items-center">
-				<svg height="20" aria-hidden="true" viewBox="0 0 16 16" version="1.1" width="20" data-view-component="true">
-				    <path d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z"></path>
-				</svg>
-				<a className="m-1" href="https://github.com/JustAIGithub/AI-Code-Convert">Star On Github</a>
-			</div>
+		<div id="git" className="flex justify-center mb-2 space-x-2 mt-4">
+			<a href="https://base64.kr" className="text-gray cursor-pointer rounded-full">
+				<div 
+					className="items-center bg-repeat flex text-sm font-medium justify-center py-2 px-6 border border-solid rounded-full">
+					<svg width="20" height="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+					    <path fill="none" stroke="#6b7280" stroke-linecap="round" stroke-width="1.5" d="m17 7.83l1.697 1.526c1.542 1.389 2.313 2.083 2.313 2.974c0 .89-.771 1.585-2.314 2.973L17 16.83M13.987 5L12 12.415l-1.987 7.415M7 7.83L5.304 9.356C3.76 10.745 2.99 11.44 2.99 12.33c0 .89.771 1.585 2.314 2.973L7 16.83"/>
+					</svg>
+					<p className="ml-2 text-white">Visit Base64.kr</p>
+				</div>
+			</a>
+			<a href="https://spokengpt.com" className="text-gray-500 cursor-pointer rounded-full">
+				<div 
+					className="items-center bg-repeat flex text-sm font-medium justify-center py-2 px-6 border border-solid rounded-full">
+					<svg width="20" height="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+					    <path fill="none" stroke="#0ea5e9" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 4v16M8 9v6m12-5v4M4 10v4m12-7v10"/>
+					</svg>
+					<p className="ml-2 text-white">Visit SpokenGPT</p>
+				</div>
+			</a>
+		</div>
+		<div id="git" className="flex justify-center mb-4 space-x-2 mt-2">
+			<a href="https://github.com/JustAIGithub/AI-Code-Convert" className="text-gray cursor-pointer rounded-full">
+				<div 
+					className="items-center bg-repeat flex text-sm font-medium justify-center py-2 px-6 border border-solid rounded-full">
+					<svg width="20" height="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+					    <path fill="#ffffff" d="M5.884 18.653c-.3-.2-.558-.456-.86-.816a50.59 50.59 0 0 1-.466-.579c-.463-.575-.755-.841-1.056-.95a1 1 0 1 1 .675-1.882c.752.27 1.261.735 1.947 1.588c-.094-.117.34.427.433.539c.19.227.33.365.44.438c.204.137.588.196 1.15.14c.024-.382.094-.753.202-1.096c-2.968-.725-4.648-2.64-4.648-6.396c0-1.238.37-2.355 1.058-3.291c-.218-.894-.185-1.975.302-3.192a1 1 0 0 1 .63-.583c.081-.024.127-.034.208-.047c.803-.123 1.937.17 3.415 1.097a11.731 11.731 0 0 1 2.687-.308c.912 0 1.819.103 2.684.308c1.477-.933 2.614-1.227 3.422-1.097c.085.014.158.032.218.051a1 1 0 0 1 .616.58c.487 1.215.52 2.296.302 3.19c.691.936 1.058 2.045 1.058 3.292c0 3.758-1.674 5.666-4.642 6.393c.125.415.19.878.19 1.38c0 .664-.002 1.299-.007 2.01c0 .19-.002.394-.005.706a1 1 0 0 1-.018 1.957c-1.14.228-1.984-.532-1.984-1.524l.002-.447l.005-.705c.005-.707.008-1.338.008-1.997c0-.697-.184-1.152-.426-1.361c-.661-.57-.326-1.654.541-1.751c2.966-.334 4.336-1.483 4.336-4.66c0-.955-.312-1.745-.913-2.405a1 1 0 0 1-.189-1.044c.166-.415.236-.957.095-1.614l-.01.002c-.491.14-1.11.44-1.858.95a1 1 0 0 1-.833.135a9.626 9.626 0 0 0-2.592-.35c-.89 0-1.772.12-2.592.35a1 1 0 0 1-.829-.133c-.753-.507-1.374-.807-1.87-.947c-.143.653-.072 1.194.093 1.607a1 1 0 0 1-.189 1.044c-.597.656-.913 1.459-.913 2.404c0 3.172 1.371 4.33 4.322 4.66c.865.098 1.202 1.178.545 1.749c-.193.167-.43.732-.43 1.364v3.149c0 .986-.834 1.726-1.96 1.529a1 1 0 0 1-.04-1.963v-.99c-.91.062-1.661-.087-2.254-.484Z"/>
+					</svg>
+					<p className="ml-2 text-white">Star On Github</p>
+				</div>
+			</a>
 		</div>
 	  </div>
     </>
