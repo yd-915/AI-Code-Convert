@@ -109,7 +109,7 @@ export default function Home() {
     <>
       <Head>
         <title>AI Code Converter</title>
-        <meta name="description" content="Use AI to Convert or Generate Code from one language to another. AI Code Translator."/>
+        <meta name="description" content="Use AI to Convert Code or Generate Code from one language to another. AI Code Translator."/>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="keywords" content="AI Code Converter,Code Convert AI, Code Generate AI,Code Translator,AICodeHelper,free,online" />
 		<link rel="canonical" href="https://aicodeconvert.com" />
