@@ -4,9 +4,31 @@ import { TextBlock } from '@/components/TextBlock';
 import { TranslateBody } from '@/types/types';
 import Head from 'next/head';
 import { useEffect, useState } from 'react';
+import { GetServerSideProps } from 'next';
 
-export default function Home() {
-  const [title, setTitle] = useState('Code Translator');
+type Params = {
+  from: string;
+  to: string;
+};
+
+type Props = {
+  from: string;
+  to: string;
+};
+
+export const getServerSideProps: GetServerSideProps<Props, Params> = async ({ params }) => {
+  const from = params?.from || '';
+  const to = params?.to || '';
+  return {
+    props: {
+      from,
+      to,
+    },
+  };
+};
+
+export default function Home({ from, to }: Props) {
+  const [title, setTitle] = useState('Code Generator');
   const [subtitle, setSubtitle] = useState('Translate Code or Natural Language To Programming Language Code');
   const [inputLanguage, setInputLanguage] = useState<string>('Natural Language');
   const [outputLanguage, setOutputLanguage] = useState<string>('Python');
@@ -14,7 +36,7 @@ export default function Home() {
   const [outputCode, setOutputCode] = useState<string>('');
   const [loading, setLoading] = useState<boolean>(false);
   const [hasTranslated, setHasTranslated] = useState<boolean>(false);
-
+  
   const handleTranslate = async () => {
     const maxCodeLength = 16000;
 
@@ -105,6 +127,11 @@ export default function Home() {
       if (hasTranslated && isOutputLanguageInArray) {
         handleTranslate();
       }
+	  if(from && to) {
+	  	  setSubtitle(`Generate Code From ${from} To ${to} Online Free With AI`);
+		  setInputLanguage(`${from}`);
+		  setOutputLanguage(`${to}`);
+	  }
   }, [outputLanguage]);
 
   return (
@@ -137,8 +164,8 @@ export default function Home() {
 	  	    <path fill="#3b82f6" d="M516 673c0 4.4 3.4 8 7.5 8h185c4.1 0 7.5-3.6 7.5-8v-48c0-4.4-3.4-8-7.5-8h-185c-4.1 0-7.5 3.6-7.5 8v48zm-194.9 6.1l192-161c3.8-3.2 3.8-9.1 0-12.3l-192-160.9A7.95 7.95 0 0 0 308 351v62.7c0 2.4 1 4.6 2.9 6.1L420.7 512l-109.8 92.2a8.1 8.1 0 0 0-2.9 6.1V673c0 6.8 7.9 10.5 13.1 6.1zM880 112H144c-17.7 0-32 14.3-32 32v736c0 17.7 14.3 32 32 32h736c17.7 0 32-14.3 32-32V144c0-17.7-14.3-32-32-32zm-40 728H184V184h656v656z"/>
 	  	</svg>
 	  	<h1 className="text-white font-bold text-2xl ml-1">
-			<a href="https://aicodeconvert.com">AICodeConvert.com</a>
-		</h1>
+	  		<a href="https://aicodeconvert.com">AICodeConvert.com</a>
+	  	</h1>
 	  </div>
 	  
       <div className="flex h-full min-h-screen flex-col items-center bg-[#0E1117] px-4 pb-20 text-neutral-200 sm:px-10">
@@ -218,7 +245,7 @@ export default function Home() {
 		  </button>
 		</div>
 		<div id="git" className="flex justify-center mb-2 space-x-2 mt-4">
-			<a href="https://base64.kr/en" className="text-gray cursor-pointer rounded-full">
+			<a href="https://base64.kr" className="text-gray cursor-pointer rounded-full">
 				<div 
 					className="items-center bg-repeat flex text-sm font-medium justify-center py-2 px-6 border border-solid rounded-full">
 					<svg width="20" height="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
