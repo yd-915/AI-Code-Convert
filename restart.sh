@@ -18,4 +18,4 @@ done
 # 端口已关闭,启动项目
 cd /www/wwwroot/AI-Code-Convert
 npm run build
-nohup npm run start > aicodeconvert.log 2>&1 &
+nohup npm run start >> aicodeconvert.log 2>&1 &

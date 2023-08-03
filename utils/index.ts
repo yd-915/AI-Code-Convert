@@ -79,7 +79,7 @@ export const OpenAIStream = async (
 	const prompt = createPrompt(inputLanguage, outputLanguage, inputCode);
 
 	const system = { role: 'system', content: prompt };
-
+	console.info('system : ', system);
 	// use openai 
 	const url = "https://api.openai.com/v1/chat/completions";
 	const apiKeysString = process.env.NEXT_PUBLIC_OPENAI_API_KEY_ARRAY || "";

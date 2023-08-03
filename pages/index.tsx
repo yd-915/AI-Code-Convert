@@ -57,7 +57,7 @@ export default function Home() {
 
     if (!response.ok) {
       setLoading(false);
-      alert('OpenAI key has expired.');
+      alert('Please try again later.');
       return;
     }
 
