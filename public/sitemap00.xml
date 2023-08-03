@@ -36,4 +36,10 @@
 		<changefreq>monthly</changefreq>
 		<priority>1</priority>
 	</url>
+	<url>
+		<loc>https://aicodeconvert.com/convert-code/from-java-python</loc>
+		<lastmod>2023-08-01</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>1</priority>
+	</url>
 </urlset>
