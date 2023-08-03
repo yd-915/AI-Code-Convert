@@ -76,14 +76,25 @@ export const OpenAIStream = async (
   outputLanguage: string,
   inputCode: string
 ) => {
-  const prompt = createPrompt(inputLanguage, outputLanguage, inputCode);
+	const prompt = createPrompt(inputLanguage, outputLanguage, inputCode);
 
-  const system = { role: 'system', content: prompt };
-	
-  // use openai 
-  const url = "https://api.openai.com/v1/chat/completions";
-  const key = process.env.NEXT_PUBLIC_OPENAI_API_KEY;
-  const model = "gpt-3.5-turbo-16k";
+	const system = { role: 'system', content: prompt };
+
+	// use openai 
+	const url = "https://api.openai.com/v1/chat/completions";
+	const apiKeysString = process.env.NEXT_PUBLIC_OPENAI_API_KEY_ARRAY || "";
+	const keyArray = apiKeysString.split(',');
+	const model = "gpt-3.5-turbo-16k";
+
+	const getNextApiKey = () => {
+		const now = new Date();
+		const seconds = Math.floor(now.getTime() / 1000);
+		let currentKeyIndex = seconds % keyArray.length;
+		let curKey = keyArray[currentKeyIndex];
+		console.info(`use key: ${curKey}, keyIndex: ${currentKeyIndex}`);
+		return curKey;
+	};
+	const key = getNextApiKey();
   // use fake
   // const url = "https://ai.fakeopen.com/v1/chat/completions";
   // const key = "pk-this-is-a-real-free-pool-token-for-everyone";
