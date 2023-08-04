@@ -41,8 +41,8 @@ export const CodeBlock: FC<Props> = ({
 		className="text-base"
         editable={editable}
         value={code}
-        minHeight="460px"
-		maxHeight="460px"
+        minHeight="560px"
+		maxHeight="560px"
         extensions={[StreamLanguage.define(go)]}
         theme={tokyoNight}
         onChange={(value) => onChange(value)}
