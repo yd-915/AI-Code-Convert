@@ -12,8 +12,9 @@ const createPrompt = (
 ) => {
   if (inputLanguage === 'Natural Language') {
     return endent`
-    You are an expert programmer in all programming languages. Translate the natural language to "${outputLanguage}" code. Do not include \`\`\`.
-
+    You are an expert programmer in all programming languages. Translate the natural language to "${outputLanguage}" code.
+	Do not include \`\`\`.
+	Given the prompt,generate the code,The code should be formatted for readability.And The code must be correct and the more detailed and complete it is the better.
     Example translating from natural language to JavaScript:
 
     Natural language:
@@ -50,8 +51,9 @@ const createPrompt = (
      `;
   } else {
     return endent`
-      You are an expert programmer in all programming languages. Translate the "${inputLanguage}" code to "${outputLanguage}" code. Do not include \`\`\`.
-  
+      You are an expert programmer in all programming languages. Translate the "${inputLanguage}" code to "${outputLanguage}" code. 
+	  Do not include \`\`\`.
+	  Given the prompt,generate the code,The code should be formatted for readability.And The code must be correct and the more detailed and complete it is the better.
       Example translating from JavaScript to Python:
   
       JavaScript code:
