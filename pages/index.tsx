@@ -131,7 +131,29 @@ export default function Home() {
 		{/* baidu analytics */}
 		<script src="/baidu-analytics.js" />
       </Head>
-	  
+	  <div className="bg-blue-600 text-slate-900">
+	    <div className="mx-auto py-2 px-8">
+	      <div className="items-center flex flex-wrap justify-center">
+	        <div className="items-center flex">
+	          <span className="bg-blue-800 flex rounded-lg p-2"
+	            ><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#ffffff" aria-hidden="true" className="h-6 w-6 text-white"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="0.13rem" d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z" fill="none" stroke="#ffffff"></path></svg
+	          ></span>
+	          <div className="text-white font ml-2 text-ellipsis overflow-hidden">
+	            <a href="https://ailandingpagegenerator.com" className="cursor-pointer p-2">
+					<span>With AI, creating a landing page is not only easy but also efficient, precise, and tailored to your needs.</span>
+				</a>
+	          </div>
+			  <div className="order-1 ml-2">
+			    <span className="inline-flex relative rounded-md">
+					<a href="https://ailandingpagegenerator.com" className="items-center bg-white text-blue-600 cursor-pointer flex text-sm font justify-center py-2 px-4 border border-solid rounded-md">
+						Create Landing Page
+					</a>
+				</span>
+			  </div>
+	        </div>
+	      </div>
+	    </div>
+	  </div>
 	  <div className="h-100 flex justify-between items-center pl-2 pr-2 md:pl-10 md:pr-10 pt-2 bg-[#0E1117]">
 	      <div className="flex items-center">
 	          <svg width="40" height="40" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
