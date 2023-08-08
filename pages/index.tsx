@@ -16,7 +16,7 @@ export default function Home() {
   const [hasTranslated, setHasTranslated] = useState<boolean>(false);
 
   const handleTranslate = async () => {
-    const maxCodeLength = 16000;
+    const maxCodeLength = 30000;
 
     if (inputLanguage === outputLanguage) {
       alert('Please select different languages.');
