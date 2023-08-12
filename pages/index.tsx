@@ -142,6 +142,7 @@ export default function Home() {
 	          </h1>
 	      </div>
 	      <div className="flex items-center hidden md:block lg:block">
+			  <a href="https://blog.aicodeconvert.com" className="text-blue-500 text font-semibold mr-1 md:mr-4 lg:mr-4">Blog</a>
 	          <a href="#about" className="text-white text font-semibold mr-1 md:mr-4 lg:mr-4">About Us</a>
 	          <a href="#contact" className="text-white text font-semibold mr-1 md:mr-4 lg:mr-4">Contact</a>
 	      </div>
@@ -260,7 +261,7 @@ export default function Home() {
 				<div 
 					className="items-center flex text-sm font-medium justify-center py-2 px-4 border rounded-full">
 					<svg width="20" height="20" viewBox="0 0 15 15" xmlns="http://www.w3.org/2000/svg">
-						<path fill="#ffffff" fill-rule="evenodd" d="m6.007 13.418l2-12l.986.164l-2 12l-.986-.164Zm-.8-8.918l-3 3l3 3l-.707.707L.793 7.5L4.5 3.793l.707.707Zm5.293-.707L14.207 7.5L10.5 11.207l-.707-.707l3-3l-3-3l.707-.707Z" clip-rule="evenodd"/>
+						<path fill="#ffffff" fill-rule="evenodd" d="m6.007 13.418l2-12l.986.164l-2 12l-.986-.164Zm-.8-8.918l-3 3l3 3l-.707.707L.793 7.5L4.5 3.793l.707.707Zm5.293-.707L14.207 7.5L10.5 11.207l-.707-.707l3-3l-3-3l.707-.707Z" clipRule="evenodd"/>
 					</svg>
 					<p className="ml-2 text-white">Base64.kr</p>
 				</div>
