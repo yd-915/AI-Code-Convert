@@ -6,8 +6,8 @@ import Head from 'next/head';
 import { useEffect, useState } from 'react';
 
 export default function Home() {
-  const [title, setTitle] = useState('Code Converter');
-  const [subtitle, setSubtitle] = useState('Convert Code or Natural Language To Programming Language Code');
+  const [title, setTitle] = useState('Codekonverter');
+  const [subtitle, setSubtitle] = useState('Konvertieren Sie Code oder natürliche Sprache in Programmiersprachencode');
   const [inputLanguage, setInputLanguage] = useState<string>('Natural Language');
   const [outputLanguage, setOutputLanguage] = useState<string>('Python');
   const [inputCode, setInputCode] = useState<string>('');
@@ -110,11 +110,11 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>AI Code Converter | AI Code Translator | AI Code Generator | AI Code Helper</title>
-        <meta name="description" content="Use AI To Convert Code Or Generate Code From One Language To Another. AI Code Translator. Translate Code From Any Language To Another With A Click Of A Button."/>
+        <title>AI-Code-Konverter | AI-Code-Übersetzer | AI-Codegenerator | AI-Code-Helfer</title>
+        <meta name="description" content="Verwenden Sie KI, um Code zu konvertieren oder Code von einer Sprache in eine andere zu generieren. AI-Code-Übersetzer. Übersetzen Sie Code per Knopfdruck von einer beliebigen Sprache in eine andere."/>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-		<meta name="keywords" content="AI Code Converter,Code Convert AI, Code Generate AI,Code Translator,AICodeHelper,free,online" />
-		<link rel="canonical" href="https://aicodeconvert.com" />
+		<meta name="keywords" content="AI-Code-Konverter, Code-Konvertierung AI, Code-Generierung AI, Code-Übersetzer, AICodeHelper, kostenlos, online" />
+		<link rel="canonical" href="https://aicodeconvert.com/de" />
         <link rel="icon" href="/code.png" />
 		{/* Add the Google Analytics script tags here */}
 		<script async src="https://www.googletagmanager.com/gtag/js?id=G-Q03Q3VY7RV"></script>
@@ -143,8 +143,8 @@ export default function Home() {
 	      </div>
 	      <div className="flex items-center hidden md:block lg:block">
 			  <a href="https://blog.aicodeconvert.com" className="text-blue-500 text font-semibold mr-1 md:mr-4 lg:mr-4">Blog</a>
-	          <a href="#about" className="text-white text font-semibold mr-1 md:mr-4 lg:mr-4">About Us</a>
-	          <a href="#contact" className="text-white text font-semibold mr-1 md:mr-4 lg:mr-4">Contact</a>
+	          <a href="#about" className="text-white text font-semibold mr-1 md:mr-4 lg:mr-4">Über uns</a>
+	          <a href="#contact" className="text-white text font-semibold mr-1 md:mr-4 lg:mr-4">Kontakt</a>
 	      </div>
 	  </div>
 	  
@@ -235,18 +235,18 @@ export default function Home() {
 	  </div>
 	  <div className="pl-6 pr-6 md:pl-20 md:pr-20 bg-[#0E1117]">
 		<div id="about" className="text-white">
-		  <div className="text-2xl">About Us</div>
+		  <div className="text-2xl">Über uns</div>
 		  <ul className="mt-4 list-disc list-inside">
-		    <li className="mb-2">AICodeConvert(AI Code Convert) simplifies coding with AI by integrating AI Code Translator and AI Code Generator. </li>
-		    <li className="mb-2">It efficiently translates existing code into different programming languages (AI Code Translator) and automatically generates high-quality code snippets and templates (AI Code Generator). </li>
-			<li className="mb-2">This powerful combination makes AICodeConvert an indispensable tool for developers, 
-					providing a convenient and intelligent coding experience.</li>
-		    <li className="mb-2">All for free(AI Code Convert | AI Code Converter).</li>
-			<li className="mb-2">Your Best AI Code Helper.</li>
+		    <li className="mb-2">AICodeConvert vereinfacht das Codieren mit KI durch die Integration von AI Code Translator und AI Code Generator. </li>
+		    <li className="mb-2">Es übersetzt effizient vorhandenen Code in verschiedene Programmiersprachen (AI Code Translator) und generiert automatisch hochwertige Codeschnipsel und Vorlagen (AI Code Generator). </li>
+			<li className="mb-2">Diese leistungsstarke Kombination macht AICodeConvert zu einem unverzichtbaren Werkzeug für Entwickler,
+				Bereitstellung eines bequemen und intelligenten Codierungserlebnisses.</li>
+		    <li className="mb-2">Alles kostenlos.</li>
+			<li className="mb-2">Ihr bester KI-Code-Helfer.</li>
 		  </ul>
 		</div>
 		<div id="contact" className="text-white pt-4">
-		  <div className="text-2xl">Contact</div>
+		  <div className="text-2xl">Kontakt</div>
 		  <div className="flex justify-start items-center mb-2 space-y-2 mt-2 flex-wrap">
 		  	<a href="https://github.com/JustAIGithub/AI-Code-Convert" className="text-gray cursor-pointer mr-4">
 		  		<svg width="26" height="26" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">

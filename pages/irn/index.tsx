@@ -6,8 +6,8 @@ import Head from 'next/head';
 import { useEffect, useState } from 'react';
 
 export default function Home() {
-  const [title, setTitle] = useState('Code Converter');
-  const [subtitle, setSubtitle] = useState('Convert Code or Natural Language To Programming Language Code');
+  const [title, setTitle] = useState('مبدل کد هوش مصنوعی');
+  const [subtitle, setSubtitle] = useState('کد یا زبان طبیعی را به کد زبان برنامه نویسی تبدیل کنید');
   const [inputLanguage, setInputLanguage] = useState<string>('Natural Language');
   const [outputLanguage, setOutputLanguage] = useState<string>('Python');
   const [inputCode, setInputCode] = useState<string>('');
@@ -110,11 +110,11 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>AI Code Converter | AI Code Translator | AI Code Generator | AI Code Helper</title>
-        <meta name="description" content="Use AI To Convert Code Or Generate Code From One Language To Another. AI Code Translator. Translate Code From Any Language To Another With A Click Of A Button."/>
+        <title>مبدل کد هوش مصنوعی | مترجم کد هوش مصنوعی | مولد کد هوش مصنوعی | کمک کننده کد هوش مصنوعی</title>
+        <meta name="description" content="از هوش مصنوعی برای تبدیل کد یا تولید کد از یک زبان به زبان دیگر استفاده کنید. مترجم کد هوش مصنوعی ترجمه کد از هر زبانی به زبان دیگر با کلیک یک دکمه."/>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-		<meta name="keywords" content="AI Code Converter,Code Convert AI, Code Generate AI,Code Translator,AICodeHelper,free,online" />
-		<link rel="canonical" href="https://aicodeconvert.com" />
+		<meta name="keywords" content="مبدل کد هوش مصنوعی، هوش مصنوعی تبدیل کد، هوش مصنوعی تولید کد، مترجم کد، AICodeHelper، رایگان، آنلاین" />
+		<link rel="canonical" href="https://aicodeconvert.com/irn" />
         <link rel="icon" href="/code.png" />
 		{/* Add the Google Analytics script tags here */}
 		<script async src="https://www.googletagmanager.com/gtag/js?id=G-Q03Q3VY7RV"></script>
@@ -150,7 +150,7 @@ export default function Home() {
 	  
       <div className="flex h-full min-h-screen flex-col items-center bg-[#0E1117] px-4 pb-20 text-neutral-200 sm:px-10">
 		<div className="mt-2 flex flex-col items-center justify-center sm:mt-10">
-          <h2 className="text-3xl md:text-4xl font-bold"><span className="text-blue-500">AI</span> {title}</h2>
+          <h2 className="text-3xl md:text-4xl font-bold">{title}</h2>
 		  <h3 className="mt-2 md:mt-5 text-xl text-center leading-2">{subtitle}</h3>
         </div>
 		
@@ -237,11 +237,11 @@ export default function Home() {
 		<div id="about" className="text-white">
 		  <div className="text-2xl">About Us</div>
 		  <ul className="mt-4 list-disc list-inside">
-		    <li className="mb-2">AICodeConvert(AI Code Convert) simplifies coding with AI by integrating AI Code Translator and AI Code Generator. </li>
+		    <li className="mb-2">AICodeConvert simplifies coding with AI by integrating AI Code Translator and AI Code Generator. </li>
 		    <li className="mb-2">It efficiently translates existing code into different programming languages (AI Code Translator) and automatically generates high-quality code snippets and templates (AI Code Generator). </li>
 			<li className="mb-2">This powerful combination makes AICodeConvert an indispensable tool for developers, 
 					providing a convenient and intelligent coding experience.</li>
-		    <li className="mb-2">All for free(AI Code Convert | AI Code Converter).</li>
+		    <li className="mb-2">All for free.</li>
 			<li className="mb-2">Your Best AI Code Helper.</li>
 		  </ul>
 		</div>

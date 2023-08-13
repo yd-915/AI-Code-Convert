@@ -6,8 +6,8 @@ import Head from 'next/head';
 import { useEffect, useState } from 'react';
 
 export default function Home() {
-  const [title, setTitle] = useState('Code Converter');
-  const [subtitle, setSubtitle] = useState('Convert Code or Natural Language To Programming Language Code');
+  const [title, setTitle] = useState('代码转换器');
+  const [subtitle, setSubtitle] = useState('将自然语言转换为编程语言代码 | 将代码转为另一种语言代码');
   const [inputLanguage, setInputLanguage] = useState<string>('Natural Language');
   const [outputLanguage, setOutputLanguage] = useState<string>('Python');
   const [inputCode, setInputCode] = useState<string>('');
@@ -110,11 +110,11 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>AI Code Converter | AI Code Translator | AI Code Generator | AI Code Helper</title>
-        <meta name="description" content="Use AI To Convert Code Or Generate Code From One Language To Another. AI Code Translator. Translate Code From Any Language To Another With A Click Of A Button."/>
+        <title>AI代码转换器 | AI代码生成器 | AI编程助手</title>
+        <meta name="description" content="使用AI代码生成器将自然语言转为代码.使用AI代码转换器将一种语言的代码转为另一种语言代码实现.写代码提效的AI编程助手."/>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-		<meta name="keywords" content="AI Code Converter,Code Convert AI, Code Generate AI,Code Translator,AICodeHelper,free,online" />
-		<link rel="canonical" href="https://aicodeconvert.com" />
+		<meta name="keywords" content="AI代码转换器,AI代码生成器,AI编程助手,在线，免费" />
+		<link rel="canonical" href="https://aicodeconvert.com/zh" />
         <link rel="icon" href="/code.png" />
 		{/* Add the Google Analytics script tags here */}
 		<script async src="https://www.googletagmanager.com/gtag/js?id=G-Q03Q3VY7RV"></script>
@@ -142,9 +142,9 @@ export default function Home() {
 	          </h1>
 	      </div>
 	      <div className="flex items-center hidden md:block lg:block">
-			  <a href="https://blog.aicodeconvert.com" className="text-blue-500 text font-semibold mr-1 md:mr-4 lg:mr-4">Blog</a>
-	          <a href="#about" className="text-white text font-semibold mr-1 md:mr-4 lg:mr-4">About Us</a>
-	          <a href="#contact" className="text-white text font-semibold mr-1 md:mr-4 lg:mr-4">Contact</a>
+			  <a href="https://blog.aicodeconvert.com" className="text-blue-500 text font-semibold mr-1 md:mr-4 lg:mr-4">博客</a>
+	          <a href="#about" className="text-white text font-semibold mr-1 md:mr-4 lg:mr-4">关于我们</a>
+	          <a href="#contact" className="text-white text font-semibold mr-1 md:mr-4 lg:mr-4">联系</a>
 	      </div>
 	  </div>
 	  
@@ -235,18 +235,18 @@ export default function Home() {
 	  </div>
 	  <div className="pl-6 pr-6 md:pl-20 md:pr-20 bg-[#0E1117]">
 		<div id="about" className="text-white">
-		  <div className="text-2xl">About Us</div>
+		  <div className="text-2xl">关于我们</div>
 		  <ul className="mt-4 list-disc list-inside">
-		    <li className="mb-2">AICodeConvert(AI Code Convert) simplifies coding with AI by integrating AI Code Translator and AI Code Generator. </li>
-		    <li className="mb-2">It efficiently translates existing code into different programming languages (AI Code Translator) and automatically generates high-quality code snippets and templates (AI Code Generator). </li>
-			<li className="mb-2">This powerful combination makes AICodeConvert an indispensable tool for developers, 
-					providing a convenient and intelligent coding experience.</li>
-		    <li className="mb-2">All for free(AI Code Convert | AI Code Converter).</li>
-			<li className="mb-2">Your Best AI Code Helper.</li>
+		    <li className="mb-2">AICodeConvert 集成了AI代码转换器和AI代码生成器，从而简化了编码工作.</li>
+		    <li className="mb-2">它能有效地将现有代码翻译成不同的编程语言（AI代码转换器），并自动生成高质量的代码片段和模板（AI代码生成器）. </li>
+			<li className="mb-2">这一强大的组合使 AICodeConvert 成为开发人员不可或缺的工具、 
+					提供便捷、智能的编码体验.</li>
+		    <li className="mb-2">全部免费.</li>
+			<li className="mb-2">你的最佳AI编程助手.</li>
 		  </ul>
 		</div>
 		<div id="contact" className="text-white pt-4">
-		  <div className="text-2xl">Contact</div>
+		  <div className="text-2xl">联系</div>
 		  <div className="flex justify-start items-center mb-2 space-y-2 mt-2 flex-wrap">
 		  	<a href="https://github.com/JustAIGithub/AI-Code-Convert" className="text-gray cursor-pointer mr-4">
 		  		<svg width="26" height="26" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">

@@ -12,4 +12,10 @@
 	<sitemap>
 		<loc>https://aicodeconvert.com/sitemap03.xml</loc>
 	</sitemap>
+	<sitemap>
+		<loc>https://aicodeconvert.com/sitemap-blog.xml</loc>
+	</sitemap>
+	<sitemap>
+		<loc>https://aicodeconvert.com/sitemap-i18n.xml</loc>
+	</sitemap>
 </sitemapindex>

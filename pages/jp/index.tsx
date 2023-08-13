@@ -6,8 +6,8 @@ import Head from 'next/head';
 import { useEffect, useState } from 'react';
 
 export default function Home() {
-  const [title, setTitle] = useState('Code Converter');
-  const [subtitle, setSubtitle] = useState('Convert Code or Natural Language To Programming Language Code');
+  const [title, setTitle] = useState('コードコンバータ');
+  const [subtitle, setSubtitle] = useState('コードまたは自然言語をプログラミング言語コードに変換する');
   const [inputLanguage, setInputLanguage] = useState<string>('Natural Language');
   const [outputLanguage, setOutputLanguage] = useState<string>('Python');
   const [inputCode, setInputCode] = useState<string>('');
@@ -110,11 +110,11 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>AI Code Converter | AI Code Translator | AI Code Generator | AI Code Helper</title>
-        <meta name="description" content="Use AI To Convert Code Or Generate Code From One Language To Another. AI Code Translator. Translate Code From Any Language To Another With A Click Of A Button."/>
+        <title>AIコードコンバータ | AIコードトランスレータ | AIコードジェネレーター | AI コードヘルパー</title>
+        <meta name="description" content="AI を使用してコードを変換したり、ある言語から別の言語にコードを生成したりできます。 AIコードトランスレータ。 ボタンをクリックするだけでコードを任意の言語から別の言語に翻訳."/>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-		<meta name="keywords" content="AI Code Converter,Code Convert AI, Code Generate AI,Code Translator,AICodeHelper,free,online" />
-		<link rel="canonical" href="https://aicodeconvert.com" />
+		<meta name="keywords" content="AI コード コンバーター、コード変換 AI、コード生成 AI、コード トランスレーター、AICodeHelper、無料、オンライン" />
+		<link rel="canonical" href="https://aicodeconvert.com/jp" />
         <link rel="icon" href="/code.png" />
 		{/* Add the Google Analytics script tags here */}
 		<script async src="https://www.googletagmanager.com/gtag/js?id=G-Q03Q3VY7RV"></script>
@@ -237,12 +237,12 @@ export default function Home() {
 		<div id="about" className="text-white">
 		  <div className="text-2xl">About Us</div>
 		  <ul className="mt-4 list-disc list-inside">
-		    <li className="mb-2">AICodeConvert(AI Code Convert) simplifies coding with AI by integrating AI Code Translator and AI Code Generator. </li>
-		    <li className="mb-2">It efficiently translates existing code into different programming languages (AI Code Translator) and automatically generates high-quality code snippets and templates (AI Code Generator). </li>
-			<li className="mb-2">This powerful combination makes AICodeConvert an indispensable tool for developers, 
-					providing a convenient and intelligent coding experience.</li>
-		    <li className="mb-2">All for free(AI Code Convert | AI Code Converter).</li>
-			<li className="mb-2">Your Best AI Code Helper.</li>
+		    <li className="mb-2">AICodeConvert は、AI コード トランスレーターと AI コード ジェネレーターを統合することにより、AI を使用したコーディングを簡素化します. </li>
+		    <li className="mb-2">既存のコードをさまざまなプログラミング言語に効率的に変換し (AI Code Translator)、高品質のコード スニペットとテンプレートを自動的に生成します (AI Code Generator)。</li>
+			<li className="mb-2">この強力な組み合わせにより、AICodeConvert は開発者にとって不可欠なツールになります。
+便利でインテリジェントなコーディング体験を提供します。</li>
+		    <li className="mb-2">すべて無料です。</li>
+			<li className="mb-2">あなたのベスト AI コード ヘルパー。</li>
 		  </ul>
 		</div>
 		<div id="contact" className="text-white pt-4">
