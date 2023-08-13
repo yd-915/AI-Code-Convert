@@ -38,7 +38,7 @@ export default function Home({ from, to }: Props) {
   const [hasTranslated, setHasTranslated] = useState<boolean>(false);
   
   const handleTranslate = async () => {
-    const maxCodeLength = 16000;
+    const maxCodeLength = 30000;
 
     if (inputLanguage === outputLanguage) {
       alert('Please select different languages.');
@@ -137,11 +137,11 @@ export default function Home({ from, to }: Props) {
   return (
     <>
       <Head>
-        <title>AI Code Converter | AI Code Translator | AI Code Generator</title>
-        <meta name="description" content="Use AI To Convert Code Or Generate Code From One Language To Another. AI Code Translator. Translate Code From Any Language To Another With A Click Of A Button."/>
+        <title>AI Code Converter</title>
+        <meta name="description" content="Use AI To Convert Code From One Language To Another."/>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-		<meta name="keywords" content="AI Code Converter,Code Convert AI, Code Generate AI,Code Translator,AICodeHelper,free,online" />
-		<link rel="canonical" href="https://aicodeconvert.com" />
+        <meta name="keywords" content="AI Code Converter,AI Code Convert,Code Convert AI" />
+		<link rel="canonical" href="https://aicodeconvert.com/convert-code/ai-code-converter" />
         <link rel="icon" href="/code.png" />
 		{/* Add the Google Analytics script tags here */}
 		<script async src="https://www.googletagmanager.com/gtag/js?id=G-Q03Q3VY7RV"></script>
@@ -174,7 +174,7 @@ export default function Home({ from, to }: Props) {
 		  <h3 className="mt-5 text-xl text-center leading-2">{subtitle}</h3>
         </div>
 		
-        <div className="mt-6 flex w-full max-w-[1200px] flex-col justify-between sm:flex-row sm:space-x-4">
+        <div className="mt-6 flex w-full max-w-[1600px] flex-col justify-between sm:flex-row sm:space-x-4">
           <div className="h-100 flex flex-col justify-center space-y-2 sm:w-2/4">
             <div className="text-center text-xl font-bold">From</div>
 
@@ -237,23 +237,12 @@ export default function Home({ from, to }: Props) {
 		
 		<div className="mt-5 flex items-center space-x-2">
 		  <button
-		    className="w-[140px] cursor-pointer rounded-md bg-blue-500 px-4 py-2 font-bold hover:bg-blue-600 active:bg-blue-700"
+		    className="w-[140px] cursor-pointer rounded-full bg-blue-500 px-4 py-2 font-bold hover:bg-blue-600 active:bg-blue-700"
 		    onClick={() => handleTranslate()}
 		    disabled={loading}
 		  >
 		    {loading ? 'Generating...' : 'Generate'}
 		  </button>
-		</div>
-		<div id="git" className="flex justify-center mb-2 space-x-2 mt-4">
-			<a href="https://base64.kr" className="text-gray cursor-pointer rounded-full">
-				<div 
-					className="items-center bg-repeat flex text-sm font-medium justify-center py-2 px-6 border border-solid rounded-full">
-					<svg width="20" height="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-					    <path fill="none" stroke="#6b7280" strokeLinecap="round" strokeWidth="1.5" d="m17 7.83l1.697 1.526c1.542 1.389 2.313 2.083 2.313 2.974c0 .89-.771 1.585-2.314 2.973L17 16.83M13.987 5L12 12.415l-1.987 7.415M7 7.83L5.304 9.356C3.76 10.745 2.99 11.44 2.99 12.33c0 .89.771 1.585 2.314 2.973L7 16.83"/>
-					</svg>
-					<p className="ml-2 text-white">Visit Base64.kr</p>
-				</div>
-			</a>
 		</div>
 	  </div>
     </>

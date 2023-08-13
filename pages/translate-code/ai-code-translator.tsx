@@ -6,10 +6,10 @@ import Head from 'next/head';
 import { useEffect, useState } from 'react';
 
 export default function Home() {
-  const [title, setTitle] = useState('Code Converter');
-  const [subtitle, setSubtitle] = useState('Convert Code or Natural Language To Programming Language Code');
-  const [inputLanguage, setInputLanguage] = useState<string>('Natural Language');
-  const [outputLanguage, setOutputLanguage] = useState<string>('Python');
+  const [title, setTitle] = useState('Code Translator');
+  const [subtitle, setSubtitle] = useState('Translate Code To Another Programming Language Code');
+  const [inputLanguage, setInputLanguage] = useState<string>('');
+  const [outputLanguage, setOutputLanguage] = useState<string>('');
   const [inputCode, setInputCode] = useState<string>('');
   const [outputCode, setOutputCode] = useState<string>('');
   const [loading, setLoading] = useState<boolean>(false);
@@ -110,11 +110,11 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>AI Code Converter | AI Code Translator | AI Code Generator | AI Code Helper</title>
-        <meta name="description" content="Use AI To Convert Code Or Generate Code From One Language To Another. AI Code Translator. Translate Code From Any Language To Another With A Click Of A Button."/>
+        <title>AI Code Translator</title>
+        <meta name="description" content="Use AI To Translate Code From One Language To Another."/>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-		<meta name="keywords" content="AI Code Converter,Code Convert AI, Code Generate AI,Code Translator,AICodeHelper,free,online" />
-		<link rel="canonical" href="https://aicodeconvert.com" />
+		<meta name="keywords" content="AI Code Translator,Code Translate AI" />
+		<link rel="canonical" href="https://aicodeconvert.com/translate-code/ai-code-translator" />
         <link rel="icon" href="/code.png" />
 		{/* Add the Google Analytics script tags here */}
 		<script async src="https://www.googletagmanager.com/gtag/js?id=G-Q03Q3VY7RV"></script>
@@ -242,7 +242,6 @@ export default function Home() {
 				  <li className="mb-2">This powerful combination makes AICodeConvert an indispensable tool for developers, 
 					providing a convenient and intelligent coding experience.</li>
 		    <li>All for free.</li>
-			<li>Your Best AI Code Helper.</li>
 		  </ul>
 		</div>
 		<div id="contact" className="text-white pt-4">

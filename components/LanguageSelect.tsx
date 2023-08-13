@@ -86,4 +86,7 @@ export const languages = [
   { value: 'Decimal Code', label: 'Decimal Code' },
   { value: 'Pseudo Code', label: 'Pseudo Code' },
   { value: 'Android', label: 'Android Code' },
+  { value: 'MySQL', label: 'MySQL' },
+  { value: 'FlinkSql', label: 'FlinkSql' },
+  { value: 'Regular', label: 'Regular expression' },
 ];
