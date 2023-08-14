@@ -130,7 +130,8 @@ export default function Home() {
 		/>
 		{/* baidu analytics */}
 		<script src="/baidu-analytics.js" />
-		<script src="/script.js" />
+		<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3672455877501055"
+		     crossOrigin="anonymous"></script>
       </Head>
 	  <div className="h-100 flex justify-between items-center pl-2 pr-2 md:pl-10 md:pr-10 pt-2 bg-[#0E1117]">
 	      <div className="flex items-center">

@@ -157,6 +157,8 @@ export default function Home({ from, to }: Props) {
 		/>
 		{/* baidu analytics */}
 		<script src="/baidu-analytics.js" />
+		<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3672455877501055"
+		     crossOrigin="anonymous"></script>
       </Head>
 	  
 	  <div className="h-100 flex justify-start items-center pl-10 pt-2 bg-[#0E1117]">
