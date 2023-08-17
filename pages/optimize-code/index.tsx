@@ -112,11 +112,11 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>AI Code Explainer </title>
-        <meta name="description" content="Use AI To Explain a complicated piece of code."/>
+        <title>AI Code Optimizer </title>
+        <meta name="description" content="Use AI To Provide ideas for efficiency improvements to your code."/>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-		<meta name="keywords" content="AI Code Converter,AI Code Explainer,Explain Code" />
-		<link rel="canonical" href="https://aicodeconvert.com/explain-code" />
+		<meta name="keywords" content="AI Code Converter,AI Code Optimizer,Optimize Code" />
+		<link rel="canonical" href="https://aicodeconvert.com/optimize-code" />
         <link rel="icon" href="/code.png" />
 		{/* Add the Google Analytics script tags here */}
 		<script async src="https://www.googletagmanager.com/gtag/js?id=G-Q03Q3VY7RV"></script>
