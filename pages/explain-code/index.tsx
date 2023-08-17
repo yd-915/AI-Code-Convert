@@ -6,10 +6,10 @@ import Head from 'next/head';
 import { useEffect, useState } from 'react';
 
 export default function Home() {
-  const [title, setTitle] = useState('Code Converter');
-  const [subtitle, setSubtitle] = useState('Convert Code or Natural Language To Programming Language Code');
-  const [inputLanguage, setInputLanguage] = useState<string>('Natural Language');
-  const [outputLanguage, setOutputLanguage] = useState<string>('Python');
+  const [title, setTitle] = useState('AI Code Explainer');
+  const [subtitle, setSubtitle] = useState('Get an extensive explanation of any piece of code.');
+  const [inputLanguage, setInputLanguage] = useState<string>('Automatic detection');
+  const [outputLanguage, setOutputLanguage] = useState<string>('Natural Language');
   const [inputCode, setInputCode] = useState<string>('');
   const [outputCode, setOutputCode] = useState<string>('');
   const [loading, setLoading] = useState<boolean>(false);
@@ -110,11 +110,11 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>AI Code Converter | AI Code Translator | AI Code Generator | AI Code Helper</title>
-        <meta name="description" content="Use AI To Convert Code Or Generate Code From One Language To Another. AI Code Translator. Translate Code From Any Language To Another With A Click Of A Button."/>
+        <title>AI Code Explainer </title>
+        <meta name="description" content="Use AI To Explain a complicated piece of code."/>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-		<meta name="keywords" content="AI Code Converter,Code Convert AI, Code Generate AI,Code Translator,AICodeHelper,free,online" />
-		<link rel="canonical" href="https://aicodeconvert.com" />
+		<meta name="keywords" content="AI Code Converter,AI Code Explainer,Explain Code" />
+		<link rel="canonical" href="https://aicodeconvert.com/explain-code" />
         <link rel="icon" href="/code.png" />
 		{/* Add the Google Analytics script tags here */}
 		<script async src="https://www.googletagmanager.com/gtag/js?id=G-Q03Q3VY7RV"></script>
@@ -143,7 +143,6 @@ export default function Home() {
 	          </h1>
 	      </div>
 	      <div className="flex items-center hidden md:block lg:block">
-		      <a href="/explain-code" className="bg-gradient-to-r from-yellow-300 via-orange-400 to-pink-500 text font-bold pb-1 bg-clip-text text-transparent mr-1 md:mr-4 lg:mr-4">Code Explain</a>
 			  <a href="https://blog.aicodeconvert.com" className="text-blue-500 text font-semibold mr-1 md:mr-4 lg:mr-4">Blog</a>
 	          <a href="#about" className="text-white text font-semibold mr-1 md:mr-4 lg:mr-4">About Us</a>
 	          <a href="#contact" className="text-white text font-semibold mr-1 md:mr-4 lg:mr-4">Contact</a>
@@ -152,7 +151,7 @@ export default function Home() {
 	  
       <div className="flex h-full min-h-screen flex-col items-center bg-[#0E1117] px-4 pb-20 text-neutral-200 sm:px-10">
 		<div className="mt-2 flex flex-col items-center justify-center sm:mt-10">
-          <h2 className="text-3xl md:text-4xl font-bold"><span className="text-blue-500">AI</span> {title}</h2>
+          <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-yellow-300 via-orange-400 to-pink-500 text-xl font-bold pb-1 bg-clip-text text-transparent">{title}</h2>
 		  <h3 className="mt-2 md:mt-5 text-xl text-center leading-2">{subtitle}</h3>
         </div>
 		
@@ -214,7 +213,7 @@ export default function Home() {
 		    ? '...'// Generating
 		    : hasTranslated
 		    ? 'Output copied to clipboard!'
-		    : 'Enter some code and click "Generate"'}
+		    : 'Enter some code and click "Explain"'}
 		</div>
 		
 		<div className="mt-5 flex items-center space-x-2">
@@ -223,7 +222,7 @@ export default function Home() {
 		    onClick={() => handleTranslate()}
 		    disabled={loading}
 		  >
-		    {loading ? 'Generating...' : 'Generate'}
+		    {loading ? 'Explaining...' : 'Explain'}
 		  </button>
 		  <a href="https://ko-fi.com/audi_guzz" className="text-gray cursor-pointer rounded-full">
 		  	<div className="flex justify-center items-center">

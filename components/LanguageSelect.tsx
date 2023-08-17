@@ -34,6 +34,7 @@ export const LanguageSelect: FC<Props> = ({ language, onChange }) => {
 };
 
 export const languages = [
+  { value: 'Automatic detection', label: 'Automatic detection' },
   { value: 'Pascal', label: 'Pascal' },
   { value: 'JavaScript', label: 'JavaScript' },
   { value: 'TypeScript', label: 'TypeScript' },
@@ -72,6 +73,7 @@ export const languages = [
   { value: 'Fortran', label: 'Fortran' },
   { value: 'COBOL', label: 'COBOL' },
   { value: 'Bash', label: 'Bash' },
+  { value: 'Shell', label: 'Shell' },
   { value: 'Powershell', label: 'Powershell' },
   { value: 'PL/SQL', label: 'PL/SQL' },
   { value: 'CSS', label: 'CSS' },

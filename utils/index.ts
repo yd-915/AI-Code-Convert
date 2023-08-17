@@ -32,7 +32,7 @@ const createPrompt = (
     `;
   } else if (outputLanguage === 'Natural Language') {
     return endent`
-      You are an expert programmer in all programming languages. Translate the "${inputLanguage}" code to natural language in plain English that the average adult could understand. Respond as bullet points starting with -.
+      You are an expert programmer in all programming languages. You will be provided with a piece of code, and your task is to explain it in a concise way.
   
       Example translating from JavaScript to natural language:
   
