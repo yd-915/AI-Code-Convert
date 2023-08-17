@@ -6,6 +6,7 @@ import Head from 'next/head';
 import { useEffect, useState } from 'react';
 
 export default function Home() {
+  const option = 'convert';
   const [title, setTitle] = useState('Conversor de código');
   const [subtitle, setSubtitle] = useState('Converter código ou linguagem natural em código de linguagem de programação');
   const [inputLanguage, setInputLanguage] = useState<string>('Natural Language');
@@ -43,7 +44,8 @@ export default function Home() {
     const body: TranslateBody = {
       inputLanguage,
       outputLanguage,
-      inputCode
+      inputCode,
+	  option
     };
 
     const response = await fetch('/api/translate', {

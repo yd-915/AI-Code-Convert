@@ -6,6 +6,7 @@ import Head from 'next/head';
 import { useEffect, useState } from 'react';
 
 export default function Home() {
+  const option = 'convert';
   const [title, setTitle] = useState('代码转换器');
   const [subtitle, setSubtitle] = useState('将自然语言转换为编程语言代码 | 将代码转为另一种语言代码');
   const [inputLanguage, setInputLanguage] = useState<string>('Natural Language');
@@ -43,7 +44,8 @@ export default function Home() {
     const body: TranslateBody = {
       inputLanguage,
       outputLanguage,
-      inputCode
+      inputCode,
+	  option
     };
 
     const response = await fetch('/api/translate', {

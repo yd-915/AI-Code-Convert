@@ -9,8 +9,26 @@ const createPrompt = (
   inputLanguage: string,
   outputLanguage: string,
   inputCode: string,
+  option: string
 ) => {
-  if (inputLanguage === 'Natural Language') {
+  if(option === 'optimize') {
+  	return endent`
+  	  You will be provided with a piece of "${inputLanguage}" code, and your task is to provide ideas for efficiency improvements.
+	  And at last, you should return the optimized code, And with detailed annotations that reflect optimisations.
+	  
+	  the code:
+	  ${inputCode}
+	  
+  	 `;
+  } else if (option === 'explain') {
+    return endent`
+      You will be provided with a piece of "${inputLanguage}" code, and your task is to explain it in a concise way.
+	  
+	  the code:
+	  ${inputCode}
+	  
+     `;
+  } else if (option === 'convert' && inputLanguage === 'Natural Language') {
     return endent`
     You are an expert programmer in all programming languages. Translate the natural language to "${outputLanguage}" code.
 	Do not include \`\`\`.
@@ -30,25 +48,6 @@ const createPrompt = (
 
     ${outputLanguage} code (no \`\`\`):
     `;
-  } else if (outputLanguage === 'Natural Language') {
-    return endent`
-      You are an expert programmer in all programming languages. You will be provided with a piece of code, and your task is to explain it in a concise way.
-  
-      Example translating from JavaScript to natural language:
-  
-      JavaScript code:
-      for (let i = 0; i < 10; i++) {
-        console.log(i);
-      }
-  
-      Natural language:
-      Print the numbers 0 to 9.
-      
-      ${inputLanguage} code:
-      ${inputCode}
-
-      Natural language:
-     `;
   } else {
     return endent`
       You are an expert programmer in all programming languages. Translate the "${inputLanguage}" code to "${outputLanguage}" code. 
@@ -76,9 +75,10 @@ const createPrompt = (
 export const OpenAIStream = async (
   inputLanguage: string,
   outputLanguage: string,
-  inputCode: string
+  inputCode: string,
+  option: string
 ) => {
-	const prompt = createPrompt(inputLanguage, outputLanguage, inputCode);
+	const prompt = createPrompt(inputLanguage, outputLanguage, inputCode, option);
 
 	const system = { role: 'system', content: prompt };
 	console.info('system : ', system);

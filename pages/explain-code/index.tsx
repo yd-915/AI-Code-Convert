@@ -6,9 +6,10 @@ import Head from 'next/head';
 import { useEffect, useState } from 'react';
 
 export default function Home() {
+  const option = 'explain';
   const [title, setTitle] = useState('AI Code Explainer');
   const [subtitle, setSubtitle] = useState('Get an extensive explanation of any piece of code.');
-  const [inputLanguage, setInputLanguage] = useState<string>('Automatic detection');
+  const [inputLanguage, setInputLanguage] = useState<string>('');
   const [outputLanguage, setOutputLanguage] = useState<string>('Natural Language');
   const [inputCode, setInputCode] = useState<string>('');
   const [outputCode, setOutputCode] = useState<string>('');
@@ -18,8 +19,8 @@ export default function Home() {
   const handleTranslate = async () => {
     const maxCodeLength = 30000;
 
-    if (inputLanguage === outputLanguage) {
-      alert('Please select different languages.');
+    if (inputLanguage === '' || inputLanguage.trim() === '') {
+      alert('Please select code languages.');
       return;
     }
 
@@ -43,7 +44,8 @@ export default function Home() {
     const body: TranslateBody = {
       inputLanguage,
       outputLanguage,
-      inputCode
+      inputCode,
+	  option
     };
 
     const response = await fetch('/api/translate', {
@@ -157,7 +159,7 @@ export default function Home() {
 		
         <div className="mt-6 flex w-full max-w-[1600px] flex-col justify-between sm:flex-row sm:space-x-4">
           <div className="h-100 flex flex-col justify-center space-y-2 sm:w-2/4">
-            <div className="text-center text-xl font-bold">From</div>
+            <div className="text-center text-xl font-bold">Your Code</div>
 
             <LanguageSelect
               language={inputLanguage}
@@ -190,10 +192,10 @@ export default function Home() {
             )}
           </div>
           <div className="mt-8 flex h-full flex-col justify-center space-y-2 sm:mt-0 sm:w-2/4">
-            <div className="text-center text-xl font-bold">TO</div>
+            <div className="text-center text-xl font-bold">Explanation</div>
 
             <LanguageSelect
-              language={outputLanguage}
+              language='Natural Language'
               onChange={(value) => {
                 setOutputLanguage(value);
                 setOutputCode('');

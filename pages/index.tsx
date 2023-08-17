@@ -6,6 +6,7 @@ import Head from 'next/head';
 import { useEffect, useState } from 'react';
 
 export default function Home() {
+  const option = 'convert';
   const [title, setTitle] = useState('Code Converter');
   const [subtitle, setSubtitle] = useState('Convert Code or Natural Language To Programming Language Code');
   const [inputLanguage, setInputLanguage] = useState<string>('Natural Language');
@@ -43,7 +44,8 @@ export default function Home() {
     const body: TranslateBody = {
       inputLanguage,
       outputLanguage,
-      inputCode
+      inputCode,
+	  option
     };
 
     const response = await fetch('/api/translate', {
@@ -143,6 +145,7 @@ export default function Home() {
 	          </h1>
 	      </div>
 	      <div className="flex items-center hidden md:block lg:block">
+		      <a href="/optimize-code" className="bg-gradient-to-r from-amber-400 via-orange-600 to-red-400 text font-bold pb-1 bg-clip-text text-transparent mr-1 md:mr-4 lg:mr-4">Code Optimize</a>
 		      <a href="/explain-code" className="bg-gradient-to-r from-yellow-300 via-orange-400 to-pink-500 text font-bold pb-1 bg-clip-text text-transparent mr-1 md:mr-4 lg:mr-4">Code Explain</a>
 			  <a href="https://blog.aicodeconvert.com" className="text-blue-500 text font-semibold mr-1 md:mr-4 lg:mr-4">Blog</a>
 	          <a href="#about" className="text-white text font-semibold mr-1 md:mr-4 lg:mr-4">About Us</a>

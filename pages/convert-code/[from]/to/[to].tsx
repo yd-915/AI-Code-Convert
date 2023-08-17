@@ -28,6 +28,7 @@ export const getServerSideProps: GetServerSideProps<Props, Params> = async ({ pa
 };
 
 export default function Home({ from, to }: Props) {
+  const option = 'convert';
   const [title, setTitle] = useState('Code Converter');
   const [subtitle, setSubtitle] = useState('Translate Code or Natural Language To Programming Language Code');
   const [inputLanguage, setInputLanguage] = useState<string>('Natural Language');
@@ -65,7 +66,8 @@ export default function Home({ from, to }: Props) {
     const body: TranslateBody = {
       inputLanguage,
       outputLanguage,
-      inputCode
+      inputCode,
+	  option
     };
 
     const response = await fetch('/api/translate', {

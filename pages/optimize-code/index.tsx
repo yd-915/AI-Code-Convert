@@ -6,11 +6,11 @@ import Head from 'next/head';
 import { useEffect, useState } from 'react';
 
 export default function Home() {
-  const option = 'convert';
-  const [title, setTitle] = useState('Code Generator');
-  const [subtitle, setSubtitle] = useState('Generate Code From Natural Language To Programming Language Code');
-  const [inputLanguage, setInputLanguage] = useState<string>('Natural Language');
-  const [outputLanguage, setOutputLanguage] = useState<string>('Python');
+  const option = 'optimize';
+  const [title, setTitle] = useState('AI Code Optimizer');
+  const [subtitle, setSubtitle] = useState('Provide ideas for efficiency improvements to your code.');
+  const [inputLanguage, setInputLanguage] = useState<string>('');
+  const [outputLanguage, setOutputLanguage] = useState<string>('Automatic detection');
   const [inputCode, setInputCode] = useState<string>('');
   const [outputCode, setOutputCode] = useState<string>('');
   const [loading, setLoading] = useState<boolean>(false);
@@ -19,8 +19,8 @@ export default function Home() {
   const handleTranslate = async () => {
     const maxCodeLength = 30000;
 
-    if (inputLanguage === outputLanguage) {
-      alert('Please select different languages.');
+    if (inputLanguage === '' || inputLanguage.trim() === '') {
+      alert('Please select code languages.');
       return;
     }
 
@@ -112,11 +112,11 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>AI Code Generator</title>
-        <meta name="description" content="Use AI To Generate Code From Natural Language."/>
+        <title>AI Code Explainer </title>
+        <meta name="description" content="Use AI To Explain a complicated piece of code."/>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-		<meta name="keywords" content="AI Code Generator,Code Generate" />
-		<link rel="canonical" href="https://aicodeconvert.com/generate-code/ai-code-generator" />
+		<meta name="keywords" content="AI Code Converter,AI Code Explainer,Explain Code" />
+		<link rel="canonical" href="https://aicodeconvert.com/explain-code" />
         <link rel="icon" href="/code.png" />
 		{/* Add the Google Analytics script tags here */}
 		<script async src="https://www.googletagmanager.com/gtag/js?id=G-Q03Q3VY7RV"></script>
@@ -153,23 +153,23 @@ export default function Home() {
 	  
       <div className="flex h-full min-h-screen flex-col items-center bg-[#0E1117] px-4 pb-20 text-neutral-200 sm:px-10">
 		<div className="mt-2 flex flex-col items-center justify-center sm:mt-10">
-          <h2 className="text-3xl md:text-4xl font-bold"><span className="text-blue-500">AI</span> {title}</h2>
+          <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-amber-400 via-orange-600 to-red-400 text-xl font-bold pb-1 bg-clip-text text-transparent">{title}</h2>
 		  <h3 className="mt-2 md:mt-5 text-xl text-center leading-2">{subtitle}</h3>
         </div>
 		
         <div className="mt-6 flex w-full max-w-[1600px] flex-col justify-between sm:flex-row sm:space-x-4">
           <div className="h-100 flex flex-col justify-center space-y-2 sm:w-2/4">
-            <div className="text-center text-xl font-bold">From</div>
+            <div className="text-center text-xl font-bold">Your Code</div>
 
-            <LanguageSelect
-              language={inputLanguage}
-              onChange={(value) => {
-                setInputLanguage(value);
-                setHasTranslated(false);
-                // setInputCode('');
-                // setOutputCode('');
-              }}
-            />
+			<LanguageSelect
+			  language={inputLanguage}
+			  onChange={(value) => {
+			    setInputLanguage(value);
+			    setHasTranslated(false);
+			    // setInputCode('');
+			    // setOutputCode('');
+			  }}
+			/>
 
             {inputLanguage === 'Natural Language' ? (
               <TextBlock
@@ -192,15 +192,15 @@ export default function Home() {
             )}
           </div>
           <div className="mt-8 flex h-full flex-col justify-center space-y-2 sm:mt-0 sm:w-2/4">
-            <div className="text-center text-xl font-bold">TO</div>
+            <div className="text-center text-xl font-bold">Optimize Code</div>
 
-            <LanguageSelect
-              language={outputLanguage}
-              onChange={(value) => {
-                setOutputLanguage(value);
-                setOutputCode('');
-              }}
-            />
+			<LanguageSelect
+			  language='Automatic detection'
+			  onChange={(value) => {
+			    setOutputLanguage(value);
+			    setOutputCode('');
+			  }}
+			/>
 
             {outputLanguage === 'Natural Language' ? (
               <TextBlock text={outputCode} />
@@ -215,7 +215,7 @@ export default function Home() {
 		    ? '...'// Generating
 		    : hasTranslated
 		    ? 'Output copied to clipboard!'
-		    : 'Enter some code and click "Generate"'}
+		    : 'Enter some code and click "Optimize"'}
 		</div>
 		
 		<div className="mt-5 flex items-center space-x-2">
@@ -224,7 +224,7 @@ export default function Home() {
 		    onClick={() => handleTranslate()}
 		    disabled={loading}
 		  >
-		    {loading ? 'Generating...' : 'Generate'}
+		    {loading ? 'Optimizing...' : 'Optimize'}
 		  </button>
 		  <a href="https://ko-fi.com/audi_guzz" className="text-gray cursor-pointer rounded-full">
 		  	<div className="flex justify-center items-center">
@@ -240,11 +240,12 @@ export default function Home() {
 		<div id="about" className="text-white">
 		  <div className="text-2xl">About Us</div>
 		  <ul className="mt-4 list-disc list-inside">
-		    <li className="mb-2">AICodeConvert simplifies coding with AI by integrating AI Code Translator and AI Code Generator. </li>
+		    <li className="mb-2">AICodeConvert(AI Code Convert) simplifies coding with AI by integrating AI Code Translator and AI Code Generator. </li>
 		    <li className="mb-2">It efficiently translates existing code into different programming languages (AI Code Translator) and automatically generates high-quality code snippets and templates (AI Code Generator). </li>
-				  <li className="mb-2">This powerful combination makes AICodeConvert an indispensable tool for developers, 
+			<li className="mb-2">This powerful combination makes AICodeConvert an indispensable tool for developers, 
 					providing a convenient and intelligent coding experience.</li>
-		    <li>All for free.</li>
+		    <li className="mb-2">All for free(AI Code Convert | AI Code Converter).</li>
+			<li className="mb-2">Your Best AI Code Helper.</li>
 		  </ul>
 		</div>
 		<div id="contact" className="text-white pt-4">
