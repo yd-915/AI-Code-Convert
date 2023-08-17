@@ -91,4 +91,5 @@ export const languages = [
   { value: 'MySQL', label: 'MySQL' },
   { value: 'FlinkSql', label: 'FlinkSql' },
   { value: 'Regular', label: 'Regular expression' },
+  { value: 'Arduino', label: 'Arduino' },
 ];
