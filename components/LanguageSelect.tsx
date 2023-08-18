@@ -92,4 +92,6 @@ export const languages = [
   { value: 'FlinkSql', label: 'FlinkSql' },
   { value: 'Regular', label: 'Regular expression' },
   { value: 'Arduino', label: 'Arduino' },
+  { value: 'Esp 8266', label: 'Esp 8266' },
+  { value: 'Esp 32', label: 'Esp 32' },
 ];
