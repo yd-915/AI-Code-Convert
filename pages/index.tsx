@@ -153,13 +153,8 @@ export default function Home() {
 	      </div>
 	  </div>
 	  
-      <div className="flex h-full min-h-screen flex-col items-center bg-[#0E1117] px-4 pb-20 text-neutral-200 sm:px-10">
-		<div className="mt-2 flex flex-col items-center justify-center sm:mt-10">
-          <h2 className="text-3xl md:text-4xl font-bold"><span className="text-blue-500">AI</span> {title}</h2>
-		  <h3 className="mt-2 md:mt-5 text-xl text-center leading-2">{subtitle}</h3>
-        </div>
-		
-        <div className="mt-6 flex w-full max-w-[1600px] flex-col justify-between sm:flex-row sm:space-x-4">
+      <div className="flex h-full flex-col items-center bg-[#0E1117] px-4 pb-16 text-neutral-200 sm:px-10">
+        <div className="mt-6 flex w-full max-w-[1680px] flex-col justify-between sm:flex-row sm:space-x-2">
           <div className="h-100 flex flex-col justify-center space-y-2 sm:w-2/4">
             <div className="text-center text-xl font-bold">From</div>
 
@@ -212,7 +207,7 @@ export default function Home() {
           </div>
         </div>
 		
-		<div className="mt-5 text-center text-sm">
+		<div className="mt-4 text-center text-sm">
 		  {loading
 		    ? '...'// Generating
 		    : hasTranslated
@@ -220,7 +215,7 @@ export default function Home() {
 		    : 'Enter some code and click "Generate"'}
 		</div>
 		
-		<div className="mt-5 flex items-center space-x-2">
+		<div className="mt-4 flex items-center space-x-2">
 		  <button
 		    className="w-[140px] cursor-pointer rounded-full bg-blue-500 px-4 py-2 font-bold hover:bg-blue-600 active:bg-blue-700"
 		    onClick={() => handleTranslate()}
@@ -228,15 +223,11 @@ export default function Home() {
 		  >
 		    {loading ? 'Generating...' : 'Generate'}
 		  </button>
-		  <a href="https://ko-fi.com/audi_guzz" className="text-gray cursor-pointer rounded-full">
-		  	<div className="flex justify-center items-center">
-		  		<p className="ml-1 mr-2 text-white">Buy me a Coffee</p>
-		  		<svg width="30" height="30" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
-		  		    <path fill="#ffffff" d="M208 80H32a8 8 0 0 0-8 8v48a96.3 96.3 0 0 0 32.54 72H32a8 8 0 0 0 0 16h176a8 8 0 0 0 0-16h-24.54a96.59 96.59 0 0 0 27-40.09A40 40 0 0 0 248 128v-8a40 40 0 0 0-40-40Zm24 48a24 24 0 0 1-17.2 23a95.78 95.78 0 0 0 1.2-15V97.38A24 24 0 0 1 232 120ZM112 56V24a8 8 0 0 1 16 0v32a8 8 0 0 1-16 0Zm32 0V24a8 8 0 0 1 16 0v32a8 8 0 0 1-16 0Zm-64 0V24a8 8 0 0 1 16 0v32a8 8 0 0 1-16 0Z"/>
-		  		</svg>
-		  	</div>
-		  </a>
 		</div>
+	  </div>
+	  <div className="flex flex-col items-center justify-center bg-[#0E1117] text-white">
+	    <h2 className="text-3xl md:text-4xl font-bold"><span className="text-blue-500">AI</span> {title}</h2>
+	    <h3 className="mt-2 md:mt-5 text-xl text-center leading-2">{subtitle}</h3>
 	  </div>
 	  <div className="pl-6 pr-6 md:pl-20 md:pr-20 bg-[#0E1117]">
 		<div id="about" className="text-white">
@@ -253,6 +244,14 @@ export default function Home() {
 		<div id="contact" className="text-white pt-4">
 		  <div className="text-2xl">Contact</div>
 		  <div className="flex justify-start items-center mb-2 space-y-2 mt-2 flex-wrap">
+			<a href="https://ko-fi.com/audi_guzz" className="px-2 bg-gradient-to-r from-yellow-600 via-orange-600 to-pink-600 text-gray cursor-pointer rounded-full mr-4">
+				<div className="flex justify-center items-center">
+					<p className="ml-2 mr-2 text-white">Buy me a Coffee</p>
+					<svg width="30" height="30" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+					    <path fill="#ffffff" d="M208 80H32a8 8 0 0 0-8 8v48a96.3 96.3 0 0 0 32.54 72H32a8 8 0 0 0 0 16h176a8 8 0 0 0 0-16h-24.54a96.59 96.59 0 0 0 27-40.09A40 40 0 0 0 248 128v-8a40 40 0 0 0-40-40Zm24 48a24 24 0 0 1-17.2 23a95.78 95.78 0 0 0 1.2-15V97.38A24 24 0 0 1 232 120ZM112 56V24a8 8 0 0 1 16 0v32a8 8 0 0 1-16 0Zm32 0V24a8 8 0 0 1 16 0v32a8 8 0 0 1-16 0Zm-64 0V24a8 8 0 0 1 16 0v32a8 8 0 0 1-16 0Z"/>
+					</svg>
+				</div>
+			</a>
 		  	<a href="https://github.com/JustAIGithub/AI-Code-Convert" className="text-gray cursor-pointer mr-4">
 		  		<svg width="26" height="26" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
 		  			<path fill="#ffffff" d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5c.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34c-.46-1.16-1.11-1.47-1.11-1.47c-.91-.62.07-.6.07-.6c1 .07 1.53 1.03 1.53 1.03c.87 1.52 2.34 1.07 2.91.83c.09-.65.35-1.09.63-1.34c-2.22-.25-4.55-1.11-4.55-4.92c0-1.11.38-2 1.03-2.71c-.1-.25-.45-1.29.1-2.64c0 0 .84-.27 2.75 1.02c.79-.22 1.65-.33 2.5-.33c.85 0 1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02c.55 1.35.2 2.39.1 2.64c.65.71 1.03 1.6 1.03 2.71c0 3.82-2.34 4.66-4.57 4.91c.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2Z"/>
@@ -282,6 +281,7 @@ export default function Home() {
 				</div>
 			</a>
 		  </div>
+		  
 		  <div>
 			Mail: enqueueit@gmail.com
 		  </div>
