@@ -225,6 +225,10 @@ export default function Home() {
 		  </button>
 		</div>
 	  </div>
+	  {/* ads */}
+	  <div className="flex flex-wrap items-center justify-center bg-[#0E1117]">
+		
+	  </div>
 	  <div className="flex flex-col items-center justify-center bg-[#0E1117] text-white">
 	    <h2 className="text-3xl md:text-4xl font-bold"><span className="text-blue-500">AI</span> {title}</h2>
 	    <h3 className="mt-2 md:mt-5 text-xl text-center leading-2">{subtitle}</h3>
