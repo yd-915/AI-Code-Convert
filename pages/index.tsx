@@ -17,6 +17,7 @@ export default function Home() {
   const [hasTranslated, setHasTranslated] = useState<boolean>(false);
 
   const handleTranslate = async () => {
+	window.scrollTo(0, 180);
     const maxCodeLength = 30000;
 
     if (inputLanguage === outputLanguage) {
@@ -152,8 +153,11 @@ export default function Home() {
 	          <a href="#contact" className="text-white text font-semibold mr-1 md:mr-4 lg:mr-4">Contact</a>
 	      </div>
 	  </div>
-	  
-      <div className="flex h-full flex-col items-center bg-[#0E1117] px-4 pb-16 text-neutral-200 sm:px-10">
+	  <div className="flex flex-col items-center justify-center bg-[#0E1117] text-white">
+	    <h2 className="text-3xl md:text-4xl font-bold"><span className="text-blue-500">AI</span> {title}</h2>
+	    <h3 className="mt-2 md:mt-5 text-xl text-center leading-2">{subtitle}</h3>
+	  </div>
+      <div className="flex h-full flex-col items-center bg-[#0E1117] px-4 pb-8 text-neutral-200 sm:px-10">
         <div className="mt-6 flex w-full max-w-[1680px] flex-col justify-between sm:flex-row sm:space-x-2">
           <div className="h-100 flex flex-col justify-center space-y-2 sm:w-2/4">
             <div className="text-center text-xl font-bold">From</div>
@@ -229,11 +233,7 @@ export default function Home() {
 	  <div className="flex flex-wrap items-center justify-center bg-[#0E1117]">
 		
 	  </div>
-	  <div className="flex flex-col items-center justify-center bg-[#0E1117] text-white">
-	    <h2 className="text-3xl md:text-4xl font-bold"><span className="text-blue-500">AI</span> {title}</h2>
-	    <h3 className="mt-2 md:mt-5 text-xl text-center leading-2">{subtitle}</h3>
-	  </div>
-	  <div className="pl-6 pr-6 md:pl-20 md:pr-20 bg-[#0E1117]">
+	  <div className="pl-6 pr-6 mt-1 md:pl-20 md:pr-20 bg-[#0E1117]">
 		<div id="about" className="text-white">
 		  <div className="text-2xl">About Us</div>
 		  <ul className="mt-4 list-disc list-inside">
