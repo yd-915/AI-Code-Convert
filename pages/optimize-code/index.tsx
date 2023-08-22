@@ -17,6 +17,7 @@ export default function Home() {
   const [hasTranslated, setHasTranslated] = useState<boolean>(false);
 
   const handleTranslate = async () => {
+	window.scrollTo(0, 180);
     const maxCodeLength = 30000;
 
     if (inputLanguage === '' || inputLanguage.trim() === '') {
@@ -150,13 +151,11 @@ export default function Home() {
 	          <a href="#contact" className="text-white text font-semibold mr-1 md:mr-4 lg:mr-4">Contact</a>
 	      </div>
 	  </div>
-	  
-      <div className="flex h-full min-h-screen flex-col items-center bg-[#0E1117] px-4 pb-20 text-neutral-200 sm:px-10">
-		<div className="mt-2 flex flex-col items-center justify-center sm:mt-10">
-          <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-amber-400 via-orange-600 to-red-400 text-xl font-bold pb-1 bg-clip-text text-transparent">{title}</h2>
-		  <h3 className="mt-2 md:mt-5 text-xl text-center leading-2">{subtitle}</h3>
-        </div>
-		
+	  <div className="flex flex-col items-center justify-center bg-[#0E1117] text-white">
+	    <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-amber-400 via-orange-600 to-red-400 text-xl font-bold pb-1 bg-clip-text text-transparent">{title}</h2>
+	    <h3 className="mt-2 md:mt-5 text-xl text-center leading-2">{subtitle}</h3>
+	  </div>
+      <div className="flex h-full min-h-screen flex-col items-center bg-[#0E1117] px-4 pb-8 text-neutral-200 sm:px-10">
         <div className="mt-6 flex w-full max-w-[1600px] flex-col justify-between sm:flex-row sm:space-x-4">
           <div className="h-100 flex flex-col justify-center space-y-2 sm:w-2/4">
             <div className="text-center text-xl font-bold">Your Code</div>
@@ -210,7 +209,7 @@ export default function Home() {
           </div>
         </div>
 		
-		<div className="mt-5 text-center text-sm">
+		<div className="mt-4 text-center text-sm">
 		  {loading
 		    ? '...'// Generating
 		    : hasTranslated
@@ -218,7 +217,7 @@ export default function Home() {
 		    : 'Enter some code and click "Optimize"'}
 		</div>
 		
-		<div className="mt-5 flex items-center space-x-2">
+		<div className="mt-4 flex items-center space-x-2">
 		  <button
 		    className="w-[140px] cursor-pointer rounded-full bg-blue-500 px-4 py-2 font-bold hover:bg-blue-600 active:bg-blue-700"
 		    onClick={() => handleTranslate()}
@@ -226,9 +225,9 @@ export default function Home() {
 		  >
 		    {loading ? 'Optimizing...' : 'Optimize'}
 		  </button>
-		  <a href="https://ko-fi.com/audi_guzz" className="text-gray cursor-pointer rounded-full">
+		  <a href="https://ko-fi.com/audi_guzz" className="px-2 bg-[#e06637] cursor-pointer rounded-full mr-4 py-1">
 		  	<div className="flex justify-center items-center">
-		  		<p className="ml-1 mr-2 text-white">Buy me a Coffee</p>
+		  		<p className="ml-2 mr-2 text-white font-bold">Buy me a Coffee</p>
 		  		<svg width="30" height="30" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
 		  		    <path fill="#ffffff" d="M208 80H32a8 8 0 0 0-8 8v48a96.3 96.3 0 0 0 32.54 72H32a8 8 0 0 0 0 16h176a8 8 0 0 0 0-16h-24.54a96.59 96.59 0 0 0 27-40.09A40 40 0 0 0 248 128v-8a40 40 0 0 0-40-40Zm24 48a24 24 0 0 1-17.2 23a95.78 95.78 0 0 0 1.2-15V97.38A24 24 0 0 1 232 120ZM112 56V24a8 8 0 0 1 16 0v32a8 8 0 0 1-16 0Zm32 0V24a8 8 0 0 1 16 0v32a8 8 0 0 1-16 0Zm-64 0V24a8 8 0 0 1 16 0v32a8 8 0 0 1-16 0Z"/>
 		  		</svg>

@@ -113,7 +113,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>AI Code Converter | AI Code Translator | AI Code Generator | AI Code Helper</title>
+        <title>AI Code Converter | AI Code Translator | AI Code Generator</title>
         <meta name="description" content="Use AI To Convert Code Or Generate Code From One Language To Another. AI Code Translator. Translate Code From Any Language To Another With A Click Of A Button."/>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="keywords" content="AI Code Converter,Code Convert AI, Code Generate AI,Code Translator,AICodeHelper,free,online" />
@@ -146,6 +146,7 @@ export default function Home() {
 	          </h1>
 	      </div>
 	      <div className="flex items-center hidden md:block lg:block">
+			  <a href="#license" className="bg-gradient-to-r from-amber-200 via-orange-200 to-red-200 text font-bold pb-1 bg-clip-text text-transparent mr-1 md:mr-4 lg:mr-4">Apply License Key</a>
 		      <a href="/optimize-code" className="bg-gradient-to-r from-amber-400 via-orange-600 to-red-400 text font-bold pb-1 bg-clip-text text-transparent mr-1 md:mr-4 lg:mr-4">Code Optimize</a>
 		      <a href="/explain-code" className="bg-gradient-to-r from-yellow-300 via-orange-400 to-pink-500 text font-bold pb-1 bg-clip-text text-transparent mr-1 md:mr-4 lg:mr-4">Code Explain</a>
 			  <a href="https://blog.aicodeconvert.com" className="text-blue-500 text font-semibold mr-1 md:mr-4 lg:mr-4">Blog</a>
@@ -227,6 +228,14 @@ export default function Home() {
 		  >
 		    {loading ? 'Generating...' : 'Generate'}
 		  </button>
+		  <a href="https://ko-fi.com/audi_guzz" className="px-2 bg-[#e06637] cursor-pointer rounded-full py-1">
+		  	<div className="flex justify-center items-center">
+		  		<p className="ml-2 mr-2 text-white font-bold">Buy me a Coffee</p>
+		  		<svg width="30" height="30" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+		  		    <path fill="#ffffff" d="M208 80H32a8 8 0 0 0-8 8v48a96.3 96.3 0 0 0 32.54 72H32a8 8 0 0 0 0 16h176a8 8 0 0 0 0-16h-24.54a96.59 96.59 0 0 0 27-40.09A40 40 0 0 0 248 128v-8a40 40 0 0 0-40-40Zm24 48a24 24 0 0 1-17.2 23a95.78 95.78 0 0 0 1.2-15V97.38A24 24 0 0 1 232 120ZM112 56V24a8 8 0 0 1 16 0v32a8 8 0 0 1-16 0Zm32 0V24a8 8 0 0 1 16 0v32a8 8 0 0 1-16 0Zm-64 0V24a8 8 0 0 1 16 0v32a8 8 0 0 1-16 0Z"/>
+		  		</svg>
+		  	</div>
+		  </a>
 		</div>
 	  </div>
 	  {/* ads */}
@@ -234,6 +243,14 @@ export default function Home() {
 		
 	  </div>
 	  <div className="pl-6 pr-6 mt-1 md:pl-20 md:pr-20 bg-[#0E1117]">
+		<div id="license" className="text-white">
+		  <div className="text-2xl">License Key</div>
+		  <ul className="mt-4 list-disc list-inside">
+		    <li className="mb-2">We will continue to iterate the AICodeConverter product, will require the use of the licence. </li>
+		    <li className="mb-2">We give out licence keys for free.</li>
+			<li className="mb-2">Send an email to enqueueit@gmail.com , the title will be written [apply licence key], we will get back to you within 2-3 days.. </li>
+		  </ul>
+		</div>
 		<div id="about" className="text-white">
 		  <div className="text-2xl">About Us</div>
 		  <ul className="mt-4 list-disc list-inside">
@@ -248,9 +265,9 @@ export default function Home() {
 		<div id="contact" className="text-white pt-4">
 		  <div className="text-2xl">Contact</div>
 		  <div className="flex justify-start items-center mb-2 space-y-2 mt-2 flex-wrap">
-			<a href="https://ko-fi.com/audi_guzz" className="px-2 bg-gradient-to-r from-yellow-600 via-orange-600 to-pink-600 text-gray cursor-pointer rounded-full mr-4">
+			<a href="https://ko-fi.com/audi_guzz" className="px-2 bg-[#e06637] cursor-pointer rounded-full mr-4 py-1">
 				<div className="flex justify-center items-center">
-					<p className="ml-2 mr-2 text-white">Buy me a Coffee</p>
+					<p className="ml-2 mr-2 text-white font-bold">Buy me a Coffee</p>
 					<svg width="30" height="30" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
 					    <path fill="#ffffff" d="M208 80H32a8 8 0 0 0-8 8v48a96.3 96.3 0 0 0 32.54 72H32a8 8 0 0 0 0 16h176a8 8 0 0 0 0-16h-24.54a96.59 96.59 0 0 0 27-40.09A40 40 0 0 0 248 128v-8a40 40 0 0 0-40-40Zm24 48a24 24 0 0 1-17.2 23a95.78 95.78 0 0 0 1.2-15V97.38A24 24 0 0 1 232 120ZM112 56V24a8 8 0 0 1 16 0v32a8 8 0 0 1-16 0Zm32 0V24a8 8 0 0 1 16 0v32a8 8 0 0 1-16 0Zm-64 0V24a8 8 0 0 1 16 0v32a8 8 0 0 1-16 0Z"/>
 					</svg>
