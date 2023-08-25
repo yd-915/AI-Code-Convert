@@ -135,6 +135,28 @@ export default function Home() {
 		<script src="/baidu-analytics.js" />
 		<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3672455877501055"
 		     crossOrigin="anonymous"></script>
+		{/* Additional scripts you want to add */}
+		<script async src="https://fundingchoicesmessages.google.com/i/pub-3672455877501055?ers=1" nonce="5dJWzABNlyJqOhVUEimMVQ"></script>
+		<script nonce="5dJWzABNlyJqOhVUEimMVQ">
+		    {`
+		      (function() {
+		        function signalGooglefcPresent() {
+		          if (!window.frames['googlefcPresent']) {
+		            if (document.body) {
+		              const iframe = document.createElement('iframe');
+		              iframe.style = 'width: 0; height: 0; border: none; z-index: -1000; left: -1000px; top: -1000px;';
+		              iframe.style.display = 'none';
+		              iframe.name = 'googlefcPresent';
+		              document.body.appendChild(iframe);
+		            } else {
+		              setTimeout(signalGooglefcPresent, 0);
+		            }
+		          }
+		        }
+		        signalGooglefcPresent();
+		      })();
+		    `}
+		</script>
       </Head>
 	  <div className="h-100 flex justify-between items-center pl-2 pr-2 md:pl-10 md:pr-10 pt-2 bg-[#0E1117]">
 	      <div className="flex items-center">
@@ -156,7 +178,7 @@ export default function Home() {
 	    <h3 className="mt-2 md:mt-5 text-xl text-center leading-2">{subtitle}</h3>
 	  </div>
       <div className="flex h-full min-h-screen flex-col items-center bg-[#0E1117] px-4 pb-8 text-neutral-200 sm:px-10">
-        <div className="mt-6 flex w-full max-w-[1600px] flex-col justify-between sm:flex-row sm:space-x-4">
+        <div className="mt-6 flex w-full max-w-[1260px] flex-col justify-between sm:flex-row sm:space-x-4">
           <div className="h-100 flex flex-col justify-center space-y-2 sm:w-2/4">
             <div className="text-center text-xl font-bold">Your Code</div>
 

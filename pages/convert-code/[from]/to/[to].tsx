@@ -178,7 +178,7 @@ export default function Home({ from, to }: Props) {
 		  <h3 className="mt-5 text-xl text-center leading-2">{subtitle}</h3>
         </div>
 		
-        <div className="mt-6 flex w-full max-w-[1600px] flex-col justify-between sm:flex-row sm:space-x-4">
+        <div className="mt-6 flex w-full max-w-[1260px] flex-col justify-between sm:flex-row sm:space-x-4">
           <div className="h-100 flex flex-col justify-center space-y-2 sm:w-2/4">
             <div className="text-center text-xl font-bold">From</div>
 

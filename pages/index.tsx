@@ -1,6 +1,5 @@
 import { CodeBlock } from '@/components/CodeBlock';
 import { LanguageSelect,languages } from '@/components/LanguageSelect';
-import { LicenseKeys } from '@/components/License'
 import { TextBlock } from '@/components/TextBlock';
 import { TranslateBody } from '@/types/types';
 import Head from 'next/head';
@@ -16,23 +15,8 @@ export default function Home() {
   const [outputCode, setOutputCode] = useState<string>('');
   const [loading, setLoading] = useState<boolean>(false);
   const [hasTranslated, setHasTranslated] = useState<boolean>(false);
-  const [showModal, setShowModal] = useState(false);
-  const [licenseValue, setLicenseValue] = useState('');
-  const [validLicense, setValidLicense] = useState(false);
-
-  const handleLicenseChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setLicenseValue(event.target.value);
-  };
 
   const handleTranslate = async () => {
-	let validLicense = LicenseKeys.includes(licenseValue);
-	if(validLicense === false) {
-		setShowModal(true);
-		localStorage.clear();
-		return;
-	} else {
-		localStorage.setItem('licenseKey', licenseValue);
-	}
 	window.scrollTo(0, 180);
     const maxCodeLength = 30000;
 
@@ -124,14 +108,6 @@ export default function Home() {
       if (hasTranslated && isOutputLanguageInArray) {
         handleTranslate();
       }
-	  const storedLicenseValue = localStorage.getItem('licenseKey') || '';
-	  let valid = LicenseKeys.includes(storedLicenseValue);
-	  setValidLicense(valid);
-	  if(valid){
-		  setLicenseValue(storedLicenseValue);
-	  } else {
-		  localStorage.clear();
-	  }
   }, [outputLanguage]);
 
   return (
@@ -159,6 +135,29 @@ export default function Home() {
 		<script src="/baidu-analytics.js" />
 		<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3672455877501055"
 		     crossOrigin="anonymous"></script>
+			 
+		{/* Additional scripts you want to add */}
+		<script async src="https://fundingchoicesmessages.google.com/i/pub-3672455877501055?ers=1" nonce="5dJWzABNlyJqOhVUEimMVQ"></script>
+		<script nonce="5dJWzABNlyJqOhVUEimMVQ">
+		    {`
+		      (function() {
+		        function signalGooglefcPresent() {
+		          if (!window.frames['googlefcPresent']) {
+		            if (document.body) {
+		              const iframe = document.createElement('iframe');
+		              iframe.style = 'width: 0; height: 0; border: none; z-index: -1000; left: -1000px; top: -1000px;';
+		              iframe.style.display = 'none';
+		              iframe.name = 'googlefcPresent';
+		              document.body.appendChild(iframe);
+		            } else {
+		              setTimeout(signalGooglefcPresent, 0);
+		            }
+		          }
+		        }
+		        signalGooglefcPresent();
+		      })();
+		    `}
+		</script>
       </Head>
 	  <div className="h-100 flex justify-between items-center pl-2 pr-2 md:pl-10 md:pr-10 pt-2 bg-[#0E1117]">
 	      <div className="flex items-center">
@@ -170,7 +169,6 @@ export default function Home() {
 	          </h1>
 	      </div>
 	      <div className="flex items-center hidden md:block lg:block">
-			  <a href="#license" className="bg-gradient-to-r from-amber-200 via-orange-200 to-red-200 text font-bold pb-1 bg-clip-text text-transparent mr-1 md:mr-4 lg:mr-4">Apply License Key</a>
 		      <a href="/optimize-code" className="bg-gradient-to-r from-amber-400 via-orange-600 to-red-400 text font-bold pb-1 bg-clip-text text-transparent mr-1 md:mr-4 lg:mr-4">Code Optimize</a>
 		      <a href="/explain-code" className="bg-gradient-to-r from-yellow-300 via-orange-400 to-pink-500 text font-bold pb-1 bg-clip-text text-transparent mr-1 md:mr-4 lg:mr-4">Code Explain</a>
 			  <a href="https://blog.aicodeconvert.com" className="text-blue-500 text font-semibold mr-1 md:mr-4 lg:mr-4">Blog</a>
@@ -183,7 +181,7 @@ export default function Home() {
 	    <h3 className="mt-2 md:mt-5 text-xl text-center leading-2">{subtitle}</h3>
 	  </div>
       <div className="flex h-full flex-col items-center bg-[#0E1117] px-4 pb-8 text-neutral-200 sm:px-10">
-        <div className="mt-6 flex w-full max-w-[1680px] flex-col justify-between sm:flex-row sm:space-x-2">
+        <div className="mt-6 flex w-full max-w-[1260px] flex-col justify-between sm:flex-row sm:space-x-2">
           <div className="h-100 flex flex-col justify-center space-y-2 sm:w-2/4">
             <div className="text-center text-xl font-bold">From</div>
 
@@ -252,101 +250,20 @@ export default function Home() {
 		  >
 		    {loading ? 'Generating...' : 'Generate'}
 		  </button>
-		  <input
-			  id="licenseInput"
-			  type="text"
-			  className="border rounded text-blue-500 py-1 px-2 focus:outline-none focus:ring focus:border-blue-500"
-			  placeholder="Enter Your License Key"
-			  value={licenseValue}
-			  onChange={handleLicenseChange}
-			/>
+		  <a href="https://ko-fi.com/audi_guzz" className="px-2 bg-[#e06637] cursor-pointer rounded-full py-1">
+		  	<div className="flex justify-center items-center">
+		  		<p className="ml-2 mr-2 text-white font-bold">Buy me a Coffee</p>
+		  		<svg width="30" height="30" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+		  		    <path fill="#ffffff" d="M208 80H32a8 8 0 0 0-8 8v48a96.3 96.3 0 0 0 32.54 72H32a8 8 0 0 0 0 16h176a8 8 0 0 0 0-16h-24.54a96.59 96.59 0 0 0 27-40.09A40 40 0 0 0 248 128v-8a40 40 0 0 0-40-40Zm24 48a24 24 0 0 1-17.2 23a95.78 95.78 0 0 0 1.2-15V97.38A24 24 0 0 1 232 120ZM112 56V24a8 8 0 0 1 16 0v32a8 8 0 0 1-16 0Zm32 0V24a8 8 0 0 1 16 0v32a8 8 0 0 1-16 0Zm-64 0V24a8 8 0 0 1 16 0v32a8 8 0 0 1-16 0Z"/>
+		  		</svg>
+		  	</div>
+		  </a>
 		</div>
 	  </div>
 	  <div className="flex items-center flex-wrap space-x-2 justify-center text-black">
-		<button
-		  className="text-black w-[140px] cursor-pointer rounded-full bg-blue-600 px-2 py-2 font-bold hover:bg-blue-600 active:bg-blue-700 bg-gradient-to-r from-amber-200 via-orange-200 to-red-200"
-		  onClick={() => setShowModal(true)}
-		>
-		How apply?
-		</button>
-		<a href="https://ko-fi.com/audi_guzz" className="px-2 bg-[#e06637] cursor-pointer rounded-full py-1">
-			<div className="flex justify-center items-center">
-				<p className="ml-2 mr-2 text-white font-bold">Buy me a Coffee</p>
-				<svg width="30" height="30" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
-				    <path fill="#ffffff" d="M208 80H32a8 8 0 0 0-8 8v48a96.3 96.3 0 0 0 32.54 72H32a8 8 0 0 0 0 16h176a8 8 0 0 0 0-16h-24.54a96.59 96.59 0 0 0 27-40.09A40 40 0 0 0 248 128v-8a40 40 0 0 0-40-40Zm24 48a24 24 0 0 1-17.2 23a95.78 95.78 0 0 0 1.2-15V97.38A24 24 0 0 1 232 120ZM112 56V24a8 8 0 0 1 16 0v32a8 8 0 0 1-16 0Zm32 0V24a8 8 0 0 1 16 0v32a8 8 0 0 1-16 0Zm-64 0V24a8 8 0 0 1 16 0v32a8 8 0 0 1-16 0Z"/>
-				</svg>
-			</div>
-		</a>
-	  </div>
-	  {/* license modal */}
-	  {showModal && (
-		<div className="fixed z-10 inset-0 overflow-y-auto">
-		  <div className="flex items-center justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
-			<div className="fixed inset-0 transition-opacity" aria-hidden="true">
-			  <div className="absolute inset-0 bg-gray-500 opacity-75"></div>
-			</div>
-			<span
-			  className="hidden sm:inline-block sm:align-middle sm:h-screen"
-			  aria-hidden="true"
-			>
-			  &#8203;
-			</span>
-			<div
-			  className="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full"
-			  role="dialog"
-			  aria-modal="true"
-			  aria-labelledby="modal-headline"
-			>
-			  <div className="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
-				<div className="sm:flex sm:items-start">
-				  <svg width="40" height="40" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-				      <path fill="#eab308" d="M14.5 9.5C14.5 6.47 12.03 4 9 4S3.5 6.47 3.5 9.5c0 2.47 1.49 3.89 2.35 4.5h6.3c.86-.61 2.35-2.03 2.35-4.5z" opacity=".3"/>
-				      <path fill="#eab308" d="M7 20h4c0 1.1-.9 2-2 2s-2-.9-2-2zm-2-1h8v-2H5v2zm11.5-9.5c0 3.82-2.66 5.86-3.77 6.5H5.27c-1.11-.64-3.77-2.68-3.77-6.5C1.5 5.36 4.86 2 9 2s7.5 3.36 7.5 7.5zm-2 0C14.5 6.47 12.03 4 9 4S3.5 6.47 3.5 9.5c0 2.47 1.49 3.89 2.35 4.5h6.3c.86-.61 2.35-2.03 2.35-4.5zm6.87-2.13L20 8l1.37.63L22 10l.63-1.37L24 8l-1.37-.63L22 6l-.63 1.37zM19 6l.94-2.06L22 3l-2.06-.94L19 0l-.94 2.06L16 3l2.06.94L19 6z"/>
-				  </svg>
-				  <div className="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
-					<h3
-					  className="text-lg leading-6 font-medium text-gray-900"
-					  id="modal-headline"
-					>
-					  Apply License Key
-					</h3>
-					<div className="mt-2">
-					  <p className="text text-black">
-						<li className="mb-2">The generated code's visibility will be limited without a license key. Please apply a license key.</li>
-						<li className="mb-2">Send an email to <span className="text-blue-500">enqueueit@gmail.com</span> to get your license key.</li>
-						<li className="mb-2">The title will be written [apply license key], We will respond to your request for a License Key via email within 1 days. </li>
-					  </p>
-					</div>
-				  </div>
-				</div>
-			  </div>
-			  <div className="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
-				<button
-				  type="button"
-				  className="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-blue-500 text-base font-medium text-white hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 sm:ml-3 sm:w-auto sm:text-sm"
-				  onClick={() => setShowModal(false)}
-				>
-				  OK
-				</button>
-			  </div>
-			</div>
-		  </div>
-		</div>
-	  )}
-	  {/* ads */}
-	  <div className="flex flex-wrap items-center justify-center bg-[#0E1117]">
 		
 	  </div>
 	  <div className="pl-6 pr-6 mt-1 md:pl-20 md:pr-20 bg-[#0E1117]">
-		<div id="license" className="text-white">
-		  <div className="text-2xl">License Key</div>
-		  <ul className="mt-4 list-disc list-inside">
-		    <li className="mb-2">We will continue to iterate the AICodeConverter product, will require the use of the licence. </li>
-		    <li className="mb-2">We give out licence keys for free.</li>
-			<li className="mb-2">No license key will limit the view of the generated code.</li>
-			<li className="mb-2">Send an email to enqueueit@gmail.com , the title will be written [apply license key], We will respond to your request for a License Key via email within 1 days. </li>
-		  </ul>
-		</div>
 		<div id="about" className="text-white">
 		  <div className="text-2xl">About Us</div>
 		  <ul className="mt-4 list-disc list-inside">
