@@ -1,5 +1,6 @@
 import { CodeBlock } from '@/components/CodeBlock';
 import { LanguageSelect,languages } from '@/components/LanguageSelect';
+import { LicenseKeys } from '@/components/License'
 import { TextBlock } from '@/components/TextBlock';
 import { TranslateBody } from '@/types/types';
 import Head from 'next/head';
@@ -16,8 +17,22 @@ export default function Home() {
   const [loading, setLoading] = useState<boolean>(false);
   const [hasTranslated, setHasTranslated] = useState<boolean>(false);
   const [showModal, setShowModal] = useState(false);
+  const [licenseValue, setLicenseValue] = useState('');
+  const [validLicense, setValidLicense] = useState(false);
+
+  const handleLicenseChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setLicenseValue(event.target.value);
+  };
 
   const handleTranslate = async () => {
+	let validLicense = LicenseKeys.includes(licenseValue);
+	if(validLicense === false) {
+		setShowModal(true);
+		localStorage.clear();
+		return;
+	} else {
+		localStorage.setItem('licenseKey', licenseValue);
+	}
 	window.scrollTo(0, 180);
     const maxCodeLength = 30000;
 
@@ -109,6 +124,14 @@ export default function Home() {
       if (hasTranslated && isOutputLanguageInArray) {
         handleTranslate();
       }
+	  const storedLicenseValue = localStorage.getItem('licenseKey') || '';
+	  let valid = LicenseKeys.includes(storedLicenseValue);
+	  setValidLicense(valid);
+	  if(valid){
+		  setLicenseValue(storedLicenseValue);
+	  } else {
+		  localStorage.clear();
+	  }
   }, [outputLanguage]);
 
   return (
@@ -229,15 +252,23 @@ export default function Home() {
 		  >
 		    {loading ? 'Generating...' : 'Generate'}
 		  </button>
-		  <button
-		    className="text-black w-[140px] cursor-pointer rounded-full bg-blue-600 px-2 py-2 font-bold hover:bg-blue-600 active:bg-blue-700 bg-gradient-to-r from-amber-200 via-orange-200 to-red-200"
-		    onClick={() => setShowModal(true)}
-		  >
-		  Lcense Key
-		  </button>
+		  <input
+			  id="licenseInput"
+			  type="text"
+			  className="border rounded text-blue-500 py-1 px-2 focus:outline-none focus:ring focus:border-blue-500"
+			  placeholder="Enter Your License Key"
+			  value={licenseValue}
+			  onChange={handleLicenseChange}
+			/>
 		</div>
 	  </div>
-	  <div className="flex items-center flex-wrap justify-center text-black">
+	  <div className="flex items-center flex-wrap space-x-2 justify-center text-black">
+		<button
+		  className="text-black w-[140px] cursor-pointer rounded-full bg-blue-600 px-2 py-2 font-bold hover:bg-blue-600 active:bg-blue-700 bg-gradient-to-r from-amber-200 via-orange-200 to-red-200"
+		  onClick={() => setShowModal(true)}
+		>
+		How apply?
+		</button>
 		<a href="https://ko-fi.com/audi_guzz" className="px-2 bg-[#e06637] cursor-pointer rounded-full py-1">
 			<div className="flex justify-center items-center">
 				<p className="ml-2 mr-2 text-white font-bold">Buy me a Coffee</p>
@@ -281,9 +312,9 @@ export default function Home() {
 					</h3>
 					<div className="mt-2">
 					  <p className="text text-black">
-						<li className="mb-2">The generated code's visibility will be limited without a license key. Please be aware of this in the coming days.</li>
+						<li className="mb-2">The generated code's visibility will be limited without a license key. Please apply a license key.</li>
 						<li className="mb-2">Send an email to <span className="text-blue-500">enqueueit@gmail.com</span> to get your license key.</li>
-						<li className="mb-2">The title will be written [apply license key], We will respond to your request for a License Key via email within 1-3 days. </li>
+						<li className="mb-2">The title will be written [apply license key], We will respond to your request for a License Key via email within 1 days. </li>
 					  </p>
 					</div>
 				  </div>
@@ -313,7 +344,7 @@ export default function Home() {
 		    <li className="mb-2">We will continue to iterate the AICodeConverter product, will require the use of the licence. </li>
 		    <li className="mb-2">We give out licence keys for free.</li>
 			<li className="mb-2">No license key will limit the view of the generated code.</li>
-			<li className="mb-2">Send an email to enqueueit@gmail.com , the title will be written [apply license key], We will respond to your request for a License Key via email within 1-3 days. </li>
+			<li className="mb-2">Send an email to enqueueit@gmail.com , the title will be written [apply license key], We will respond to your request for a License Key via email within 1 days. </li>
 		  </ul>
 		</div>
 		<div id="about" className="text-white">
