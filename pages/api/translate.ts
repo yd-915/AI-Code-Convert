@@ -7,7 +7,7 @@ export const config = {
 
 const handler = async (req: Request): Promise<Response> => {
   try {
-    const { inputLanguage, outputLanguage, inputCode, option } =
+    const { inputLanguage, outputLanguage, inputCode, option, outputNaturalLanguage } =
       (await req.json()) as TranslateBody;
 
     const stream = await OpenAIStream(
@@ -15,6 +15,7 @@ const handler = async (req: Request): Promise<Response> => {
       outputLanguage,
       inputCode,
 	  option,
+	  outputNaturalLanguage,
     );
 
     return new Response(stream);

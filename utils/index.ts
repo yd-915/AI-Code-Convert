@@ -9,7 +9,8 @@ const createPrompt = (
   inputLanguage: string,
   outputLanguage: string,
   inputCode: string,
-  option: string
+  option: string,
+  outputNaturalLanguage: string
 ) => {
   if(option === 'optimize') {
   	return endent`
@@ -17,16 +18,18 @@ const createPrompt = (
 	  And at last, you should return the optimized code, And with detailed annotations that reflect optimisations.
 	  
 	  the code:
-	  ${inputCode}
+	  ${inputCode}.
 	  
+	  You must Response in "${outputNaturalLanguage}".
   	 `;
   } else if (option === 'explain') {
     return endent`
       You will be provided with a piece of "${inputLanguage}" code, and your task is to explain it in a concise way.
 	  
 	  the code:
-	  ${inputCode}
+	  ${inputCode}.
 	  
+	  You must Response in "${outputNaturalLanguage}".
      `;
   } else if (option === 'ask') {
 	  return endent`
@@ -65,7 +68,9 @@ const createPrompt = (
 	  It's important to note that while JavaScript shares a similar name with Java, they are two distinct programming languages with different syntax, purposes, and use cases.
 	  
 	  Question:
-	  ${inputCode}
+	  ${inputCode}.
+	  
+	  You must Response in "${outputNaturalLanguage}".
 	  
 	  Answer:
 	  
@@ -76,7 +81,7 @@ const createPrompt = (
 	Do not include \`\`\`.
 	Given the prompt,generate the code,The code should be formatted for readability.And The code must be correct and the more detailed and complete it is the better.
     Example translating from natural language to JavaScript:
-
+	
     Natural language:
     Print the numbers 0 to 9.
 
@@ -86,7 +91,9 @@ const createPrompt = (
     }
 
     Natural language:
-    ${inputCode}
+    ${inputCode}.
+	
+	You must Response in "${outputNaturalLanguage}".
 
     ${outputLanguage} code (no \`\`\`):
     `;
@@ -107,7 +114,9 @@ const createPrompt = (
         print(i)
       
       ${inputLanguage} code:
-      ${inputCode}
+      ${inputCode}.
+	  
+	  You must Response in "${outputNaturalLanguage}".
 
       ${outputLanguage} code (no \`\`\`):
      `;
@@ -118,9 +127,10 @@ export const OpenAIStream = async (
   inputLanguage: string,
   outputLanguage: string,
   inputCode: string,
-  option: string
+  option: string,
+  outputNaturalLanguage: string
 ) => {
-	const prompt = createPrompt(inputLanguage, outputLanguage, inputCode, option);
+	const prompt = createPrompt(inputLanguage, outputLanguage, inputCode, option, outputNaturalLanguage);
 
 	const system = { role: 'system', content: prompt };
 	console.info('system : ', system);

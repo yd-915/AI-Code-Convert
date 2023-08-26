@@ -3,6 +3,7 @@ export interface TranslateBody {
   outputLanguage: string;
   inputCode: string;
   option: string;
+  outputNaturalLanguage: string;
 }
 
 export interface TranslateResponse {
