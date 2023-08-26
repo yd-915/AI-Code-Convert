@@ -6,7 +6,7 @@ import Head from 'next/head';
 import { useEffect, useState } from 'react';
 
 export default function Home() {
-  const option = 'convert';
+  const [option, setOption] = useState('');
   const [title, setTitle] = useState('Code Converter');
   const [subtitle, setSubtitle] = useState('Convert Code or Natural Language To Programming Language Code');
   const [inputLanguage, setInputLanguage] = useState<string>('Natural Language');
@@ -14,9 +14,10 @@ export default function Home() {
   const [inputCode, setInputCode] = useState<string>('');
   const [outputCode, setOutputCode] = useState<string>('');
   const [loading, setLoading] = useState<boolean>(false);
+  const [userAsk, setUserAsk] = useState<boolean>(false);
   const [hasTranslated, setHasTranslated] = useState<boolean>(false);
 
-  const handleTranslate = async () => {
+  const handleTranslate = async (userAsk: boolean, option: string) => {
 	window.scrollTo(0, 180);
     const maxCodeLength = 30000;
 
@@ -41,7 +42,6 @@ export default function Home() {
     setOutputCode('');
 
     const controller = new AbortController();
-
     const body: TranslateBody = {
       inputLanguage,
       outputLanguage,
@@ -106,7 +106,7 @@ export default function Home() {
 	      (language) => language.value === outputLanguage
 	  );
       if (hasTranslated && isOutputLanguageInArray) {
-        handleTranslate();
+        handleTranslate(userAsk, option);
       }
   }, [outputLanguage]);
 
@@ -233,31 +233,32 @@ export default function Home() {
             )}
           </div>
         </div>
-		
 		<div className="mt-4 text-center text-sm">
-		  {loading
-		    ? '...'// Generating
-		    : hasTranslated
-		    ? 'Output copied to clipboard!'
-		    : 'Enter some code and click "Generate"'}
+		  
 		</div>
-		
 		<div className="mt-4 flex items-center space-x-2 flex-wrap justify-center">
 		  <button
 		    className="w-[140px] cursor-pointer rounded-full bg-blue-500 px-4 py-2 font-bold hover:bg-blue-600 active:bg-blue-700"
-		    onClick={() => handleTranslate()}
+		    onClick={() => {
+				setOption('convert');
+				setUserAsk(false);
+				handleTranslate(false, 'convert');
+			}}
 		    disabled={loading}
 		  >
-		    {loading ? 'Generating...' : 'Generate'}
+		    {loading && !userAsk ? 'Generating...' : 'Generate'}
 		  </button>
-		  <a href="https://ko-fi.com/audi_guzz" className="px-2 bg-[#e06637] cursor-pointer rounded-full py-1">
-		  	<div className="flex justify-center items-center">
-		  		<p className="ml-2 mr-2 text-white font-bold">Buy me a Coffee</p>
-		  		<svg width="30" height="30" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
-		  		    <path fill="#ffffff" d="M208 80H32a8 8 0 0 0-8 8v48a96.3 96.3 0 0 0 32.54 72H32a8 8 0 0 0 0 16h176a8 8 0 0 0 0-16h-24.54a96.59 96.59 0 0 0 27-40.09A40 40 0 0 0 248 128v-8a40 40 0 0 0-40-40Zm24 48a24 24 0 0 1-17.2 23a95.78 95.78 0 0 0 1.2-15V97.38A24 24 0 0 1 232 120ZM112 56V24a8 8 0 0 1 16 0v32a8 8 0 0 1-16 0Zm32 0V24a8 8 0 0 1 16 0v32a8 8 0 0 1-16 0Zm-64 0V24a8 8 0 0 1 16 0v32a8 8 0 0 1-16 0Z"/>
-		  		</svg>
-		  	</div>
-		  </a>
+		  <button
+		    className="w-[140px] cursor-pointer rounded-full bg-gradient-to-r from-amber-200 via-orange-600 to-red-400 px-4 py-2 font-bold"
+		    onClick={() => {
+				setOption('ask');
+				setUserAsk(true);
+				handleTranslate(true, 'ask');
+			}}
+		    disabled={loading}
+		  >
+		    {loading && userAsk ? 'Generating...' : 'Ask'}
+		  </button>
 		</div>
 	  </div>
 	  <div className="flex items-center flex-wrap space-x-2 justify-center text-black">
@@ -278,9 +279,9 @@ export default function Home() {
 		<div id="contact" className="text-white pt-4">
 		  <div className="text-2xl">Contact</div>
 		  <div className="flex justify-start items-center mb-2 space-y-2 mt-2 flex-wrap">
-			<a href="https://ko-fi.com/audi_guzz" className="px-2 bg-[#e06637] cursor-pointer rounded-full mr-4 py-1">
+			<a href="https://ko-fi.com/audi_guzz" className="px-2 bg-[#f6db4b] cursor-pointer rounded-full mr-4 py-1">
 				<div className="flex justify-center items-center">
-					<p className="ml-2 mr-2 text-white font-bold">Buy me a Coffee</p>
+					<p className="ml-2 mr-2 text-black font-bold">Buy me a Coffee</p>
 					<svg width="30" height="30" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
 					    <path fill="#ffffff" d="M208 80H32a8 8 0 0 0-8 8v48a96.3 96.3 0 0 0 32.54 72H32a8 8 0 0 0 0 16h176a8 8 0 0 0 0-16h-24.54a96.59 96.59 0 0 0 27-40.09A40 40 0 0 0 248 128v-8a40 40 0 0 0-40-40Zm24 48a24 24 0 0 1-17.2 23a95.78 95.78 0 0 0 1.2-15V97.38A24 24 0 0 1 232 120ZM112 56V24a8 8 0 0 1 16 0v32a8 8 0 0 1-16 0Zm32 0V24a8 8 0 0 1 16 0v32a8 8 0 0 1-16 0Zm-64 0V24a8 8 0 0 1 16 0v32a8 8 0 0 1-16 0Z"/>
 					</svg>
