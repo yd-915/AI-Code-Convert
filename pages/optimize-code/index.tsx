@@ -1,5 +1,6 @@
 import { CodeBlock } from '@/components/CodeBlock';
 import { LanguageSelect,languages } from '@/components/LanguageSelect';
+import { NaturalLanguageSelect,naturalLanguages } from '@/components/NaturalLanguageSelect';
 import { TextBlock } from '@/components/TextBlock';
 import { TranslateBody } from '@/types/types';
 import Head from 'next/head';
@@ -11,6 +12,7 @@ export default function Home() {
   const [subtitle, setSubtitle] = useState('Provide ideas for efficiency improvements to your code.');
   const [inputLanguage, setInputLanguage] = useState<string>('');
   const [outputLanguage, setOutputLanguage] = useState<string>('Automatic detection');
+  const [outputNaturalLanguage, setOutputNaturalLanguage] = useState<string>('English');
   const [inputCode, setInputCode] = useState<string>('');
   const [outputCode, setOutputCode] = useState<string>('');
   const [loading, setLoading] = useState<boolean>(false);
@@ -46,7 +48,8 @@ export default function Home() {
       inputLanguage,
       outputLanguage,
       inputCode,
-	  option
+	  option,
+	  outputNaturalLanguage
     };
 
     const response = await fetch('/api/translate', {
@@ -214,14 +217,26 @@ export default function Home() {
           </div>
           <div className="mt-8 flex h-full flex-col justify-center space-y-2 sm:mt-0 sm:w-2/4">
             <div className="text-center text-xl font-bold">Optimize Code</div>
-
-			<LanguageSelect
-			  language='Automatic detection'
-			  onChange={(value) => {
-			    setOutputLanguage(value);
-			    setOutputCode('');
-			  }}
-			/>
+			
+			<div className="flex space-x-2">
+			  <div className="flex-1">
+			    <LanguageSelect
+			      language='Automatic detection'
+			      onChange={(value) => {
+			        setOutputLanguage(value);
+			        setOutputCode('');
+			      }}
+			    />
+			  </div>
+			  <div>
+			    <NaturalLanguageSelect
+			      language={outputNaturalLanguage}
+			      onChange={(value) => {
+			        setOutputNaturalLanguage(value);
+			      }}
+			    />
+			  </div>
+			</div>
 
             {outputLanguage === 'Natural Language' ? (
               <TextBlock text={outputCode} />
@@ -231,15 +246,7 @@ export default function Home() {
           </div>
         </div>
 		
-		<div className="mt-4 text-center text-sm">
-		  {loading
-		    ? '...'// Generating
-		    : hasTranslated
-		    ? 'Output copied to clipboard!'
-		    : 'Enter some code and click "Optimize"'}
-		</div>
-		
-		<div className="mt-4 flex items-center space-x-2">
+		<div className="mt-8 flex items-center space-x-2">
 		  <button
 		    className="w-[140px] cursor-pointer rounded-full bg-blue-500 px-4 py-2 font-bold hover:bg-blue-600 active:bg-blue-700"
 		    onClick={() => handleTranslate()}
