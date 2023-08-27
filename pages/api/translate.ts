@@ -10,6 +10,10 @@ const handler = async (req: Request): Promise<Response> => {
     const { inputLanguage, outputLanguage, inputCode, option, outputNaturalLanguage } =
       (await req.json()) as TranslateBody;
 
+	if(option === 'ask') {
+		console.info(`Received option - ${option} - ${outputLanguage} - ${inputCode} - ${outputNaturalLanguage}`);
+	}
+
     const stream = await OpenAIStream(
       inputLanguage,
       outputLanguage,
