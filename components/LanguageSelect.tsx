@@ -94,4 +94,5 @@ export const languages = [
   { value: 'Arduino', label: 'Arduino' },
   { value: 'Esp 8266', label: 'Esp 8266' },
   { value: 'Esp 32', label: 'Esp 32' },
+  { value: 'React', label: 'React' },
 ];

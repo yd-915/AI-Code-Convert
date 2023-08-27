@@ -34,7 +34,7 @@ const createPrompt = (
   } else if (option === 'ask') {
 	  return endent`
 	  You are an expert programmer in all programming languages. Especially good at "${outputLanguage}" language code.
-	  give you a question，and you provide me with Code Review、Problem Solving、Learning Advice、Design Guidance、Error Debugging and so on only related with program；
+	  give you a question，and you provide me with Code Review、Problem Solving、Learning Advice、Design Guidance、Error Debugging、Solution and so on only related with program；
 	  You only reply to the content related to the program, you do not need to reply to other topics；
 	  
 	  Example Answer the question in JavaScript program:
