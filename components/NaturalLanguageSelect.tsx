@@ -43,4 +43,5 @@ export const naturalLanguages = [
   { value: 'Русский', label: 'Русский' },
   { value: '日本語', label: '日本語' },
   { value: '한국인', label: '한국인' },
+  { value: 'Italiano', label: 'Italiano' },
 ];
