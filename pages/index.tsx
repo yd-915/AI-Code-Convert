@@ -16,8 +16,18 @@ export default function Home() {
   const [inputCode, setInputCode] = useState<string>('');
   const [outputCode, setOutputCode] = useState<string>('');
   const [loading, setLoading] = useState<boolean>(false);
+  const [userConvert, setUserConvert] = useState<boolean>(false);
   const [userAsk, setUserAsk] = useState<boolean>(false);
+  const [userOptimize, setUserOptimize] = useState<boolean>(false);
+  const [userExplain, setUserExplain] = useState<boolean>(false);
   const [hasTranslated, setHasTranslated] = useState<boolean>(false);
+
+  const resetOtherOption = () => {
+	  setUserConvert(false);
+	  setUserAsk(false);
+	  setUserOptimize(false);
+	  setUserExplain(false);
+  };
 
   const handleTranslate = async (userAsk: boolean, option: string) => {
 	window.scrollTo(0, 180);
@@ -93,6 +103,7 @@ export default function Home() {
     setLoading(false);
     setHasTranslated(true);
     copyToClipboard(code);
+	resetOtherOption();
   };
 
   const copyToClipboard = (text: string) => {
@@ -172,8 +183,6 @@ export default function Home() {
 	          </h1>
 	      </div>
 	      <div className="flex items-center hidden md:block lg:block">
-		      <a href="/optimize-code" className="bg-gradient-to-r from-amber-400 via-orange-600 to-red-400 text font-bold pb-1 bg-clip-text text-transparent mr-1 md:mr-4 lg:mr-4">Code Optimize</a>
-		      <a href="/explain-code" className="bg-gradient-to-r from-yellow-300 via-orange-400 to-pink-500 text font-bold pb-1 bg-clip-text text-transparent mr-1 md:mr-4 lg:mr-4">Code Explain</a>
 			  <a href="https://blog.aicodeconvert.com" className="text-blue-500 text font-semibold mr-1 md:mr-4 lg:mr-4">Blog</a>
 	          <a href="#about" className="text-white text font-semibold mr-1 md:mr-4 lg:mr-4">About Us</a>
 	          <a href="#contact" className="text-white text font-semibold mr-1 md:mr-4 lg:mr-4">Contact</a>
@@ -253,18 +262,18 @@ export default function Home() {
 		</div>
 		<div className="mt-4 flex items-center space-x-2 flex-wrap justify-center">
 		  <button
-		    className="w-[140px] cursor-pointer rounded-full bg-blue-500 px-4 py-2 font-bold hover:bg-blue-600 active:bg-blue-700"
+		    className="w-[110px] cursor-pointer rounded-full bg-[#4c81ec] px-4 py-2 font-bold hover:bg-blue-600 active:bg-blue-700"
 		    onClick={() => {
 				setOption('convert');
-				setUserAsk(false);
+				setUserConvert(true);
 				handleTranslate(false, 'convert');
 			}}
 		    disabled={loading}
 		  >
-		    {loading && !userAsk ? 'Generating...' : 'Generate'}
+		    {loading && userConvert ? 'Loading' : 'Generate'}
 		  </button>
 		  <button
-		    className="w-[140px] cursor-pointer rounded-full bg-gradient-to-r from-amber-200 via-orange-600 to-red-400 px-4 py-2 font-bold"
+		    className="w-[110px] cursor-pointer rounded-full bg-[#6269e7] hover:bg-blue-600 px-4 py-2 font-bold"
 		    onClick={() => {
 				setOption('ask');
 				setUserAsk(true);
@@ -272,12 +281,31 @@ export default function Home() {
 			}}
 		    disabled={loading}
 		  >
-		    {loading && userAsk ? 'Generating...' : 'Ask'}
+		    {loading && userAsk ? 'Loading' : 'Ask'}
+		  </button>
+		  <button
+		    className="w-[110px] cursor-pointer rounded-full bg-[#8262ec] hover:bg-[#9b5eed] to-red-400 px-4 py-2 font-bold"
+		    onClick={() => {
+				setOption('optimize');
+				setUserOptimize(true);
+				handleTranslate(true, 'optimize');
+			}}
+		    disabled={loading}
+		  >
+		    {loading && userOptimize ? 'Loading' : 'Optimize'}
+		  </button>
+		  <button
+		    className="w-[110px] cursor-pointer rounded-full bg-[#9b5eed] hover:bg-[#c856e5] px-4 py-2 font-bold"
+		    onClick={() => {
+				setOption('explain');
+				setUserExplain(true);
+				handleTranslate(true, 'explain');
+			}}
+		    disabled={loading}
+		  >
+		    {loading && userExplain ? 'Loading' : 'Explain'}
 		  </button>
 		</div>
-	  </div>
-	  <div className="flex items-center flex-wrap space-x-2 justify-center text-black">
-		
 	  </div>
 	  <div className="pl-6 pr-6 mt-1 md:pl-20 md:pr-20 bg-[#0E1117]">
 		<div id="about" className="text-white">
