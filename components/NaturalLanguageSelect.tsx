@@ -38,10 +38,6 @@ export const naturalLanguages = [
   { value: 'فارسی', label: 'فارسی' },
   { value: 'Deutsch', label: 'Deutsch' },
   { value: 'Français', label: 'Français' },
-  { value: '简体中文', label: '简体中文' },
-  { value: '繁體中文', label: '繁體中文' },
   { value: 'Русский', label: 'Русский' },
-  { value: '日本語', label: '日本語' },
-  { value: '한국인', label: '한국인' },
   { value: 'Italiano', label: 'Italiano' },
 ];
