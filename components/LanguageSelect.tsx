@@ -6,21 +6,17 @@ interface Props {
 }
 
 export const LanguageSelect: FC<Props> = ({ language, onChange }) => {
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     onChange(e.target.value);
   };
 
   return (
     <div className="flex justify-center items-center">
-	 <span className="mr-2 w-1/10">Select :</span>
-      <input
-        type="text"
-        list="languages"
-        className="flex-1 rounded-md bg-[#1F2937] px-4 py-2 text-neutral-200"
+      <select
+        className="flex-1 rounded-md bg-[#1F2937] px-4 py-2 text-neutral-200 focus:outline-none focus:ring-2 focus:ring-[#1F2937]"
         value={language}
         onChange={handleChange}
-      />
-      <datalist id="languages">
+      >
         {languages
           .sort((a, b) => a.label.localeCompare(b.label))
           .map((language) => (
@@ -28,12 +24,13 @@ export const LanguageSelect: FC<Props> = ({ language, onChange }) => {
               {language.label}
             </option>
           ))}
-      </datalist>
+      </select>
     </div>
   );
 };
 
 export const languages = [
+  { value: '-- Select --', label: '-- Select --' },
   { value: 'Automatic detection', label: 'Automatic detection' },
   { value: 'Pascal', label: 'Pascal' },
   { value: 'JavaScript', label: 'JavaScript' },
@@ -95,4 +92,9 @@ export const languages = [
   { value: 'Esp 8266', label: 'Esp 8266' },
   { value: 'Esp 32', label: 'Esp 32' },
   { value: 'React', label: 'React' },
+  { value: 'HTML JS CSS', label: 'HTML JS CSS' },
+  { value: 'Tailwind', label: 'Tailwind' },
+  { value: 'Git', label: 'Git' },
+  { value: 'SVN', label: 'SVN' },
+  { value: 'Linux', label: 'Linux' },
 ];

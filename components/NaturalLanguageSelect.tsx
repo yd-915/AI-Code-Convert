@@ -40,4 +40,5 @@ export const naturalLanguages = [
   { value: 'Français', label: 'Français' },
   { value: 'Русский', label: 'Русский' },
   { value: 'Italiano', label: 'Italiano' },
+  { value: 'Español', label: 'Español' },
 ];

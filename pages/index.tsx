@@ -11,7 +11,7 @@ export default function Home() {
   const [title, setTitle] = useState('Code Converter');
   const [subtitle, setSubtitle] = useState('Convert Code or Natural Language To Programming Language Code');
   const [inputLanguage, setInputLanguage] = useState<string>('Natural Language');
-  const [outputLanguage, setOutputLanguage] = useState<string>('Python');
+  const [outputLanguage, setOutputLanguage] = useState<string>('-- Select --');
   const [outputNaturalLanguage, setOutputNaturalLanguage] = useState<string>('English');
   const [inputCode, setInputCode] = useState<string>('');
   const [outputCode, setOutputCode] = useState<string>('');
@@ -30,8 +30,13 @@ export default function Home() {
   };
 
   const handleTranslate = async (userAsk: boolean, option: string) => {
-	window.scrollTo(0, 180);
+	// window.scrollTo(0, 180);
     const maxCodeLength = 30000;
+	
+	if(outputLanguage === '-- Select --') {
+	   alert('Please select program languages.');
+	   return;
+	}
 
     if (inputLanguage === outputLanguage) {
       alert('Please select different languages.');
@@ -193,7 +198,7 @@ export default function Home() {
 	    <h3 className="mt-2 md:mt-5 text-xl text-center leading-2">{subtitle}</h3>
 	  </div>
       <div className="flex h-full flex-col items-center bg-[#0E1117] px-4 pb-8 text-neutral-200 sm:px-10">
-        <div className="mt-6 flex w-full max-w-[1260px] flex-col justify-between sm:flex-row sm:space-x-2">
+        <div className="mt-6 flex w-full max-w-[1600px] flex-col justify-between sm:flex-row sm:space-x-2">
           <div className="h-100 flex flex-col justify-center space-y-2 sm:w-2/4">
             <div className="text-center text-xl font-bold">From</div>
 
