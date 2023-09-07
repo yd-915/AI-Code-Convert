@@ -121,12 +121,12 @@ export default function Home() {
   };
 
   useEffect(() => {
-	  const isOutputLanguageInArray = languages.some(
-	      (language) => language.value === outputLanguage
-	  );
-      if (hasTranslated && isOutputLanguageInArray) {
-        handleTranslate(userAsk, option);
-      }
+	  // const isOutputLanguageInArray = languages.some(
+	  //     (language) => language.value === outputLanguage
+	  // );
+      // if (hasTranslated && isOutputLanguageInArray) {
+      //   handleTranslate(userAsk, option);
+      // }
   }, [outputLanguage]);
 
   return (
