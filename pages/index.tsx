@@ -9,7 +9,7 @@ import { useEffect, useState } from 'react';
 export default function Home() {
   const [option, setOption] = useState('');
   const [title, setTitle] = useState('Code Converter');
-  const [subtitle, setSubtitle] = useState('Convert Code or Natural Language To Programming Language Code');
+  const [subtitle, setSubtitle] = useState('Code Converter AI | Convert Code or Natural Language To Programming Language Code');
   const [inputLanguage, setInputLanguage] = useState<string>('Natural Language');
   const [outputLanguage, setOutputLanguage] = useState<string>('-- Select --');
   const [outputNaturalLanguage, setOutputNaturalLanguage] = useState<string>('English');
@@ -316,7 +316,7 @@ export default function Home() {
 		<div id="about" className="text-white">
 		  <div className="text-2xl">About Us</div>
 		  <ul className="mt-4 list-disc list-inside">
-		    <li className="mb-2">AICodeConvert(AI Code Convert) simplifies coding with AI by integrating AI Code Translator and AI Code Generator. </li>
+		    <li className="mb-2">AICodeConvert(AI Code Converter | Code Converter AI) simplifies coding with AI by integrating AI Code Translator and AI Code Generator. </li>
 		    <li className="mb-2">It efficiently translates existing code into different programming languages (AI Code Translator) and automatically generates high-quality code snippets and templates (AI Code Generator). </li>
 			<li className="mb-2">This powerful combination makes AICodeConvert an indispensable tool for developers, 
 					providing a convenient and intelligent coding experience.</li>
