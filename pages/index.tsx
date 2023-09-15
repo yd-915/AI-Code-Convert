@@ -8,7 +8,7 @@ import { useEffect, useState } from 'react';
 
 export default function Home() {
   const [option, setOption] = useState('');
-  const [title, setTitle] = useState('Code Converter');
+  const [title, setTitle] = useState('Code Converter(Translator)');
   const [subtitle, setSubtitle] = useState('Code Converter AI | Convert Code or Natural Language To Programming Language Code');
   const [inputLanguage, setInputLanguage] = useState<string>('Natural Language');
   const [outputLanguage, setOutputLanguage] = useState<string>('-- Select --');
@@ -340,6 +340,15 @@ export default function Home() {
 		  		    <path fill="#ffffff" d="M459.37 151.716c.325 4.548.325 9.097.325 13.645c0 138.72-105.583 298.558-298.558 298.558c-59.452 0-114.68-17.219-161.137-47.106c8.447.974 16.568 1.299 25.34 1.299c49.055 0 94.213-16.568 130.274-44.832c-46.132-.975-84.792-31.188-98.112-72.772c6.498.974 12.995 1.624 19.818 1.624c9.421 0 18.843-1.3 27.614-3.573c-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319c-28.264-18.843-46.781-51.005-46.781-87.391c0-19.492 5.197-37.36 14.294-52.954c51.655 63.675 129.3 105.258 216.365 109.807c-1.624-7.797-2.599-15.918-2.599-24.04c0-57.828 46.782-104.934 104.934-104.934c30.213 0 57.502 12.67 76.67 33.137c23.715-4.548 46.456-13.32 66.599-25.34c-7.798 24.366-24.366 44.833-46.132 57.827c21.117-2.273 41.584-8.122 60.426-16.243c-14.292 20.791-32.161 39.308-52.628 54.253z"/>
 		  		</svg>
 		  	</a>
+			<a href="https://aicomicfactory.com/" className="text-gray cursor-pointer rounded-full mr-4">
+				<div 
+					className="items-center flex text-sm font-medium justify-center py-2 px-4 border rounded-full">
+					<svg width="26" height="26" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+					    <path fill="#eab308" fill-rule="evenodd" d="m14.489 8.388l-.001.006a.115.115 0 0 1-.027.028a.428.428 0 0 1-.264.082h-3.186c-3.118 0-4.68 3.77-2.476 5.974a6.5 6.5 0 1 1 5.953-6.09Zm-.292 1.616c.913 0 1.736-.618 1.79-1.529a8 8 0 1 0-7.032 7.468c1.243-.147 1.527-1.639.641-2.525c-1.26-1.26-.367-3.414 1.415-3.414h3.186ZM10 5a1 1 0 1 1-2 0a1 1 0 0 1 2 0ZM6 7a1 1 0 1 0 0-2a1 1 0 0 0 0 2Zm0 2a1 1 0 1 1-2 0a1 1 0 0 1 2 0Z" clip-rule="evenodd"/>
+					</svg>
+					<p className="ml-2 text-white">AI Comic Factory</p>
+				</div>
+			</a>
 			<a href="https://base64.kr/en" className="text-gray cursor-pointer rounded-full mr-4">
 				<div 
 					className="items-center flex text-sm font-medium justify-center py-2 px-4 border rounded-full">
