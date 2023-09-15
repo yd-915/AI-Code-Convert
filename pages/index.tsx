@@ -8,7 +8,7 @@ import { useEffect, useState } from 'react';
 
 export default function Home() {
   const [option, setOption] = useState('');
-  const [title, setTitle] = useState('Code Converter(Translator)');
+  const [title, setTitle] = useState('Code Converter（Generator | Translator）');
   const [subtitle, setSubtitle] = useState('Code Converter AI | Convert Code or Natural Language To Programming Language Code');
   const [inputLanguage, setInputLanguage] = useState<string>('Natural Language');
   const [outputLanguage, setOutputLanguage] = useState<string>('-- Select --');
