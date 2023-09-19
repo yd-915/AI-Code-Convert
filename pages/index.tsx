@@ -340,42 +340,17 @@ export default function Home() {
 		  		    <path fill="#ffffff" d="M459.37 151.716c.325 4.548.325 9.097.325 13.645c0 138.72-105.583 298.558-298.558 298.558c-59.452 0-114.68-17.219-161.137-47.106c8.447.974 16.568 1.299 25.34 1.299c49.055 0 94.213-16.568 130.274-44.832c-46.132-.975-84.792-31.188-98.112-72.772c6.498.974 12.995 1.624 19.818 1.624c9.421 0 18.843-1.3 27.614-3.573c-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319c-28.264-18.843-46.781-51.005-46.781-87.391c0-19.492 5.197-37.36 14.294-52.954c51.655 63.675 129.3 105.258 216.365 109.807c-1.624-7.797-2.599-15.918-2.599-24.04c0-57.828 46.782-104.934 104.934-104.934c30.213 0 57.502 12.67 76.67 33.137c23.715-4.548 46.456-13.32 66.599-25.34c-7.798 24.366-24.366 44.833-46.132 57.827c21.117-2.273 41.584-8.122 60.426-16.243c-14.292 20.791-32.161 39.308-52.628 54.253z"/>
 		  		</svg>
 		  	</a>
-			<a href="https://aicomicfactory.com/" className="text-gray cursor-pointer rounded-full mr-4">
-				<div 
-					className="items-center flex text-sm font-medium justify-center py-2 px-4 border rounded-full">
-					<svg width="26" height="26" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
-					    <path fill="#eab308" fill-rule="evenodd" d="m14.489 8.388l-.001.006a.115.115 0 0 1-.027.028a.428.428 0 0 1-.264.082h-3.186c-3.118 0-4.68 3.77-2.476 5.974a6.5 6.5 0 1 1 5.953-6.09Zm-.292 1.616c.913 0 1.736-.618 1.79-1.529a8 8 0 1 0-7.032 7.468c1.243-.147 1.527-1.639.641-2.525c-1.26-1.26-.367-3.414 1.415-3.414h3.186ZM10 5a1 1 0 1 1-2 0a1 1 0 0 1 2 0ZM6 7a1 1 0 1 0 0-2a1 1 0 0 0 0 2Zm0 2a1 1 0 1 1-2 0a1 1 0 0 1 2 0Z" clip-rule="evenodd"/>
-					</svg>
-					<p className="ml-2 text-white">AI Comic Factory</p>
-				</div>
-			</a>
-			<a href="https://base64.kr/en" className="text-gray cursor-pointer rounded-full mr-4">
-				<div 
-					className="items-center flex text-sm font-medium justify-center py-2 px-4 border rounded-full">
-					<svg width="20" height="20" viewBox="0 0 15 15" xmlns="http://www.w3.org/2000/svg">
-						<path fill="#ffffff" fillRule="evenodd" d="m6.007 13.418l2-12l.986.164l-2 12l-.986-.164Zm-.8-8.918l-3 3l3 3l-.707.707L.793 7.5L4.5 3.793l.707.707Zm5.293-.707L14.207 7.5L10.5 11.207l-.707-.707l3-3l-3-3l.707-.707Z" clipRule="evenodd"/>
-					</svg>
-					<p className="ml-2 text-white">Base64.kr</p>
-				</div>
-			</a>
-			<a href="https://ailandingpagegenerator.com" className="text-gray cursor-pointer rounded-full mr-4">
-				<div 
-					className="items-center flex text-sm font-medium justify-center py-2 px-4 border rounded-full">
-					<svg width="20" height="20" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
-					    <path fill="#f43f5e" d="M96 63.38C142.49 27.25 201.55 7.31 260.51 8.81c29.58-.38 59.11 5.37 86.91 15.33c-24.13-4.63-49-6.34-73.38-2.45C231.17 27 191 48.84 162.21 80.87c5.67-1 10.78-3.67 16-5.86c18.14-7.87 37.49-13.26 57.23-14.83c19.74-2.13 39.64-.43 59.28 1.92c-14.42 2.79-29.12 4.57-43 9.59c-34.43 11.07-65.27 33.16-86.3 62.63c-13.8 19.71-23.63 42.86-24.67 67.13c-.35 16.49 5.22 34.81 19.83 44a53.27 53.27 0 0 0 37.52 6.74c15.45-2.46 30.07-8.64 43.6-16.33c11.52-6.82 22.67-14.55 32-24.25c3.79-3.22 2.53-8.45 2.62-12.79c-2.12-.34-4.38-1.11-6.3.3a203 203 0 0 1-35.82 15.37c-20 6.17-42.16 8.46-62.1.78c12.79 1.73 26.06.31 37.74-5.44c20.23-9.72 36.81-25.2 54.44-38.77a526.57 526.57 0 0 1 88.9-55.31c25.71-12 52.94-22.78 81.57-24.12c-15.63 13.72-32.15 26.52-46.78 41.38c-14.51 14-27.46 29.5-40.11 45.18c-3.52 4.6-8.95 6.94-13.58 10.16a150.7 150.7 0 0 0-51.89 60.1c-9.33 19.68-14.5 41.85-11.77 63.65c1.94 13.69 8.71 27.59 20.9 34.91c12.9 8 29.05 8.07 43.48 5.1c32.8-7.45 61.43-28.89 81-55.84c20.44-27.52 30.52-62.2 29.16-96.35c-.52-7.5-1.57-15-1.66-22.49c8 19.48 14.82 39.71 16.65 60.83c2 14.28.75 28.76-1.62 42.9c-1.91 11-5.67 21.51-7.78 32.43a165 165 0 0 0 39.34-81.07a183.64 183.64 0 0 0-14.21-104.64c20.78 32 32.34 69.58 35.71 107.48c.49 12.73.49 25.51 0 38.23A243.21 243.21 0 0 1 482 371.34c-26.12 47.34-68 85.63-117.19 108c-78.29 36.23-174.68 31.32-248-14.68A248.34 248.34 0 0 1 25.36 366A238.34 238.34 0 0 1 0 273.08v-31.34C3.93 172 40.87 105.82 96 63.38m222 80.33a79.13 79.13 0 0 0 16-4.48c5-1.77 9.24-5.94 10.32-11.22c-8.96 4.99-17.98 9.92-26.32 15.7z"/>
-					</svg>
-					<p className="ml-2 text-white">AILandingPageGenerator.com</p>
-				</div>
-			</a>
 		  </div>
-		  
 		  <div>
 			Mail: enqueueit@gmail.com
 		  </div>
 		</div>
 	  </div>
-	  <div className="bg-[#0E1117] pt-4 pb-2 text-center text-white text-sm pt-10">
+	  <div className="bg-[#0E1117] text-center text-white text-sm pt-10">
 	  	AI Code Convert Copyright © <span className="text-blue-500">aicodeconvert.com</span>
+	  </div>
+	  <div className="bg-[#0E1117] pt-1 pb-1 text-center text-white text-sm">
+		<a href="https://ailandingpagegenerator.com">AI Landing Page Generator</a> | <a href="https://base64.kr">Base64.kr</a> | <a href="https://aicomicfactory.com">AI Comic Factory</a> 
 	  </div>
     </>
   );
