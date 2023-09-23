@@ -8,7 +8,7 @@ import { useEffect, useState } from 'react';
 
 export default function Home() {
   const [option, setOption] = useState('');
-  const [title, setTitle] = useState('Code Converter（Generator | Translator）');
+  const [title, setTitle] = useState('Code Converter(Generator | Translator)');
   const [subtitle, setSubtitle] = useState('Code Converter AI | Convert Code or Natural Language To Programming Language Code');
   const [inputLanguage, setInputLanguage] = useState<string>('Natural Language');
   const [outputLanguage, setOutputLanguage] = useState<string>('-- Select --');
@@ -121,12 +121,7 @@ export default function Home() {
   };
 
   useEffect(() => {
-	  // const isOutputLanguageInArray = languages.some(
-	  //     (language) => language.value === outputLanguage
-	  // );
-      // if (hasTranslated && isOutputLanguageInArray) {
-      //   handleTranslate(userAsk, option);
-      // }
+	  
   }, [outputLanguage]);
 
   return (
@@ -138,45 +133,6 @@ export default function Home() {
 		<meta name="keywords" content="AI Code Converter,Code Convert AI, Code Generate AI,Code Translator,AICodeHelper,free,online" />
 		<link rel="canonical" href="https://aicodeconvert.com" />
         <link rel="icon" href="/code.png" />
-		{/* Add the Google Analytics script tags here */}
-		<script async src="https://www.googletagmanager.com/gtag/js?id=G-Q03Q3VY7RV"></script>
-		<script
-		  dangerouslySetInnerHTML={{
-			__html: `
-			  window.dataLayer = window.dataLayer || [];
-			  function gtag(){dataLayer.push(arguments);}
-			  gtag('js', new Date());
-			  gtag('config', 'G-Q03Q3VY7RV');
-			`,
-		  }}
-		/>
-		{/* baidu analytics */}
-		<script src="/baidu-analytics.js" />
-		<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3672455877501055"
-		     crossOrigin="anonymous"></script>
-			 
-		{/* Additional scripts you want to add */}
-		<script async src="https://fundingchoicesmessages.google.com/i/pub-3672455877501055?ers=1" nonce="5dJWzABNlyJqOhVUEimMVQ"></script>
-		<script nonce="5dJWzABNlyJqOhVUEimMVQ">
-		    {`
-		      (function() {
-		        function signalGooglefcPresent() {
-		          if (!window.frames['googlefcPresent']) {
-		            if (document.body) {
-		              const iframe = document.createElement('iframe');
-		              iframe.style = 'width: 0; height: 0; border: none; z-index: -1000; left: -1000px; top: -1000px;';
-		              iframe.style.display = 'none';
-		              iframe.name = 'googlefcPresent';
-		              document.body.appendChild(iframe);
-		            } else {
-		              setTimeout(signalGooglefcPresent, 0);
-		            }
-		          }
-		        }
-		        signalGooglefcPresent();
-		      })();
-		    `}
-		</script>
       </Head>
 	  <div className="h-100 flex justify-between items-center pl-2 pr-2 md:pl-10 md:pr-10 pt-2 bg-[#0E1117]">
 	      <div className="flex items-center">
@@ -262,10 +218,7 @@ export default function Home() {
             )}
           </div>
         </div>
-		<div className="mt-4 text-center text-sm">
-		  
-		</div>
-		<div className="mt-4 flex items-center space-x-2 flex-wrap justify-center">
+		<div className="mt-8 flex items-center space-x-2 flex-wrap justify-center">
 		  <button
 		    className="w-[110px] cursor-pointer rounded-full bg-[#4c81ec] px-4 py-2 font-bold hover:bg-blue-600 active:bg-blue-700"
 		    onClick={() => {
@@ -310,7 +263,11 @@ export default function Home() {
 		  >
 		    {loading && userExplain ? 'Loading' : 'Explain'}
 		  </button>
-		  <a href="https://www.producthunt.com/products/aicodeconvert#aicodeconvert" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/follow.svg?product_id=540327&theme=light" alt="AICodeConvert - Generate&#0032;Code&#0032;or&#0032;Natural&#0032;Language&#0032;To&#0032;Another&#0032;Language&#0032;Code | Product Hunt" width="250" height="54" /></a>
+		  <a href="https://www.producthunt.com/products/aicodeconvert#aicodeconvert" target="_blank">
+		  	<img src="https://api.producthunt.com/widgets/embed-image/v1/follow.svg?product_id=540327&theme=light" 
+		  		alt="AICodeConvert - Generate&#0032;Code&#0032;or&#0032;Natural&#0032;Language&#0032;To&#0032;Another&#0032;Language&#0032;Code | Product Hunt" 
+		  		width="200" height="45" />
+		  </a>
 		</div>
 	  </div>
 	  <div className="pl-6 pr-6 mt-1 md:pl-20 md:pr-20 bg-[#0E1117]">
@@ -341,7 +298,11 @@ export default function Home() {
 		  		    <path fill="#ffffff" d="M459.37 151.716c.325 4.548.325 9.097.325 13.645c0 138.72-105.583 298.558-298.558 298.558c-59.452 0-114.68-17.219-161.137-47.106c8.447.974 16.568 1.299 25.34 1.299c49.055 0 94.213-16.568 130.274-44.832c-46.132-.975-84.792-31.188-98.112-72.772c6.498.974 12.995 1.624 19.818 1.624c9.421 0 18.843-1.3 27.614-3.573c-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319c-28.264-18.843-46.781-51.005-46.781-87.391c0-19.492 5.197-37.36 14.294-52.954c51.655 63.675 129.3 105.258 216.365 109.807c-1.624-7.797-2.599-15.918-2.599-24.04c0-57.828 46.782-104.934 104.934-104.934c30.213 0 57.502 12.67 76.67 33.137c23.715-4.548 46.456-13.32 66.599-25.34c-7.798 24.366-24.366 44.833-46.132 57.827c21.117-2.273 41.584-8.122 60.426-16.243c-14.292 20.791-32.161 39.308-52.628 54.253z"/>
 		  		</svg>
 		  	</a>
-			<a href="https://www.producthunt.com/products/aicodeconvert#aicodeconvert" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/follow.svg?product_id=540327&theme=light" alt="AICodeConvert - Generate&#0032;Code&#0032;or&#0032;Natural&#0032;Language&#0032;To&#0032;Another&#0032;Language&#0032;Code | Product Hunt" width="250" height="54" /></a>
+			<a href="https://www.producthunt.com/products/aicodeconvert#aicodeconvert" target="_blank">
+				<img src="https://api.producthunt.com/widgets/embed-image/v1/follow.svg?product_id=540327&theme=light" 
+					alt="AICodeConvert - Generate&#0032;Code&#0032;or&#0032;Natural&#0032;Language&#0032;To&#0032;Another&#0032;Language&#0032;Code | Product Hunt" 
+					width="200" height="45" />
+			</a>
 		  </div>
 		  <div>
 			Mail: enqueueit@gmail.com
