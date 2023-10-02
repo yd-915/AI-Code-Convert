@@ -63,7 +63,7 @@ export const CodeBlock: FC<Props> = ({
 		onClick={handleDownload}>Download Code</button>
 	<button
 		className="absolute left-0 bottom-[-4] z-10 p-1 text-sm font-bold text-yellow-400"
-		onClick={handleCoffee}>Support Me on Ko-fi</button>
+		onClick={handleCoffee}>Buy Me a Coffee</button>
     </div>
   );
 };
