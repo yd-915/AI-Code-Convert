@@ -15,12 +15,15 @@ export default function Home() {
   const [outputNaturalLanguage, setOutputNaturalLanguage] = useState<string>('English');
   const [inputCode, setInputCode] = useState<string>('');
   const [convertBtnName, setConvertBtnName] = useState<string>('Generate');
-  const [outputCode, setOutputCode] = useState<string>(`\`\`\`java
-  int sum = 0;
-  for (int i = 1; i <= 10; i++) {
-      sum += i;
-  }
-  System.out.println("The sum is: " + sum);
+  const [outputCode, setOutputCode] = useState<string>(`To calculate the sum of numbers from 1 to 10 in Java, 
+you can use a for loop, just like in the code you provided. 
+Here's a simple Java program that calculates and prints the sum:
+\`\`\`java
+int sum = 0;
+for (int i = 1; i <= 10; i++) {
+  sum += i;
+}
+System.out.println("The sum is: " + sum);
 \`\`\`
   `);
   const [loading, setLoading] = useState<boolean>(false);
@@ -140,10 +143,10 @@ export default function Home() {
     <>
       <Head>
         <title>AI Code Converter | AI Code Translator | AI Code Generator</title>
-        <meta name="description" content="Use AI To Convert Code Or Generate Code From One Language To Another. AI Code Translator. Translate Code From Any Language To Another With A Click Of A Button."/>
+        <meta name="description" content="Use AI To Convert Code Or Generate Code From One Language To Another. AI Code Translator. Translate Code From Any Language To Another With A Click."/>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="keywords" content="AI Code Converter,Code Convert AI, Code Generate AI,Code Translator,AICodeHelper,free,online" />
-		<link rel="canonical" href="https://aicodeconvert.com" />
+		<link rel="canonical" href="https://www.aicodeconvert.com" />
         <link rel="icon" href="/code.png" />
       </Head>
 	  <div className="h-100 flex justify-between items-center pl-2 pr-2 md:pl-10 md:pr-10 pt-2 bg-[#0E1117]">
