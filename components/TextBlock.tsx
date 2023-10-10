@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
 interface Props {
   text: string;
@@ -12,6 +12,7 @@ export const TextBlock: React.FC<Props> = ({
   onChange = () => {},
 }) => {
   const [internalText, setInternalText] = useState(text);
+  const textAreaRef = useRef<HTMLTextAreaElement>(null);
   
   const handleClear = () => {
     setInternalText('');
@@ -21,11 +22,18 @@ export const TextBlock: React.FC<Props> = ({
     setInternalText(newValue);
     onChange(newValue);
   };
+  
+  useEffect(() => {
+      if (textAreaRef.current) {
+        textAreaRef.current.focus();
+      }
+    }, []);
 
   return (
     <div className="relative">
 	  <div>
 	    <textarea
+		  ref={textAreaRef}
 	      className="min-h-[180px] md:min-h-[200px] lg:min-h-[200px] w-full bg-[#1A1B26] p-4 text-base text-neutral-200 focus:outline-none"
 	      style={{ resize: 'none' }}
 	      value={internalText}

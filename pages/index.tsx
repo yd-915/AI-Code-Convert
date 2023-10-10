@@ -15,8 +15,10 @@ export default function Home() {
   const [outputNaturalLanguage, setOutputNaturalLanguage] = useState<string>('English');
   const [inputCode, setInputCode] = useState<string>('');
   const [convertBtnName, setConvertBtnName] = useState<string>('Generate');
-  const [outputCode, setOutputCode] = useState<string>(`To calculate the sum of numbers from 1 to 10 in Java, 
-you can use a for loop, just like in the code you provided. 
+  const [outputCode, setOutputCode] = useState<string>(`# Usage instructions:
+Enter your question or code in the input box below, then click the button you want to execute.
+
+## For example input: sum code in java;
 Here's a simple Java program that calculates and prints the sum:
 \`\`\`java
 int sum = 0;
@@ -24,8 +26,7 @@ for (int i = 1; i <= 10; i++) {
   sum += i;
 }
 System.out.println("The sum is: " + sum);
-\`\`\`
-  `);
+\`\`\``);
   const [loading, setLoading] = useState<boolean>(false);
   const [userConvert, setUserConvert] = useState<boolean>(false);
   const [userAsk, setUserAsk] = useState<boolean>(false);
@@ -133,7 +134,7 @@ System.out.println("The sum is: " + sum);
 
   useEffect(() => {
 	  if(inputLanguage === 'Natural Language') {
-		  setConvertBtnName('Generate');
+		  setConvertBtnName('Convert');
 	  } else {
 		  setConvertBtnName('Convert');
 	  }
@@ -165,11 +166,11 @@ System.out.println("The sum is: " + sum);
 	      </div>
 	  </div>
 	  <div className="flex flex-col items-center justify-center bg-[#0E1117] text-white">
-	    <h2 className="text-3xl md:text-4xl font-bold"><span className="text-blue-500">AI</span> {title}</h2>
-	    <h3 className="mt-2 md:mt-5 text-xl text-center leading-2">{subtitle}</h3>
+	    <h2 className="text-xl md:text-4xl font-bold"><span className="text-blue-500">AI</span> {title}</h2>
+	    <h3 className="mt-2 md:mt-5 text md:text-xl text-center leading-2">{subtitle}</h3>
 	  </div>
-      <div className="flex h-full flex items-center justify-center bg-[#0E1117] text-neutral-200 px-10">
-        <div className="mt-2 flex-row items-center justify-center w-3/5">
+      <div className="flex h-full items-center justify-center bg-[#0E1117] text-neutral-100 px-2">
+        <div className="mt-2 flex-row items-center justify-center w-full md:w-3/5 lg:w-3/5">
           <div className="mt-2 flex h-full flex-col justify-center">
             <div>
 				<div className="mt-5 flex space-x-2">
@@ -211,9 +212,9 @@ System.out.println("The sum is: " + sum);
                 }}
               />
             </div>
-			<div className="mt-4 flex items-center space-x-2 flex-wrap justify-center text-neutral-200">
+			<div className="mt-2 flex items-center space-x-1 flex-wrap justify-center text-neutral-100">
 			  <button
-			    className="w-[110px] cursor-pointer rounded-full bg-[#4c81ec] px-4 py-2 font-bold hover:bg-blue-600 active:bg-blue-700"
+			    className="mt-2 w-[110px] cursor-pointer rounded-full bg-[#4c81ec] px-4 py-2 font-bold hover:bg-blue-600 active:bg-blue-700"
 			    onClick={() => {
 					setOption('convert');
 					setUserConvert(true);
@@ -224,7 +225,7 @@ System.out.println("The sum is: " + sum);
 			    {loading && userConvert ? 'Loading' : convertBtnName}
 			  </button>
 			  <button
-			    className="w-[110px] cursor-pointer rounded-full bg-[#6269e7] hover:bg-blue-600 px-4 py-2 font-bold"
+			    className="mt-2 w-[110px] cursor-pointer rounded-full bg-[#6269e7] hover:bg-blue-600 px-4 py-2 font-bold"
 			    onClick={() => {
 					setOption('ask');
 					setUserAsk(true);
@@ -235,7 +236,7 @@ System.out.println("The sum is: " + sum);
 			    {loading && userAsk ? 'Loading' : 'Ask'}
 			  </button>
 			  <button
-			    className="w-[110px] cursor-pointer rounded-full bg-[#8262ec] hover:bg-[#9b5eed] to-red-400 px-4 py-2 font-bold"
+			    className="mt-2 w-[110px] cursor-pointer rounded-full bg-[#8262ec] hover:bg-[#9b5eed] to-red-400 px-4 py-2 font-bold"
 			    onClick={() => {
 					setOption('optimize');
 					setUserOptimize(true);
@@ -246,7 +247,7 @@ System.out.println("The sum is: " + sum);
 			    {loading && userOptimize ? 'Loading' : 'Optimize'}
 			  </button>
 			  <button
-			    className="w-[110px] cursor-pointer rounded-full bg-[#9b5eed] hover:bg-[#c856e5] px-4 py-2 font-bold"
+			    className="mt-2 w-[110px] cursor-pointer rounded-full bg-[#9b5eed] hover:bg-[#c856e5] px-4 py-2 font-bold"
 			    onClick={() => {
 					setOption('explain');
 					setUserExplain(true);
@@ -256,11 +257,11 @@ System.out.println("The sum is: " + sum);
 			  >
 			    {loading && userExplain ? 'Loading' : 'Explain'}
 			  </button>
-			  <a href="https://ko-fi.com/audi_guzz" className="px-2 bg-[#f6db4b] cursor-pointer rounded-full mr-4 py-1">
+			  <a href="https://ko-fi.com/audi_guzz" className="mt-2 px-2 bg-[#f6db4b] cursor-pointer rounded-full mr-4 py-1">
 			  	<div className="flex justify-center items-center">
 			  		<p className="ml-2 mr-2 text-black font-bold">Buy me a Coffee</p>
 			  		<svg width="30" height="30" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
-			  		    <path fill="#ffffff" d="M208 80H32a8 8 0 0 0-8 8v48a96.3 96.3 0 0 0 32.54 72H32a8 8 0 0 0 0 16h176a8 8 0 0 0 0-16h-24.54a96.59 96.59 0 0 0 27-40.09A40 40 0 0 0 248 128v-8a40 40 0 0 0-40-40Zm24 48a24 24 0 0 1-17.2 23a95.78 95.78 0 0 0 1.2-15V97.38A24 24 0 0 1 232 120ZM112 56V24a8 8 0 0 1 16 0v32a8 8 0 0 1-16 0Zm32 0V24a8 8 0 0 1 16 0v32a8 8 0 0 1-16 0Zm-64 0V24a8 8 0 0 1 16 0v32a8 8 0 0 1-16 0Z"/>
+			  		    <path fill="#eab308" d="M208 80H32a8 8 0 0 0-8 8v48a96.3 96.3 0 0 0 32.54 72H32a8 8 0 0 0 0 16h176a8 8 0 0 0 0-16h-24.54a96.59 96.59 0 0 0 27-40.09A40 40 0 0 0 248 128v-8a40 40 0 0 0-40-40Zm24 48a24 24 0 0 1-17.2 23a95.78 95.78 0 0 0 1.2-15V97.38A24 24 0 0 1 232 120ZM112 56V24a8 8 0 0 1 16 0v32a8 8 0 0 1-16 0Zm32 0V24a8 8 0 0 1 16 0v32a8 8 0 0 1-16 0Zm-64 0V24a8 8 0 0 1 16 0v32a8 8 0 0 1-16 0Z"/>
 			  		</svg>
 			  	</div>
 			  </a>
@@ -269,7 +270,7 @@ System.out.println("The sum is: " + sum);
         </div>
         </div>
 	  </div>
-	  <div className="pl-6 pr-6 mt-60 md:pl-20 md:pr-20 bg-[#0E1117]">
+	  <div className="pl-6 pr-6 mt-10 md:pl-20 md:pr-20 bg-[#0E1117]">
 		<div id="about" className="text-white">
 		  <div className="text-2xl">About Us</div>
 		  <ul className="mt-4 list-disc list-inside">
@@ -288,7 +289,7 @@ System.out.println("The sum is: " + sum);
 				<div className="flex justify-center items-center">
 					<p className="ml-2 mr-2 text-black font-bold">Buy me a Coffee</p>
 					<svg width="30" height="30" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
-					    <path fill="#ffffff" d="M208 80H32a8 8 0 0 0-8 8v48a96.3 96.3 0 0 0 32.54 72H32a8 8 0 0 0 0 16h176a8 8 0 0 0 0-16h-24.54a96.59 96.59 0 0 0 27-40.09A40 40 0 0 0 248 128v-8a40 40 0 0 0-40-40Zm24 48a24 24 0 0 1-17.2 23a95.78 95.78 0 0 0 1.2-15V97.38A24 24 0 0 1 232 120ZM112 56V24a8 8 0 0 1 16 0v32a8 8 0 0 1-16 0Zm32 0V24a8 8 0 0 1 16 0v32a8 8 0 0 1-16 0Zm-64 0V24a8 8 0 0 1 16 0v32a8 8 0 0 1-16 0Z"/>
+					    <path fill="#eab308" d="M208 80H32a8 8 0 0 0-8 8v48a96.3 96.3 0 0 0 32.54 72H32a8 8 0 0 0 0 16h176a8 8 0 0 0 0-16h-24.54a96.59 96.59 0 0 0 27-40.09A40 40 0 0 0 248 128v-8a40 40 0 0 0-40-40Zm24 48a24 24 0 0 1-17.2 23a95.78 95.78 0 0 0 1.2-15V97.38A24 24 0 0 1 232 120ZM112 56V24a8 8 0 0 1 16 0v32a8 8 0 0 1-16 0Zm32 0V24a8 8 0 0 1 16 0v32a8 8 0 0 1-16 0Zm-64 0V24a8 8 0 0 1 16 0v32a8 8 0 0 1-16 0Z"/>
 					</svg>
 				</div>
 			</a>
