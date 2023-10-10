@@ -1,6 +1,6 @@
-import { StreamLanguage } from '@codemirror/language';
-import { go } from '@codemirror/legacy-modes/mode/go';
-import { tokyoNight } from '@uiw/codemirror-theme-tokyo-night';
+import { markdown, markdownLanguage } from '@codemirror/lang-markdown';
+import { languages } from '@codemirror/language-data';
+import { githubDark } from '@uiw/codemirror-theme-github';
 import CodeMirror from '@uiw/react-codemirror';
 import { FC, useEffect, useState } from 'react';
 import { saveAs } from 'file-saver';
@@ -13,7 +13,7 @@ interface Props {
 
 export const CodeBlock: FC<Props> = ({
   code,
-  editable = false,
+  editable = true,
   onChange = () => {},
 }) => {
   const [copyText, setCopyText] = useState<string>('Copy');
@@ -46,24 +46,20 @@ export const CodeBlock: FC<Props> = ({
       >
         {copyText}
       </button>
-
       <CodeMirror
 		className="text-base"
         editable={editable}
         value={code}
-        minHeight="640px"
-		maxHeight="640px"
-        extensions={[StreamLanguage.define(go)]}
-        theme={tokyoNight}
+		height="auto"
+        minHeight="240px"
+        extensions={[markdown({ base: markdownLanguage, codeLanguages: languages })]}
+        theme={githubDark}
 		indentWithTab={true}
         onChange={(value) => onChange(value)}
       />
 	<button
 		className="absolute right-0 bottom-[-4] z-10 rounded p-1 text-sm text-white"
 		onClick={handleDownload}>Download Code</button>
-	<button
-		className="absolute left-0 bottom-[-4] z-10 p-1 text-sm font-bold text-yellow-400"
-		onClick={handleCoffee}>Buy Me a Coffee</button>
     </div>
   );
 };

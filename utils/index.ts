@@ -140,9 +140,9 @@ const createPrompt = (
     Natural Language:
     ${inputCode}.
     
-    You must Response in "${outputNaturalLanguage}".Only return the Code. And The Code Do not include \`\`\`.
+    You must Response in "${outputNaturalLanguage}".Only return the Code. And in markdown.
     
-    The ${outputLanguage} Code (no \`\`\`):
+    The ${outputLanguage} Code:
     `;
   }
 };
