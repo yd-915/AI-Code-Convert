@@ -30,6 +30,7 @@ System.out.println("The sum is: " + sum);
   const [loading, setLoading] = useState<boolean>(false);
   const [userConvert, setUserConvert] = useState<boolean>(false);
   const [userAsk, setUserAsk] = useState<boolean>(false);
+  const [userDebug, setUserDebug] = useState<boolean>(false);
   const [userOptimize, setUserOptimize] = useState<boolean>(false);
   const [userExplain, setUserExplain] = useState<boolean>(false);
   const [hasTranslated, setHasTranslated] = useState<boolean>(false);
@@ -37,6 +38,7 @@ System.out.println("The sum is: " + sum);
   const resetOtherOption = () => {
 	  setUserConvert(false);
 	  setUserAsk(false);
+	  setUserDebug(false);
 	  setUserOptimize(false);
 	  setUserExplain(false);
   };
@@ -234,6 +236,17 @@ System.out.println("The sum is: " + sum);
 			    disabled={loading}
 			  >
 			    {loading && userAsk ? 'Loading' : 'Ask'}
+			  </button>
+			  <button
+			    className="mt-2 w-[110px] cursor-pointer rounded-full bg-[#6156ff] hover:bg-blue-600 px-4 py-2 font-bold"
+			    onClick={() => {
+			  					setOption('debug');
+			  					setUserDebug(true);
+			  					handleTranslate(true, 'debug');
+			  				}}
+			    disabled={loading}
+			  >
+			    {loading && userDebug ? 'Loading' : 'Debug'}
 			  </button>
 			  <button
 			    className="mt-2 w-[110px] cursor-pointer rounded-full bg-[#8262ec] hover:bg-[#9b5eed] to-red-400 px-4 py-2 font-bold"

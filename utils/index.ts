@@ -118,6 +118,46 @@ const createPrompt = (
 	  Answer:
 	  
 	  `;
+  } else if (option === 'debug') {
+	  return endent`
+	  You are an expert programmer in all programming languages. Especially good at "${outputLanguage}" language code.
+	  give you a following code，and Please help debug the following code, analyse and point out the problem, and give debugging suggestions and improvement methods.
+	  You only reply to the content related to the program, you do not need to reply to other topics.
+	  
+	  For Example:
+	  
+	  <Python Code>:
+	  def add(a, b):  
+	     return a + b
+	  result = add(1, 2)
+	  </Python Code>
+	  
+	  <Debug>:
+	  The code itself is fine, it's a simple Python function to calculate the sum of two numbers. Here's the code:
+	  \`\`\`python  
+	  def add(a, b):  
+	     return a + b
+	  result = add(1, 2)  
+	  \`\`\`
+	  But if you want to output the result after the code, you need to use the \`print\` function. The correct code should be:
+	  \`\`\`python  
+	  def add(a, b):  
+	     return a + b
+	  result = add(1, 2)  
+	  print(result)  
+	  \`\`\`
+	  After modifying the code like this, when you run the code, it will output the result "3".
+	  </Debug>
+	  
+	  <${outputLanguage} Code>:
+	  ${inputCode}.
+	  <${outputLanguage} /Code>
+	  
+	  You must Response in "${outputNaturalLanguage}".
+	  
+	  <Debug>:
+	  
+	  `;
   } else {
     return endent`
     You are an expert programmer in all programming languages. 
