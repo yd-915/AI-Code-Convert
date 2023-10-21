@@ -31,47 +31,42 @@ const createPrompt = (
 	  
 	  Example Explain the code in Java Program;
 	  
-	  The code:
-	  public class Sum {
-	      public static void main(String[] args) {
-	          int sum = 0;
-	          for (int i = 1; i <= 10; i++) {
-	              sum += i;
-	          }
-	          System.out.println("The sum is: " + sum);
-	      }
+	  <The Next code>
+	  import { NextApiHandler } from 'next'
+	  import { createPagesServerClient } from '@supabase/auth-helpers-nextjs'
+	  const handler: NextApiHandler = async (req, res) => {
+	    const { code } = req.query
+	    if (code) {
+	      const supabase = createPagesServerClient({ req, res })
+	      await supabase.auth.exchangeCodeForSession(String(code))
+	    }
+	    res.redirect('/')
 	  }
+	  export default handler
+	  </The Next code>
 	  
-	  The explain:
-	  The code you've provided is a Java program that calculates the sum of the numbers from 1 to 10 using a loop and then prints out the result. Let's break down the code step by step:
+	  <The explain>:
+	  This code is a Next.js API route handler responsible for handling the OAuth 2.0 authorization code exchange process. Let's break down the code step by step:
+	  1. First, it imports the necessary modules and dependencies:
+	     - \`NextApiHandler\` is a type defined in Next.js used to handle API requests.
+	     - \`createPagesServerClient\` is a function used to create a Supabase client for server-side authentication.
+	     - \`req\` and \`res\` are the request and response objects in Next.js, used for handling HTTP requests and responses.
+	  2. It defines an asynchronous function named \`handler\`, which serves as a Next.js API route handler. This handler is responsible for processing the authorization code received from the client and exchanging it for a user session.
+	  3. It extracts the \`code\` query parameter from the request object \`req\`. This parameter typically contains the authorization code obtained during the OAuth 2.0 authorization process.
+	  4. Next, it checks if the \`code\` parameter exists to determine whether the code exchange is required. If it exists, it implies that the user has obtained an authorization code from an identity provider (e.g., Google, Facebook).
+	  5. It uses the \`createPagesServerClient({ req, res })\` function to create a Supabase client specifically designed for server-side operations. The \`req\` and \`res\` parameters are passed to this function, allowing the Supabase client to handle server-related requests and responses.
+	  6. The code then executes the authorization code exchange operation using \`await supabase.auth.exchangeCodeForSession(String(code))\`. This line sends the authorization code as a parameter to the \`exchangeCodeForSession\` method, and it waits for Supabase to complete the validation and exchange process.
+	  7. Finally, it redirects the user back to the application's main page using \`res.redirect('/')\`. This means that, after successfully completing the authorization code exchange, the user will be redirected to the main page with a valid user session, enabling them to perform authenticated and authorized actions.
+	  In summary, this code is a Next.js API route handler responsible for the OAuth 2.0 authorization code exchange operation. Its purpose is to ensure that users obtain a valid authentication session, allowing them to perform protected actions within the application.
+	  </The explain>
 	  
-	  1. \`public class Sum {\`: This line declares the start of a Java class named \`Sum\`.
-	  
-	  2. \`public static void main(String[] args) {\`: This is the main method of the program, which serves as the entry point for execution. The program starts running from here.
-	  
-	  3. \`int sum = 0;\`: This initializes a variable named \`sum\` to 0. This variable will be used to store the cumulative sum of the numbers.
-	  
-	  4. \`for (int i = 1; i <= 10; i++) {\`: This line starts a \`for\` loop that iterates from \`i = 1\` to \`i = 10\` (inclusive). The loop increments \`i\` by 1 in each iteration.
-	  
-	  5. Inside the loop:
-	     - \`sum += i;\`: This statement adds the current value of \`i\` to the \`sum\` variable. Essentially, it's accumulating the values of \`i\` as the loop iterates.
-	  
-	  6. \`}\`: This closes the \`for\` loop.
-	  
-	  7. \`System.out.println("The sum is: " + sum);\`: After the loop has finished, this line prints the calculated sum to the console. It uses string concatenation to combine the text "The sum is: " with the value of the \`sum\` variable.
-	  
-	  8. \`}\`: This closes the \`main\` method.
-	  
-	  9. \`}\`: This closes the \`Sum\` class.
-	  
-	  In summary, the program calculates the sum of the numbers from 1 to 10 using a \`for\` loop and prints the result to the console. The output will be: "The sum is: 55" since 1 + 2 + ... + 10 equals 55.
-	  
-	  The code:
+	  <The "${inputLanguage}" code>:
 	  ${inputCode}.
+	  </The "${inputLanguage}" code>
 	  
 	  You must Response in "${outputNaturalLanguage}".
 	  
-	  The explain:
+	  <The explain>:
 	  
      `;
   } else if (option === 'ask') {
