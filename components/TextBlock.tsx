@@ -34,7 +34,7 @@ export const TextBlock: React.FC<Props> = ({
 	  <div>
 	    <textarea
 		  ref={textAreaRef}
-	      className="min-h-[180px] md:min-h-[200px] lg:min-h-[200px] w-full bg-[#1A1B26] p-4 text-base text-neutral-200 focus:outline-none"
+	      className="min-h-[100px] md:min-h-[100px] lg:min-h-[100px] w-full bg-[#1A1B26] p-4 text-base text-neutral-200 focus:outline-none"
 	      style={{ resize: 'none' }}
 	      value={internalText}
 	      onChange={(e) => handleChange(e.target.value)}
