@@ -34,15 +34,18 @@ export const TextBlock: React.FC<Props> = ({
 	  <div>
 	    <textarea
 		  ref={textAreaRef}
-	      className="min-h-[100px] md:min-h-[100px] lg:min-h-[100px] w-full bg-[#1A1B26] p-4 text-base text-neutral-200 focus:outline-none"
-	      style={{ resize: 'none' }}
+	      className="w-full bg-[#1A1B26] p-4 text-base text-neutral-200 focus:outline-none"
+          style={{
+              minHeight: '100px',
+              maxHeight: '400px',
+          }}
 	      value={internalText}
 	      onChange={(e) => handleChange(e.target.value)}
 	      disabled={!editable}
 		  placeholder="Tip: sum code in Java"
 	    />
 	  </div>
-	  <button className="absolute top-0 right-0 z-10 rounded p-1 text-sm text-white"
+	  <button className="absolute top-0 right-0 z-10 rounded p-1 text-sm text-color-info-light"
 		onClick={() => {
 			handleClear();
 		}}

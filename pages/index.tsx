@@ -156,32 +156,32 @@ System.out.println("The sum is: " + sum);
 		<link rel="canonical" href="https://www.aicodeconvert.com" />
         <link rel="icon" href="/code.png" />
       </Head>
-	  <div className="h-100 flex justify-between items-center pl-2 pr-2 md:pl-10 md:pr-10 pt-2 bg-[#0E1117]">
+	  <div className="h-100 py-2 flex justify-between items-center pl-2 pr-2 md:pl-10 md:pr-10 pt-2 background-color border-b-2 border-dotted border-[#24354b]">
 	      <div className="flex items-center">
-	          <svg width="40" height="40" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+	          <svg width="35" height="35" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
 	              <path fill="#3b82f6" d="M516 673c0 4.4 3.4 8 7.5 8h185c4.1 0 7.5-3.6 7.5-8v-48c0-4.4-3.4-8-7.5-8h-185c-4.1 0-7.5 3.6-7.5 8v48zm-194.9 6.1l192-161c3.8-3.2 3.8-9.1 0-12.3l-192-160.9A7.95 7.95 0 0 0 308 351v62.7c0 2.4 1 4.6 2.9 6.1L420.7 512l-109.8 92.2a8.1 8.1 0 0 0-2.9 6.1V673c0 6.8 7.9 10.5 13.1 6.1zM880 112H144c-17.7 0-32 14.3-32 32v736c0 17.7 14.3 32 32 32h736c17.7 0 32-14.3 32-32V144c0-17.7-14.3-32-32-32zm-40 728H184V184h656v656z"/>
 	          </svg>
-	          <h1 className="text-white font-bold text-2xl ml-1">
+	          <h1 className="text-white text-lg font-semibold ml-1">
 	              <a href="https://aicodeconvert.com">AICodeConvert.com</a>
 	          </h1>
 	      </div>
 	      <div className="flex items-center hidden md:block lg:block">
-			  <a href="https://blog.aicodeconvert.com" className="text-blue-500 text font-semibold mr-1 md:mr-4 lg:mr-4">Blog</a>
-	          <a href="#about" className="text-white text font-semibold mr-1 md:mr-4 lg:mr-4">About Us</a>
-	          <a href="#contact" className="text-white text font-semibold mr-1 md:mr-4 lg:mr-4">Contact</a>
+			  <a href="https://blog.aicodeconvert.com" className="text-blue-500 text mr-1 md:mr-4 lg:mr-4">Blog</a>
+	          <a href="#about" className="text-white text mr-1 md:mr-4 lg:mr-4">About Us</a>
+	          <a href="#contact" className="text-white text mr-1 md:mr-4 lg:mr-4">Contact</a>
 	      </div>
 	  </div>
-	  <div className="flex flex-col items-center justify-center bg-[#0E1117] text-white">
-	    <h2 className="text-xl md:text-4xl font-bold"><span className="text-blue-500">AI</span> {title}</h2>
-	    <h3 className="mt-2 md:mt-5 text md:text-xl text-center leading-2">{subtitle}</h3>
+	  <div className="mt-2 flex flex-col items-center justify-center background-color text-white">
+	    <h2 className="text-xl md:text-3xl font-semibold"><span className="text-blue-500">AI</span> {title}</h2>
+	    <h3 className="mt-2 md:mt-2 text md:text-lg text-center leading-2 text-color-info-light">{subtitle}</h3>
 	  </div>
 	  <AdsTop />
-      <div className="flex h-full items-center justify-center bg-[#0E1117] text-neutral-100 px-2">
+      <div className="flex h-full items-center justify-center background-color text-neutral-100 px-2">
         <div className="flex-row items-center justify-center w-full md:w-3/5 lg:w-3/5">
           <div className="flex h-full flex-col justify-center">
             <div>
 				<div className="mt-1 flex space-x-2">
-					<div className="text-center text-xl font-bold">TO</div>
+					<div className="text-center text-lg font-semibold text-color-info-light">TO</div>
 					<div className="flex-1">
 						<LanguageSelect
 						  language={outputLanguage}
@@ -219,9 +219,9 @@ System.out.println("The sum is: " + sum);
                 }}
               />
             </div>
-			<div className="mt-2 flex items-center space-x-1 flex-wrap justify-center text-neutral-100">
+			<div className="mt-2 flex items-center space-x-1 flex-wrap justify-center">
 			  <button
-			    className="mt-2 w-[110px] cursor-pointer rounded-full bg-[#4c81ec] px-4 py-2 font-bold hover:bg-blue-600 active:bg-blue-700"
+			    className="mt-2 w-[110px] cursor-pointer rounded-full bg-[#4c81ec] px-4 py-2 font-semibold hover:bg-blue-600 active:bg-blue-700"
 			    onClick={() => {
 					setOption('convert');
 					setUserConvert(true);
@@ -232,7 +232,7 @@ System.out.println("The sum is: " + sum);
 			    {loading && userConvert ? 'Loading' : convertBtnName}
 			  </button>
 			  <button
-			    className="mt-2 w-[110px] cursor-pointer rounded-full bg-[#6269e7] hover:bg-blue-600 px-4 py-2 font-bold"
+			    className="mt-2 w-[110px] cursor-pointer rounded-full bg-[#6269e7] hover:bg-blue-600 px-4 py-2 font-semibold"
 			    onClick={() => {
 					setOption('ask');
 					setUserAsk(true);
@@ -243,7 +243,7 @@ System.out.println("The sum is: " + sum);
 			    {loading && userAsk ? 'Loading' : 'Ask'}
 			  </button>
 			  <button
-			    className="mt-2 w-[110px] cursor-pointer rounded-full bg-[#6156ff] hover:bg-blue-600 px-4 py-2 font-bold"
+			    className="mt-2 w-[110px] cursor-pointer rounded-full bg-[#6156ff] hover:bg-blue-600 px-4 py-2 font-semibold"
 			    onClick={() => {
 			  					setOption('debug');
 			  					setUserDebug(true);
@@ -254,7 +254,7 @@ System.out.println("The sum is: " + sum);
 			    {loading && userDebug ? 'Loading' : 'Debug'}
 			  </button>
 			  <button
-			    className="mt-2 w-[110px] cursor-pointer rounded-full bg-[#8262ec] hover:bg-[#9b5eed] to-red-400 px-4 py-2 font-bold"
+			    className="mt-2 w-[110px] cursor-pointer rounded-full bg-[#8262ec] hover:bg-[#9b5eed] to-red-400 px-4 py-2 font-semibold"
 			    onClick={() => {
 					setOption('optimize');
 					setUserOptimize(true);
@@ -265,7 +265,7 @@ System.out.println("The sum is: " + sum);
 			    {loading && userOptimize ? 'Loading' : 'Optimize'}
 			  </button>
 			  <button
-			    className="mt-2 w-[110px] cursor-pointer rounded-full bg-[#9b5eed] hover:bg-[#c856e5] px-4 py-2 font-bold"
+			    className="mt-2 w-[110px] cursor-pointer rounded-full bg-[#9b5eed] hover:bg-[#c856e5] px-4 py-2 font-semibold"
 			    onClick={() => {
 					setOption('explain');
 					setUserExplain(true);
@@ -277,7 +277,7 @@ System.out.println("The sum is: " + sum);
 			  </button>
 			  <a href="https://ko-fi.com/audi_guzz" className="mt-2 px-2 bg-[#f6db4b] cursor-pointer rounded-full mr-4 py-1">
 			  	<div className="flex justify-center items-center">
-			  		<p className="ml-2 mr-2 text-black font-bold">Buy me a Coffee</p>
+			  		<p className="ml-2 mr-2 text-black font-semibold">Buy me a Coffee</p>
 			  		<svg width="30" height="30" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
 			  		    <path fill="#eab308" d="M208 80H32a8 8 0 0 0-8 8v48a96.3 96.3 0 0 0 32.54 72H32a8 8 0 0 0 0 16h176a8 8 0 0 0 0-16h-24.54a96.59 96.59 0 0 0 27-40.09A40 40 0 0 0 248 128v-8a40 40 0 0 0-40-40Zm24 48a24 24 0 0 1-17.2 23a95.78 95.78 0 0 0 1.2-15V97.38A24 24 0 0 1 232 120ZM112 56V24a8 8 0 0 1 16 0v32a8 8 0 0 1-16 0Zm32 0V24a8 8 0 0 1 16 0v32a8 8 0 0 1-16 0Zm-64 0V24a8 8 0 0 1 16 0v32a8 8 0 0 1-16 0Z"/>
 			  		</svg>
@@ -290,8 +290,18 @@ System.out.println("The sum is: " + sum);
 	  <AdsBottom />
 	  <AdsLeft />
 	  <AdsRight />
-	  <div className="pl-6 pr-6 mt-10 md:pl-20 md:pr-20 bg-[#0E1117]">
-		<div id="about" className="text-white">
+		<div className="mt-5 pl-6 pr-6 flex flex-col justify-center items-center">
+			<div className="text-center text-lg text-blue-500 font-semibold">Your Multilingual Code Translator</div>
+			<div className="mt-2 text-center">
+				<h2 className="text-xl md:text-3xl font-semibold text-white">AI Code Translator</h2>
+			</div>
+			<h3 className="mt-3 text-color-info-light text-center text-lg font-semibold w-3/5">
+				Experience seamless code translation and optimize your development process. With AI Code Translator,
+				you can convert any piece of code into multiple languages in just a click.
+			</h3>
+		</div>
+		<div className="pl-6 pr-6 mt-80 md:pl-20 md:pr-20 background-color">
+		<div id="about" className="text-color-info-light">
 		  <div className="text-2xl">About Us</div>
 		  <ul className="mt-4 list-disc list-inside">
 		    <li className="mb-2">AICodeConvert(AI Code Converter | Code Converter AI) simplifies coding with AI by integrating AI Code Translator and AI Code Generator. </li>
@@ -302,7 +312,7 @@ System.out.println("The sum is: " + sum);
 			<li className="mb-2">Your Best AI Code Helper.</li>
 		  </ul>
 		</div>
-		<div id="contact" className="text-white pt-4">
+		<div id="contact" className="text-color-info-light pt-4">
 		  <div className="text-2xl">Contact</div>
 		  <div className="flex justify-start items-center mb-2 space-y-2 mt-2 flex-wrap">
 			<a href="https://ko-fi.com/audi_guzz" className="px-2 bg-[#f6db4b] cursor-pointer rounded-full mr-4 py-1">
@@ -329,10 +339,10 @@ System.out.println("The sum is: " + sum);
 		  </div>
 		</div>
 	  </div>
-	  <div className="bg-[#0E1117] text-center text-white text-sm pt-10">
+	  <div className="background-color text-center text-color-info-light text-sm pt-10">
 	  	AI Code Convert Copyright © <span className="text-blue-500">aicodeconvert.com</span>
 	  </div>
-	  <div className="bg-[#0E1117] pt-1 pb-1 text-center text-white text-sm">
+	  <div className="background-color pt-1 pb-1 text-center text-color-info-light text-sm">
 		<a href="https://ailandingpagegenerator.com">AI Landing Page Generator</a> | <a href="https://base64.kr">Base64.kr</a> | <a href="https://aicomicfactory.com">AI Comic Factory </a> 
 		| <a href="https://illusiondiffusion.net"> Illusion Diffusion</a> | <a href="https://aicoderhelper.com">AI Coder Helper</a>
 	  </div>

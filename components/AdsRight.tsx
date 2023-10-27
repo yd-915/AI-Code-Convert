@@ -19,9 +19,9 @@ export const AdsRight = () => {
 
   return (
 	<div className="fixed top-20 right-10 w-180 h-620 bg-transparent z-50"
-		style={{width:'150px',height:'620px'}} >
+		style={{width:'180px',height:'600px'}} >
 		<ins className="adsbygoogle"
-		     style={{display:'inline-block',width:'150px',height:'620px'}}
+		     style={{display:'inline-block',width:'180px',height:'600px'}}
 		     data-ad-client="ca-pub-3672455877501055"
 		     data-ad-slot="1462825757"></ins>
 	</div>

@@ -13,7 +13,7 @@ export const LanguageSelect: FC<Props> = ({ language, onChange }) => {
   return (
     <div className="flex justify-center items-center">
       <select
-        className="flex-1 rounded-md bg-[#1F2937] px-4 py-2 text-neutral-200 focus:outline-none focus:ring-2 focus:ring-[#1F2937]"
+        className="flex-1 rounded-md bg-[#1F2937] px-4 py-2 text-neutral-200 focus:outline-none focus:ring-2 focus:ring-[#1F2937] text-color-info-light"
         value={language}
         onChange={handleChange}
       >

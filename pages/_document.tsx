@@ -44,7 +44,7 @@ export default function Document() {
 		    `}
 		</script>
 	  </Head>
-      <body className="bg-[#0E1117]">
+      <body className="background-color">
         <Main />
         <NextScript />
       </body>
