@@ -300,6 +300,11 @@ System.out.println("The sum is: " + sum);
 				you can convert any piece of code into multiple languages in just a click.
 			</h3>
 		</div>
+		<div>
+			<div>Languages Supported</div>
+			<div>Convert code across 100+ programming languages</div>
+
+		</div>
 		<div className="pl-6 pr-6 mt-80 md:pl-20 md:pr-20 background-color">
 		<div id="about" className="text-color-info-light">
 		  <div className="text-2xl">About Us</div>
