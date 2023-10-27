@@ -1,5 +1,6 @@
 import { CodeBlock } from '@/components/CodeBlock';
-import { LanguageSelect,languages } from '@/components/LanguageSelect';
+import { LanguageSelect } from '@/components/LanguageSelect';
+import { languages } from '@/components/Languages';
 import { NaturalLanguageSelect,naturalLanguages } from '@/components/NaturalLanguageSelect';
 import { TextBlock } from '@/components/TextBlock';
 import { TranslateBody } from '@/types/types';
@@ -9,6 +10,7 @@ import { AdsTop } from '@/components/AdsTop';
 import { AdsBottom } from '@/components/AdsBottom';
 import { AdsLeft } from '@/components/AdsLeft';
 import { AdsRight } from '@/components/AdsRight';
+import { LanguageSupport } from '@/components/LanguageSupport'
 
 export default function Home() {
   const [option, setOption] = useState('');
@@ -172,7 +174,7 @@ System.out.println("The sum is: " + sum);
 	      </div>
 	  </div>
 	  <div className="mt-2 flex flex-col items-center justify-center background-color text-white">
-	    <h2 className="text-xl md:text-3xl font-semibold"><span className="text-blue-500">AI</span> {title}</h2>
+	    <h2 className="hidden md:block lg:block text-xl md:text-3xl font-semibold"><span className="text-blue-500">AI</span> {title}</h2>
 	    <h3 className="mt-2 md:mt-2 text md:text-lg text-center leading-2 text-color-info-light">{subtitle}</h3>
 	  </div>
 	  <AdsTop />
@@ -295,16 +297,12 @@ System.out.println("The sum is: " + sum);
 			<div className="mt-2 text-center">
 				<h2 className="text-xl md:text-3xl font-semibold text-white">AI Code Translator</h2>
 			</div>
-			<h3 className="mt-3 text-color-info-light text-center text-lg font-semibold w-3/5">
+			<h3 className="mt-3 text-color-info-light text-center text-lg font-semibold w-full md:w-3/5 lg:w-3/5">
 				Experience seamless code translation and optimize your development process. With AI Code Translator,
 				you can convert any piece of code into multiple languages in just a click.
 			</h3>
 		</div>
-		<div>
-			<div>Languages Supported</div>
-			<div>Convert code across 100+ programming languages</div>
-
-		</div>
+		<LanguageSupport />
 		<div className="pl-6 pr-6 mt-80 md:pl-20 md:pr-20 background-color">
 		<div id="about" className="text-color-info-light">
 		  <div className="text-2xl">About Us</div>

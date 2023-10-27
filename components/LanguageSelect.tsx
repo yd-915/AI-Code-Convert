@@ -1,5 +1,5 @@
 import type { FC } from 'react';
-import { languages } from './Languages'
+import {languages} from '@/components/Languages';
 
 interface Props {
   language: string;
