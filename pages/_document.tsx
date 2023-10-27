@@ -18,6 +18,8 @@ export default function Document() {
 		/>
 		{/* baidu analytics */}
 		<script src="/baidu-analytics.js" />
+	    {/* ads retrieve */}
+	    <script src="/ads-retrieve.js" />
 		<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3672455877501055"
 		     crossOrigin="anonymous"></script>
 			 
