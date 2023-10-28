@@ -1,68 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 	<url>
-		<loc>https://aicodeconvert.com/</loc>
+		<loc>https://www.aicodeconvert.com/</loc>
 		<lastmod>2023-08-01</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>1</priority>
 	</url>
 	<url>
-		<loc>https://aicodeconvert.com/code-convert/</loc>
-		<lastmod>2023-08-01</lastmod>
+		<loc>https://www.aicodeconvert.com/assistant/ai-code-assistant</loc>
+		<lastmod>2023-10-28</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>1</priority>
 	</url>
 	<url>
-		<loc>https://aicodeconvert.com/code-convert-ai/</loc>
-		<lastmod>2023-08-01</lastmod>
+		<loc>https://www.aicodeconvert.com/converter/ai-code-converter</loc>
+		<lastmod>2023-10-28</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>1</priority>
 	</url>
 	<url>
-		<loc>https://aicodeconvert.com/code-converter/</loc>
-		<lastmod>2023-08-01</lastmod>
+		<loc>https://www.aicodeconvert.com/debug/ai-code-debug</loc>
+		<lastmod>2023-10-28</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>1</priority>
 	</url>
 	<url>
-		<loc>https://aicodeconvert.com/code-converter-ai/</loc>
-		<lastmod>2023-08-01</lastmod>
+		<loc>https://www.aicodeconvert.com/explain/ai-code-explain</loc>
+		<lastmod>2023-10-28</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>1</priority>
 	</url>
 	<url>
-		<loc>https://aicodeconvert.com/code-convertor/</loc>
-		<lastmod>2023-08-01</lastmod>
+		<loc>https://www.aicodeconvert.com/optimize/ai-code-optimize</loc>
+		<lastmod>2023-10-28</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>1</priority>
 	</url>
 	<url>
-		<loc>https://aicodeconvert.com/translate-code/ai-code-translator</loc>
-		<lastmod>2023-08-13</lastmod>
-		<changefreq>monthly</changefreq>
-		<priority>1</priority>
-	</url>
-	<url>
-		<loc>https://aicodeconvert.com/generate-code/ai-code-generator</loc>
-		<lastmod>2023-08-13</lastmod>
-		<changefreq>monthly</changefreq>
-		<priority>1</priority>
-	</url>
-	<url>
-		<loc>https://aicodeconvert.com/convert-code/ai-code-converter</loc>
-		<lastmod>2023-08-13</lastmod>
-		<changefreq>monthly</changefreq>
-		<priority>1</priority>
-	</url>
-	<url>
-		<loc>https://aicodeconvert.com/optimize-code</loc>
-		<lastmod>2023-08-18</lastmod>
-		<changefreq>monthly</changefreq>
-		<priority>1</priority>
-	</url>
-	<url>
-		<loc>https://aicodeconvert.com/explain-code</loc>
-		<lastmod>2023-08-18</lastmod>
+		<loc>https://www.aicodeconvert.com/translator/ai-code-translator</loc>
+		<lastmod>2023-10-28</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>1</priority>
 	</url>

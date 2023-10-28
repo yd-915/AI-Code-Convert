@@ -1,4 +1,5 @@
 import endent from 'endent';
+import { OPTIONS } from '@/components/CommonUtils'
 import {
   createParser,
   ParsedEvent,
@@ -12,7 +13,7 @@ const createPrompt = (
   option: string,
   outputNaturalLanguage: string
 ) => {
-  if(option === 'optimize') {
+  if(option === OPTIONS.OPTIMIZE) {
   	return endent`
 	  You are an expert programmer in all programming languages. Especially good at "${outputLanguage}" language code.
   	  You will be provided with a piece of "${inputLanguage}" code, and your task is to provide ideas for efficiency improvements.
@@ -23,7 +24,7 @@ const createPrompt = (
 	  
 	  You must Response in "${outputNaturalLanguage}".
   	 `;
-  } else if (option === 'explain') {
+  } else if (option === OPTIONS.EXPLAIN) {
     return endent`
 	  You are an expert programmer in all programming languages. Especially good at "${outputLanguage}" language code.
       You will be provided with a piece of "${inputLanguage}" code, and your task is to explain it.
@@ -69,7 +70,7 @@ const createPrompt = (
 	  <The explain>:
 	  
      `;
-  } else if (option === 'ask') {
+  } else if (option === OPTIONS.ASK) {
 	  return endent`
 	  You are an expert programmer in all programming languages. Especially good at "${outputLanguage}" language code.
 	  give you a question or code，and you provide me with answer for the question, Code or how to fix the bug of the given code, and only related with program；
@@ -113,7 +114,7 @@ const createPrompt = (
 	  Answer:
 	  
 	  `;
-  } else if (option === 'debug') {
+  } else if (option === OPTIONS.DEBUG) {
 	  return endent`
 	  You are an expert programmer in all programming languages. Especially good at "${outputLanguage}" language code.
 	  give you a following code，and Please help debug the following code, analyse and point out the problem, and give debugging suggestions and improvement methods.

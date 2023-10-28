@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const Header = () => {
+export const BaseHeader = () => {
     return (
         <div className="h-100 py-2 flex justify-between items-center pl-2 pr-2 md:pl-10 md:pr-10 pt-2 background-color border-b-2 border-dotted border-[#24354b]">
             <div className="flex items-center">

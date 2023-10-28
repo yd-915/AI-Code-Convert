@@ -20,7 +20,7 @@ const handler = async (req: Request): Promise<Response> => {
     );
 
     return new Response(stream);
-  } catch (error) {
+  } catch (error: any) {
     console.error(error);
     return new Response('Error', { status: 500 });
   }
