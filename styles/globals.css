@@ -3,7 +3,9 @@
 @tailwind utilities;
 
 .background-color {
-    background-color: #0e2439;
+    /*background-color: #0e2439;*/
+    --tw-bg-opacity: 1;
+    background-color: rgb(15 23 42/var(--tw-bg-opacity));
 }
 
 .text-color-info-light {
