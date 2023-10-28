@@ -18,7 +18,7 @@ export const LanguageSupport = () => {
         : languages.slice(0, itemsToShow);
 
     return (
-        <div className="p-4 md:pl-48 md:pr-48 mt-32 background-color flex-row justify-center items-center text-center">
+        <div className="p-4 md:pl-48 md:pr-48 mt-20 background-color flex-row justify-center items-center text-center">
             <h2 className="text-2xl md:text-3xl font-semibold text-white">Languages Supported</h2>
             <div className="mt-3 md:mt-6 text-color-info-light text-center text-lg font-semibold">Convert code across {languages.filter((language) => language.src && language.alt).length}+ programming languages</div>
             <div className="mt-4 md:mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-7">

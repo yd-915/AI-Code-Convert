@@ -48,3 +48,5 @@ export const HEAD_METAS = {
         canonical: "debug/ai-code-debug"
     },
 };
+
+export const FEATURES = Object.entries(HEAD_METAS).map(([key, value]) => value);

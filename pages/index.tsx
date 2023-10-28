@@ -10,18 +10,20 @@ import { WhyUse } from '@/components/WhyUse';
 import { MainCode } from '@/components/MainCode';
 import { AboutUs } from "@/components/AboutUs";
 import { Footer } from "@/components/Footer";
+import { MainFeature } from "@/components/MainFeature";
 
 export default function Home() {
   	return (
 		<>
 			<MainHeadMeta />
 			<Header />
+			<AdsLeft />
+			<AdsRight />
 			<MainTop />
 			<AdsTop />
 			<MainCode />
 			<AdsBottom />
-			<AdsLeft />
-			<AdsRight />
+			<MainFeature />
 			<LanguageSupport />
 			<WhyUse />
 			<AboutUs />

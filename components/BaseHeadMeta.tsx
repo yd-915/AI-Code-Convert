@@ -15,12 +15,11 @@ export const BaseHeadMeta: React.FC<BaseHeadMetaProps> = (props) => {
         const currentDomain = window.location.hostname;
         const port = window.location.port;
         const protocol = window.location.protocol;
-        if (port !== '80') {
-            setHost(protocol + "//" + currentDomain + ":" + port + "/");
-        } else {
+        if (port === '80' || port === '443' || port === '') {
             setHost(protocol + "//" + currentDomain + "/");
+        } else {
+            setHost(protocol + "//" + currentDomain + ":" + port + "/");
         }
-        console.info(host)
     }, []);
     return (
         <div>
