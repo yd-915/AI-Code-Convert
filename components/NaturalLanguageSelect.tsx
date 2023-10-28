@@ -33,12 +33,13 @@ export const NaturalLanguageSelect: FC<Props> = ({ language, onChange }) => {
 };
 
 export const naturalLanguages = [
-  { value: 'English', label: 'English' },
-  { value: 'Português', label: 'Português' },
-  { value: 'فارسی', label: 'فارسی' },
-  { value: 'Deutsch', label: 'Deutsch' },
-  { value: 'Français', label: 'Français' },
-  { value: 'Русский', label: 'Русский' },
-  { value: 'Italiano', label: 'Italiano' },
-  { value: 'Español', label: 'Español' },
+    { value: 'English', label: 'English' },
+    { value: 'Português', label: 'Português' },
+    { value: 'فارسی', label: 'فارسی' },
+    { value: 'Deutsch', label: 'Deutsch' },
+    { value: 'Français', label: 'Français' },
+    { value: 'Русский', label: 'Русский' },
+    { value: 'Italiano', label: 'Italiano' },
+    { value: 'Español', label: 'Español' },
+    { value: 'বাংলা', label: 'বাংলা'} // Bangla
 ];
