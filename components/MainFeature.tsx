@@ -21,11 +21,11 @@ export const MainFeature = () => {
             <div className="mt-3 md:mt-6 grid w-full text-center grid-cols-2 gap-x-4 gap-y-8 md:grid-cols-3 lg:grid-cols-3">
                 {
                     FEATURES.map((feature, index) => (
-                        <a
+                        <a key={index}
                             className="cursor-pointer rounded-lg background-color text-color-info-light hover:border-blue-600 border border-transparent transition duration-200 ease-in-out"
                             href={feature.canonical}
                         >
-                        <div className="flex w-full items-center justify-between px-4 py-6">
+                        <div key={index} className="flex w-full items-center justify-between px-4 py-6">
                                 <div
                                     className="flex items-center justify-start gap-2 text-slate-900 text-color-info-light"
                                 >

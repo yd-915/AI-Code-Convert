@@ -1,3 +1,4 @@
+const PRODUCT = "AICodeConvert";
 export const OPTIONS = {
     ASK: 'ask',
     TRANSLATE: 'translate',
@@ -5,6 +6,7 @@ export const OPTIONS = {
     OPTIMIZE: 'optimize',
     EXPLAIN: 'explain',
     DEBUG: 'debug',
+    HELPER: 'ask',
 };
 
 export const TITLES = {
@@ -14,38 +16,44 @@ export const TITLES = {
     OPTIMIZE: 'AI Code Optimize',
     EXPLAIN: 'AI Code Explain',
     DEBUG: 'AI Code Debug',
+    HELPER: 'AI Code Helper',
 };
 
 export const HEAD_METAS = {
     ASK: {
         title : TITLES.ASK,
-        description: "Use " + TITLES.ASK + " Online.",
+        description: "Use Free " + TITLES.ASK + " Online With " + PRODUCT,
         canonical: "assistant/ai-code-assistant"
     },
     TRANSLATE: {
         title: TITLES.TRANSLATE,
-        description: "Use " + TITLES.TRANSLATE + " Online.",
+        description: "Use Free " + TITLES.TRANSLATE + " Online With " + PRODUCT,
         canonical: "translator/ai-code-translator"
     },
     CONVERT: {
         title: TITLES.CONVERT,
-        description: "Use " + TITLES.CONVERT + " Online.",
+        description: "Use Free " + TITLES.CONVERT + " Online With " + PRODUCT,
         canonical: "converter/ai-code-converter"
     },
     OPTIMIZE: {
         title: TITLES.OPTIMIZE,
-        description: "Use " + TITLES.OPTIMIZE + " Online.",
+        description: "Use Free " + TITLES.OPTIMIZE + " Online With " + PRODUCT,
         canonical: "optimize/ai-code-optimize"
     },
     EXPLAIN: {
         title: TITLES.EXPLAIN,
-        description: "Use " + TITLES.EXPLAIN + " Online.",
+        description: "Use Free " + TITLES.EXPLAIN + " Online With " + PRODUCT,
         canonical: "explain/ai-code-explain"
     },
     DEBUG: {
         title: TITLES.DEBUG,
-        description: "Use " + TITLES.DEBUG + " Online.",
+        description: "Use Free " + TITLES.DEBUG + " Online With " + PRODUCT,
         canonical: "debug/ai-code-debug"
+    },
+    HELPER: {
+        title: TITLES.HELPER,
+        description: "Use Free " + TITLES.HELPER + " Online With " + PRODUCT,
+        canonical: "helper/ai-code-helper"
     },
 };
 

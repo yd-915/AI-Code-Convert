@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const Header = () => {
+export const ChatHeader = () => {
     return (
         <div className="h-100 py-2 flex justify-between items-center pl-2 pr-2 md:pl-10 md:pr-10 pt-2 background-color border-b-2 border-dotted border-[#24354b]">
             <div className="flex items-center">
@@ -12,12 +12,8 @@ export const Header = () => {
                 </h1>
             </div>
             <div className="flex items-center hidden md:block lg:block">
-                <a href="https://www.aicodeconvert.com/helper/ai-code-helper" className="text-amber-400 text mr-1 md:mr-4 lg:mr-4">
-                    ✨ AI Code Helper
-                </a>
+                <a href="https://ko-fi.com/audi_guzz" className="text-amber-500 text mr-1 md:mr-4 lg:mr-4">Buy me a coffee</a>
                 <a href="https://blog.aicodeconvert.com" className="text-blue-500 text mr-1 md:mr-4 lg:mr-4">Blog</a>
-                <a href="#about" className="text-white text mr-1 md:mr-4 lg:mr-4">About Us</a>
-                <a href="#contact" className="text-white text mr-1 md:mr-4 lg:mr-4">Contact</a>
             </div>
         </div>
     );

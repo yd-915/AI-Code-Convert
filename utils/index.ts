@@ -193,7 +193,7 @@ export const OpenAIStream = async (
 	const prompt = createPrompt(inputLanguage, outputLanguage, inputCode, option, outputNaturalLanguage);
 
 	const system = { role: 'system', content: prompt };
-	console.info('option : ', option, 'inputCode : ', inputCode);
+	console.info('option :', option, ',inputCode :', inputCode);
 	// use openai 
 	const url = "https://api.openai.com/v1/chat/completions";
 	const apiKeysString = process.env.NEXT_PUBLIC_OPENAI_API_KEY_ARRAY || "";
@@ -209,15 +209,7 @@ export const OpenAIStream = async (
 		return curKey;
 	};
 	const key = getNextApiKey();
-  // use fake
-  // const url = "https://ai.fakeopen.com/v1/chat/completions";
-  // const key = "pk-this-is-a-real-free-pool-token-for-everyone";
-  // const model = "gpt-4";
-  // use api2d
-  // const url = "https://oa.api2d.net/v1/chat/completions";
-  // const key = process.env.NEXT_PUBLIC_OPENAI_API_KEY;
-  // const model = "gpt-3.5-turbo-16k";
-  
+
   const res = await fetch(url, {
     headers: {
       'Content-Type': 'application/json',

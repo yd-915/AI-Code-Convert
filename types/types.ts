@@ -6,6 +6,13 @@ export interface TranslateBody {
   outputNaturalLanguage: string;
 }
 
-export interface TranslateResponse {
-  code: string;
+export interface ChatBody {
+  inputCode: string;
+  outputNaturalLanguage: string;
+  chatHistory?: ChatMsg[];
+}
+
+export interface ChatMsg {
+  role: string;
+  content: string;
 }
