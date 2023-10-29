@@ -18,8 +18,7 @@ export const AdsRight = () => {
   }, []);
 
   return (
-	<div className="hidden md:block lg:block fixed top-20 right-10 w-180 h-620 bg-transparent z-50"
-		style={{width:'180px',height:'600px'}} >
+	<div className="hidden md:block lg:block fixed top-20 right-10 w-180 h-620 bg-transparent z-50">
 		<ins className="adsbygoogle hidden md:block lg:block"
 		     style={{display:'inline-block',width:'180px',height:'600px'}}
 		     data-ad-client="ca-pub-3672455877501055"

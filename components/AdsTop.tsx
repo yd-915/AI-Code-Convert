@@ -24,7 +24,8 @@ export const AdsTop = () => {
 		     style={{display:'inline-block',width:'728px',height:'90px'}}
 		     data-ad-client="ca-pub-3672455877501055"
 		     data-ad-slot="3433106919"
-			 data-ad-format="auto"></ins>
+			 ></ins>
+		{/*data-ad-format="auto"*/}
 	</div>
   );
 };

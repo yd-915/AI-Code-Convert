@@ -18,12 +18,12 @@ export const AdsChat = () => {
   }, []);
 
   return (
-	<div className="mt-1 mx-auto bg-transparent flex justify-center items-center"
-		style={{width:'728px',height:'90px'}} >
+	<div className="mt-1 mx-auto bg-transparent flex justify-center items-center">
 		<ins className="adsbygoogle"
 		     style={{display:'inline-block',width:'728px',height:'90px'}}
 		     data-ad-client="ca-pub-3672455877501055"
-		     data-ad-slot="2477498296"></ins>
+		     data-ad-slot="2477498296"
+			 data-ad-format="auto"></ins>
 	</div>
   );
 };

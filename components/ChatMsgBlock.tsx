@@ -108,7 +108,7 @@ export const ChatMsgBlock: React.FC<Props> = ({code, user}) => {
                     </button>
                 </div>
             </div>
-            {code.length > 800 ? (
+            {code.length > 518 ? (
                 <AdsChat />
             ) : ('')}
         </div>
