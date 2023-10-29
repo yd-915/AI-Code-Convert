@@ -23,7 +23,8 @@ export const AdsLeft = () => {
 		<ins className="adsbygoogle hidden md:block lg:block"
 		     style={{display:'inline-block',width:'180px',height:'600px'}}
 		     data-ad-client="ca-pub-3672455877501055"
-		     data-ad-slot="6854753232"></ins>
+		     data-ad-slot="6854753232"
+			 data-ad-format="auto"></ins>
 	</div>
   );
 };
