@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useRef} from 'react';
 
 import {ChatMsgBlock} from "@/components/ChatMsgBlock";
 import {ChatBody, ChatMsg} from "@/types/types";
@@ -27,9 +27,20 @@ export const ChatContainer = () => {
     const [loading, setLoading] = useState<boolean>(false);
     const [chatHistory, setChatHistory] = useState<ChatMsg[]>([]);
     const [clearHisBtnName, setClearHisBtnName] = useState('Clear History');
-
+    const textAreaRef = useRef<HTMLTextAreaElement>(null);
     useEffect(() => {
         setChatHistory(getChatHistory());
+        if (textAreaRef.current) {
+            textAreaRef.current.focus();
+        }
+        if (textAreaRef.current) {
+            textAreaRef.current.addEventListener('input', handleTextAreaChange);
+        }
+        return () => {
+            if (textAreaRef.current) {
+                textAreaRef.current.removeEventListener('input', handleTextAreaChange);
+            }
+        };
     }, []);
 
     const clearHistory = () => {
@@ -108,6 +119,35 @@ export const ChatContainer = () => {
         addMessageToHistory({role: 'assistant', content: code});
     };
 
+    const handleKeyDown = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
+        if (e.key === 'Enter' && !e.shiftKey) {
+            e.preventDefault();
+            handleChat().then(() => {
+                if (textAreaRef.current) {
+                    textAreaRef.current.rows = 1;
+                }
+            });
+        }
+    };
+
+    const handleTextAreaChange = () => {
+        if (textAreaRef.current) {
+            const minRows = 1;
+            const maxRows = 3;
+            textAreaRef.current.rows = minRows;
+            const lineHeight = parseInt(getComputedStyle(textAreaRef.current).lineHeight);
+            const textAreaHeight = textAreaRef.current.scrollHeight;
+
+            if (textAreaHeight > lineHeight * maxRows) {
+                textAreaRef.current.rows = maxRows;
+                textAreaRef.current.style.overflowY = 'scroll';
+            } else {
+                textAreaRef.current.style.overflowY = 'hidden';
+            }
+        }
+    };
+
+
     return (
         <div>
             <div className="mb-2">
@@ -128,10 +168,10 @@ export const ChatContainer = () => {
                     ''
                 )}
             </div>
-            <div className="fixed background-color bottom-0 w-full md:w-3/5 lg:w-3/5">
+            <div className="fixed background-color bottom-0 w-full md:w-3/5 lg:w-3/5 pr-6 md:pr-0 lg:pr-0">
                 <div className="flex w-full items-center rounded-md bg-slate-900">
                     <textarea
-                        id="prompt"
+                        ref={textAreaRef}
                         value={inputCode}
                         rows={1}
                         className="flex min-h-full w-full rounded-md border border-slate-300 p-2 text-base focus:outline-none focus:ring-1 border-slate-300/20 bg-slate-800 text-slate-200 placeholder-slate-400 focus:border-blue-600 focus:ring-blue-600"
@@ -139,6 +179,7 @@ export const ChatContainer = () => {
                         onChange={(e) => {
                             setInputCode(e.target.value);
                         }}
+                        onKeyDown={handleKeyDown}
                     ></textarea>
                     <div className="">
                         <button

@@ -22,6 +22,7 @@ const createPrompt = (
 	  the code:
 	  ${inputCode}.
 	  
+	  The most important thing is:You must only reply to the content related to the program, you do not need to reply to other topics.
 	  You must Response in "${outputNaturalLanguage}".
   	 `;
   } else if (option === OPTIONS.EXPLAIN) {
@@ -65,6 +66,7 @@ const createPrompt = (
 	  ${inputCode}.
 	  </The "${inputLanguage}" code>
 	  
+	  The most important thing is:You must only reply to the content related to the program, you do not need to reply to other topics.
 	  You must Response in "${outputNaturalLanguage}".
 	  
 	  <The explain>:
@@ -73,46 +75,62 @@ const createPrompt = (
   } else if (option === OPTIONS.ASK) {
 	  return endent`
 	  You are an expert programmer in all programming languages. Especially good at "${outputLanguage}" language code.
-	  give you a question or code，and you provide me with answer for the question, Code or how to fix the bug of the given code, and only related with program；
-	  You only reply to the content related to the program, you do not need to reply to other topics；
+	  I want you to act as a code expert, please help me by giving code to solve my problem, 
+	  you should use your knowledge of computer science, network infrastructure and IT security to solve my problem. 
+	  It will be helpful to use smart, simple and easy to understand language suitable for all levels of people in your answer, 
+	  it is helpful to explain your solution step by step with bullet points, 
+	  try to avoid too many technical details but use them when necessary, 
+	  I would like you to reply with the solution instead of writing any explanation, 
 	  
-	  Example Answer the question in JavaScript program:
-	  
-	  Question:
+	  For Example :
+	  <Question>:
 	  what is JavaScript?
+	  </Question>
+	  <Answer>:
+	  JavaScript is a widely used programming language that was originally developed to provide interactive functionality in web browsers. It is a high-level, interpreted programming language that is widely used in web development.JavaScript can perform the following functions:
+1. user interface interaction: JavaScript can respond to user actions (e.g., clicking buttons, typing text, etc.) to provide a dynamic and interactive experience for a website.
+2. data validation: JavaScript can perform form validation on the client side to ensure the validity of data and reduce the burden on the server.
+3. asynchronous communication: JavaScript can implement asynchronous requests (such as AJAX requests) to communicate with the server without refreshing the entire page to obtain and submit data.
+4. animation and visual effects: JavaScript can create a variety of animation effects to make web pages more attractive.
+To get started with JavaScript, you need to be familiar with basic syntax such as variables, conditional statements, loops, functions, etc. You can use a variety of popular JavaScript libraries. You can use various popular JavaScript libraries such as jQuery, React or Angular to simplify the development process.
+
+JavaScript example:
+
+\`\`\`javascript
+// Define variables
+var number = 7; // Conditional statement.
+
+// Conditional statement
+if (number % 2 == 0) {
+    console.log("This is an even number"); } else {
+} else {
+    console.log("It's an odd number"); } else {
+}
+
+// Loop
+for (var i = 0; i < 10; i++) {
+    console.log(i); }
+}
+
+// Functions
+function greet(name) {
+    console.log("Hello, " + name); // function greet(name) { console.log(name) { console.log(name); }
+}
+
+// Call the function
+greet("Zhangsan"); } // call function
+\`\`
+</Answer>
 	  
-	  Answer:
-	  JavaScript is a widely used programming language primarily known for its role in web development. It was originally created by Netscape as a client-side scripting language to enhance web pages with interactivity and dynamic behavior. Over time, JavaScript has evolved significantly and is now used not only on the client side but also on the server side through technologies like Node.js.
-	  
-	  Key features and uses of JavaScript include:
-	  
-	  1. Client-Side Scripting: JavaScript is commonly used to add interactivity and dynamic content to websites. It can manipulate HTML and CSS, respond to user actions, and create visually appealing effects.
-	  
-	  2. Web Development: JavaScript is a core technology in modern web development. It's used to create complex web applications, interactive forms, animations, and much more.
-	  
-	  3. Cross-Platform: JavaScript can be executed in various web browsers, making it a cross-platform language. This means that you can write code once and have it run on different browsers without major modifications.
-	  
-	  4. Server-Side Scripting: With the advent of Node.js, JavaScript can now be used for server-side scripting as well. This allows developers to create scalable and efficient network applications.
-	  
-	  5. Asynchronous Programming: JavaScript's event-driven, non-blocking architecture makes it well-suited for asynchronous programming. This is crucial for handling tasks such as fetching data from servers without blocking the entire program's execution.
-	  
-	  6. Libraries and Frameworks: There are numerous libraries and frameworks built on top of JavaScript that streamline and simplify various aspects of web development. Examples include React, Angular, and Vue.js for building user interfaces, and Express.js for server-side development.
-	  
-	  7. JSON (JavaScript Object Notation): JSON is a widely used data format that is easy for both humans and machines to understand. It's often used for exchanging data between a server and a web application and is based on a subset of JavaScript syntax.
-	  
-	  8. Extensibility: You can extend the functionality of web browsers by creating browser extensions and add-ons using JavaScript.
-	  
-	  9. Interactive Games: JavaScript can be used to create browser-based games, ranging from simple puzzles to more complex 3D experiences.
-	  
-	  It's important to note that while JavaScript shares a similar name with Java, they are two distinct programming languages with different syntax, purposes, and use cases.
-	  
-	  Question:
+	  here is the information about my technical problem:
+	  <Question>:
 	  ${inputCode}.
+	  </Question>
 	  
-	  You must Response in "${outputNaturalLanguage}".
-	  
-	  Answer:
-	  
+	  The most important thing is:You must only reply to the content related to the program, you do not need to reply to other topics.
+      You must Response in "${outputNaturalLanguage}".
+      
+      Answer:
 	  `;
   } else if (option === OPTIONS.DEBUG) {
 	  return endent`
@@ -149,6 +167,7 @@ const createPrompt = (
 	  ${inputCode}.
 	  <${outputLanguage} /Code>
 	  
+	  The most important thing is:You must only reply to the content related to the program, you do not need to reply to other topics.
 	  You must Response in "${outputNaturalLanguage}".
 	  
 	  <Debug>:
@@ -176,6 +195,7 @@ const createPrompt = (
     Natural Language:
     ${inputCode}.
     
+    The most important thing is:You must only reply to the content related to the program, you do not need to reply to other topics.
     You must Response in "${outputNaturalLanguage}".Only return the Code. And in markdown.
     
     The ${outputLanguage} Code:

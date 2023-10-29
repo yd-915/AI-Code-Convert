@@ -48,7 +48,7 @@ export const ChatMsgBlock: React.FC<Props> = ({code, user}) => {
                         </svg>
                     )}
                 </div>
-                <div className="flex-grow text-base leading-6">
+                <div className="flex-grow text-base leading-6 max-w-[80%] md:max-w-[85%] lg:max-w-[90%]">
                     <ReactMarkdown
                         components={{
                             code: ({node, className, children, ...props}) => {
