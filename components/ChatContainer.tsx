@@ -21,6 +21,10 @@ function storeChatHistory(history: ChatMsg[]) {
 }
 
 export const ChatContainer = () => {
+    const tipInfo = 'Welcome to AI Code Helper, your open-source web companion for coding with Large Language Models (LLMs). Designed with developers in mind, AI Code Helper transforms the way you interact with AI models, making it effortless to read, write, debug, and enhance your code.\n' +
+        '\n' +
+        'Whether you\'re exploring new designs or learning about the latest technologies, AI Code Helper is your go-to platform. ' +
+        '\n';
     const [inputCode, setInputCode] = useState<string>('');
     const [outputCode, setOutputCode] = useState<string>('');
     const [outputNaturalLanguage, setOutputNaturalLanguage] = useState<string>('English');
@@ -45,8 +49,8 @@ export const ChatContainer = () => {
 
     const clearHistory = () => {
         localStorage.clear();
-        setClearHisBtnName('All History cleared.')
         setChatHistory([]);
+        setClearHisBtnName('All History cleared.')
         setTimeout(() => {
             setClearHisBtnName('Clear History');
         }, 2000);
@@ -59,6 +63,9 @@ export const ChatContainer = () => {
     };
 
     const handleChat = async () => {
+        if (loading) {
+            return;
+        }
         const maxCodeLength = 30000;
         if (!inputCode) {
             alert('Please enter some message.');
@@ -164,9 +171,10 @@ export const ChatContainer = () => {
                 ))}
                 {loading ? (
                     <ChatMsgBlock code={outputCode} user={false}/>
-                ) : (
-                    ''
-                )}
+                ) : ('')}
+                {chatHistory.length == 0 ? (
+                    <ChatMsgBlock code={tipInfo} user={false}/>
+                ) : ('')}
             </div>
             <div className="fixed background-color bottom-0 w-full md:w-3/5 lg:w-3/5 pr-6 md:pr-0 lg:pr-0">
                 <div className="flex w-full items-center rounded-md bg-slate-900">

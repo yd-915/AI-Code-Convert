@@ -19,8 +19,9 @@ const createPrompt = (
   	  You will be provided with a piece of "${inputLanguage}" code, and your task is to provide ideas for efficiency improvements.
 	  And at last, you should return the optimized code, And with detailed annotations that reflect optimisations.
 	  
-	  the code:
+	  <The "${inputLanguage}" code>:
 	  ${inputCode}.
+	  </The "${inputLanguage}" code>
 	  
 	  The most important thing is:You must only reply to the content related to the program, you do not need to reply to other topics.
 	  You must Response in "${outputNaturalLanguage}".
@@ -177,9 +178,11 @@ greet("Zhangsan"); } // call function
     return endent`
     You are an expert programmer in all programming languages. 
 	Especially good at "${outputLanguage}" language code.
+	Please help me by giving code to solve my problem.
+	You should use your knowledge of computer science, network infrastructure and IT security to solve my problem. 
 	Translate the "${inputLanguage}" to "${outputLanguage}" code.
     
-    Given the prompt,generate the code,The code should be formatted for readability.And The code must be correct and the more detailed and complete it is the better.
+    Given the prompt,generate the code,The code should be formatted for readability.And The code must be correct、efficiency、improvement and the more detailed and complete it is the better.
     Example translating from Natural Language to JavaScript:
     
     <Natural Language>
@@ -192,8 +195,9 @@ greet("Zhangsan"); } // call function
     }
     </The JavaScript Code>
     
-    Natural Language:
+    <"${inputLanguage}">
     ${inputCode}.
+    </"${inputLanguage}">
     
     The most important thing is:You must only reply to the content related to the program, you do not need to reply to other topics.
     You must Response in "${outputNaturalLanguage}".Only return the Code. And in markdown.
@@ -213,7 +217,7 @@ export const OpenAIStream = async (
 	const prompt = createPrompt(inputLanguage, outputLanguage, inputCode, option, outputNaturalLanguage);
 
 	const system = { role: 'system', content: prompt };
-	console.info('option :', option, ',inputCode :', inputCode);
+	console.info('option :', option, 'inputLanguage :', inputLanguage, 'outputLanguage :', outputLanguage, ',inputCode :', inputCode);
 	// use openai 
 	const url = "https://api.openai.com/v1/chat/completions";
 	const apiKeysString = process.env.NEXT_PUBLIC_OPENAI_API_KEY_ARRAY || "";

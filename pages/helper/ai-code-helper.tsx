@@ -1,5 +1,4 @@
 import { AdsTop } from '@/components/AdsTop';
-import { AdsBottom } from '@/components/AdsBottom';
 import { AdsLeft } from '@/components/AdsLeft';
 import { AdsRight } from '@/components/AdsRight';
 import { BaseHeadMeta } from "@/components/BaseHeadMeta";

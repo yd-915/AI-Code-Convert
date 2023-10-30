@@ -1,9 +1,9 @@
 import React, {useEffect, useState} from 'react';
 import {LanguageSelect} from "@/components/LanguageSelect";
 import {NaturalLanguageSelect} from "@/components/NaturalLanguageSelect";
-import {CodeBlock} from "@/components/CodeBlock";
 import {TextBlock} from "@/components/TextBlock";
 import {TranslateBody} from "@/types/types";
+import {ChatMsgBlock} from "@/components/ChatMsgBlock";
 
 export const MainCode = () => {
     const [option, setOption] = useState('');
@@ -12,7 +12,8 @@ export const MainCode = () => {
     const [outputNaturalLanguage, setOutputNaturalLanguage] = useState<string>('English');
     const [inputCode, setInputCode] = useState<string>('');
     const [convertBtnName, setConvertBtnName] = useState<string>('Generate');
-    const [outputCode, setOutputCode] = useState<string>(`# Usage instructions:
+    const [outputCode, setOutputCode] = useState<string>(
+        `# **Usage instructions**  :
 Enter your question or code in the input box below, then click the button you want to execute.
 
 ## For example input: sum code in java;
@@ -23,7 +24,10 @@ for (int i = 1; i <= 10; i++) {
   sum += i;
 }
 System.out.println("The sum is: " + sum);
-\`\`\``);
+\`\`\`
+
+# **[✨ ✨ AI Code Helper Launched](https://www.aicodeconvert.com/helper/ai-code-helper)** [Click Here Send a message](https://www.aicodeconvert.com/helper/ai-code-helper)
+`);
     const [loading, setLoading] = useState<boolean>(false);
     const [userConvert, setUserConvert] = useState<boolean>(false);
     const [userAsk, setUserAsk] = useState<boolean>(false);
@@ -132,7 +136,7 @@ System.out.println("The sum is: " + sum);
             <div className="flex-row items-center justify-center w-full md:w-3/5 lg:w-3/5">
                 <div className="flex h-full flex-col justify-center">
                     <div>
-                        <div className="mt-1 flex space-x-2">
+                        <div className="mt-1 mb-2 flex space-x-2">
                             <div className="text-center text-lg font-semibold text-color-info-light">TO</div>
                             <div className="flex-1">
                                 <LanguageSelect
@@ -152,7 +156,7 @@ System.out.println("The sum is: " + sum);
                                 />
                             </div>
                         </div>
-                        <CodeBlock code={outputCode} />
+                        <ChatMsgBlock code={outputCode} user = {false} />
                     </div>
                     <div className="mt-8 flex flex-col justify-center">
                         <LanguageSelect

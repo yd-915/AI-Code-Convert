@@ -68,7 +68,7 @@ export const ChatStream = async (
     if (messages.length > 0) {
         messages[messages.length - 1] = {role: 'user', content: system.content};
     }
-    console.info('messages:',messages)
+    console.info('latest messages:', messages[messages.length - 1].content)
     // use openai
     const url = "https://api.openai.com/v1/chat/completions";
     const apiKeysString = process.env.NEXT_PUBLIC_OPENAI_API_KEY_ARRAY || "";
