@@ -4,6 +4,7 @@ import { NaturalLanguageSelect } from "@/components/NaturalLanguageSelect";
 import { CodeBlock } from "@/components/CodeBlock";
 import { TextBlock } from "@/components/TextBlock";
 import { TranslateBody } from "@/types/types";
+import CryptoJS from "crypto-js";
 
 interface BaseCodeOptionProps {
     option: string;
@@ -42,12 +43,17 @@ export const BaseCodeOption: React.FC<BaseCodeOptionProps> = (props) => {
         setLoading(true);
         setOutputCode('');
         const controller = new AbortController();
+        const secretKey = process.env.NEXT_PUBLIC_SECRET_KEY || 'secret';
+        const random = Math.random().toString(36).substring(7);
+        const secret = CryptoJS.AES.encrypt(random, secretKey).toString();
         const body: TranslateBody = {
             inputLanguage,
             outputLanguage,
             inputCode,
             option,
-            outputNaturalLanguage
+            outputNaturalLanguage,
+            secret,
+            random
         };
         const response = await fetch('/api/translate', {
             method: 'POST',

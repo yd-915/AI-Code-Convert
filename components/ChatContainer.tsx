@@ -3,6 +3,7 @@ import React, {useState, useEffect, useRef} from 'react';
 import {ChatMsgBlock} from "@/components/ChatMsgBlock";
 import {ChatBody, ChatMsg} from "@/types/types";
 import {NaturalLanguageSelect} from "@/components/NaturalLanguageSelect";
+import CryptoJS from "crypto-js";
 
 function getChatHistory() {
     const existingData = localStorage.getItem('chatHistory');
@@ -85,10 +86,15 @@ export const ChatContainer = () => {
         setInputCode('');
         setOutputCode('');
         const controller = new AbortController();
+        const secretKey = process.env.NEXT_PUBLIC_SECRET_KEY || 'secret';
+        const random = Math.random().toString(36).substring(7);
+        const secret = CryptoJS.AES.encrypt(random, secretKey).toString();
         const body: ChatBody = {
             inputCode,
             outputNaturalLanguage,
-            chatHistory
+            chatHistory,
+            secret,
+            random
         };
         const response = await fetch('/api/chat', {
             method: 'POST',

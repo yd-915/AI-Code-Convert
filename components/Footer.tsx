@@ -8,7 +8,7 @@ export const Footer = () => {
             </div>
             <div className="bg-black pt-1 pb-1 text-center text-color-info-light text-sm">
                 <a href="https://ailandingpagegenerator.com">AI Landing Page Generator</a> | <a href="https://base64.kr">Base64.kr</a> | <a href="https://aicomicfactory.com">AI Comic Factory </a>
-                | <a href="https://illusiondiffusion.net"> Illusion Diffusion</a> | <a href="https://aicoderhelper.com">AI Coder Helper</a>
+                | <a href="https://illusiondiffusion.net"> Illusion Diffusion</a> | <a href="https://aicoderhelper.com">AI Coder Helper</a> | <a href="https://www.disneyaiposter.com">Disney AI Poster</a>
             </div>
         </div>
     );

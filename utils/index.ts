@@ -75,7 +75,7 @@ const createPrompt = (
      `;
   } else if (option === OPTIONS.ASK) {
 	  return endent`
-	  You are an expert programmer in all programming languages. Especially good at "${outputLanguage}" language code.
+	  You are an expert programmer in all programming languages..
 	  I want you to act as a code expert, please help me by giving code to solve my problem, 
 	  you should use your knowledge of computer science, network infrastructure and IT security to solve my problem. 
 	  It will be helpful to use smart, simple and easy to understand language suitable for all levels of people in your answer, 
@@ -122,11 +122,11 @@ function greet(name) {
 greet("Zhangsan"); } // call function
 \`\`
 </Answer>
-	  
-	  here is the information about my technical problem:
-	  <Question>:
+	 
+	  here is the information about my technical problem in "${outputLanguage}" :
+	  <Question in "${outputLanguage}">:
 	  ${inputCode}.
-	  </Question>
+	  </Question in "${outputLanguage}">
 	  
 	  The most important thing is:You must only reply to the content related to the program, you do not need to reply to other topics.
       You must Response in "${outputNaturalLanguage}".
