@@ -4,6 +4,7 @@ import {NaturalLanguageSelect} from "@/components/NaturalLanguageSelect";
 import {TextBlock} from "@/components/TextBlock";
 import {TranslateBody} from "@/types/types";
 import {ChatMsgBlock} from "@/components/ChatMsgBlock";
+import {CodeBlock} from "@/components/CodeBlock";
 
 export const MainCode = () => {
     const [option, setOption] = useState('');
@@ -26,7 +27,6 @@ for (int i = 1; i <= 10; i++) {
 System.out.println("The sum is: " + sum);
 \`\`\`
 
-# **[✨ ✨ AI Code Helper Launched](https://www.aicodeconvert.com/helper/ai-code-helper)** [Click Here Send a message](https://www.aicodeconvert.com/helper/ai-code-helper)
 `);
     const [loading, setLoading] = useState<boolean>(false);
     const [userConvert, setUserConvert] = useState<boolean>(false);
@@ -35,7 +35,7 @@ System.out.println("The sum is: " + sum);
     const [userOptimize, setUserOptimize] = useState<boolean>(false);
     const [userExplain, setUserExplain] = useState<boolean>(false);
     const [hasTranslated, setHasTranslated] = useState<boolean>(false);
-
+    const [edit, setEdit] = useState<boolean>(false);
     const resetOtherOption = () => {
         setUserConvert(false);
         setUserAsk(false);
@@ -156,7 +156,26 @@ System.out.println("The sum is: " + sum);
                                 />
                             </div>
                         </div>
-                        <ChatMsgBlock code={outputCode} user = {false} />
+                        {edit ? (
+                            <CodeBlock code={outputCode} />
+                        ) : (
+                            <ChatMsgBlock code={outputCode} user = {false} />
+                        )}
+                        <button className="text-right w-full text-sm text-color-info-light hover:text-blue-500" onClick={()=> setEdit(!edit)}>
+                            {edit ? (
+                                <svg className="inline-block" width="24" height="24" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                                    <g fill="none" stroke="#3b82f6" strokeLinejoin="round" strokeWidth="4">
+                                        <path d="M24 36c11.046 0 20-12 20-12s-8.954-12-20-12S4 24 4 24s8.954 12 20 12Z"/>
+                                        <path d="M24 29a5 5 0 1 0 0-10a5 5 0 0 0 0 10Z"/>
+                                    </g>
+                                </svg>
+                                ) : (
+                                <svg className="inline-block" width="24" height="24" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill="#3b82f6" d="M832 512a32 32 0 1 1 64 0v352a32 32 0 0 1-32 32H160a32 32 0 0 1-32-32V160a32 32 0 0 1 32-32h352a32 32 0 0 1 0 64H192v640h640V512z"/>
+                                    <path fill="#3b82f6" d="m469.952 554.24l52.8-7.552L847.104 222.4a32 32 0 1 0-45.248-45.248L477.44 501.44l-7.552 52.8zm422.4-422.4a96 96 0 0 1 0 135.808l-331.84 331.84a32 32 0 0 1-18.112 9.088L436.8 623.68a32 32 0 0 1-36.224-36.224l15.104-105.6a32 32 0 0 1 9.024-18.112l331.904-331.84a96 96 0 0 1 135.744 0z"/>
+                                </svg>
+                            )}
+                        </button>
                     </div>
                     <div className="mt-8 flex flex-col justify-center">
                         <LanguageSelect

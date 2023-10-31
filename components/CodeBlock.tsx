@@ -58,7 +58,7 @@ export const CodeBlock: FC<Props> = ({
         onChange={(value) => onChange(value)}
       />
 	<button
-		className="absolute right-0 bottom-[-4] z-10 rounded p-1 text-sm text-color-info-light"
+		className="absolute right-0 bottom-0 z-10 rounded p-1 text-sm text-color-info-light"
 		onClick={handleDownload}>Download Code</button>
     </div>
   );
